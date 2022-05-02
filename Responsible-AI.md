@@ -70,43 +70,6 @@ Microsoft 自身も責任のある AI に取り組んでいます。
 
 開発チームなどがあらゆる AI の構築・運用のライフサイクルにおいて AI を理解し、保護し、制御するためのツールを開発しています。こちらは後ほど詳細に説明します。
 
-
-#### Governance
-
-Microsoft は Hub and Spokes 　モデルでガバナンスの体制を構築しています。
-
-<!-- TODO : hub and spokes の図を追加 -->
-
-また、Responsible AI Standard は
-これまで紹介した原則が実際に実践されるために、マイクロソフトはツールを開発しました。
-- 原則の適用、ビルディングブロック
-    - Principles, Practices, Tools, Governance
-- Responsible AI Standard 
-- Responsible AI Lifecycle
-    - 評価と準備
-    - 設計、構築、文章化
-    - 検証とサポート
-
-
-### 技術
-- ガイドライン、パターン、実践
-    - Guidelines for Human-AI Interaction
-    - HAX ワークブック
-    - HAX デザインパターン
-    - HAX プレイブック
-- ツール
-    - 理解 : Responsible AI Toolbox
-    - 保護 : Presidio, SmartNoise, Counterfit
-    - 統制 : MLOps, Datasheet
-
-
-
-
-## 2. 機械学習モデルを理解する
-
-
-## 3. 機械学習モデルとデータを保護する
-
 ### 登場するライブラリ・ツール・フレームワーク
 
 
@@ -129,8 +92,89 @@ Microsoft は Hub and Spokes 　モデルでガバナンスの体制を構築し
 |Row15     |         |         |
 
 
+#### Governance
+
+Microsoft は Hub and Spokes 　モデルでガバナンスの体制を構築しています。
+
+<!-- TODO : hub and spokes の図を追加 -->
+
+また、Microsoft では AI システムの開発の各段階において実行すべき推奨事項をまとめた Responsible AI Standard を作成しています (現時点では社内限定の公開)。
+
+
+### Responsible AI Lifecycle (RAIL)
+
+Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これは Responsible AI Standard に沿った形で責任のある AI をシステムに構築・デプロイするためのフレームワークです。
+
+- 評価と準備
+    - 製品による利益、技術、潜在的なリスク、チームを評価する。
+- 設計、構築、文章化
+    - 製品がもたらす影響、独自の考慮事項、文章の実践などをレビューする。
+- 検証とサポート
+    - テスト手順を選択し、製品が意図した通りに動作するか確認する。
+
+
+### ツール、ガイドライン、パターン、プラクティスの活用
+
+責任のある AI ツールは一貫性のある AI システムの開発において有効です。ただしツールは人間中心となるデザインのような思考を自動化することはできない点には注意が必要です。Microsoft などが開発し提供している取り組みをご紹介します。
+
+#### ガイドライン、パターン、プラクティス
+
+- Guidelines for Human-AI Interaction
+- HAX ワークブック
+- HAX デザインパターン
+- HAX プレイブック
+
+#### ツール
+
+- 理解 : Responsible AI Toolbox
+- 保護 : Presidio, SmartNoise, Counterfit
+- 統制 : MLOps, Datasheet
+
+
+--- 
+
+## 2. 機械学習モデルを理解する
+
+本モジュールではモデルを理解するための様々な技術を紹介します。Responsible AI Lifecycle の中でも 「設計、構築、文章化」のフェーズで利用する技術です。
+
+- モデルの公平性
+    - 学習済みモデルの公平性を評価し、必要に応じて軽減を行います。公平性とは特定のグループに対してモデルが他とは異なる挙動しないことを意味します。特にセンシティブな属性 (人種、ジェンダー、年齢、障害の有無 etc) の観点で考慮されます
+- モデルの透明性
+    - 機械学習アルゴリズムの解釈性、または説明可能性の技術より、大域的・局所的なトレンドを理解します。これは AI システムを実装する際に Data Scientist が経営者やステークホルダーにモデルを説明する際に役立ちます。また運用中モデルの挙動について説明が求められるようなシーンでも有効ですし、Data Scientist 自身が開発中の機械学習モデルをデバッグする際にも有効です。
+
+これらの技術は下記の 3 つのステップ (特定 -> 診断 -> 軽減・対処) で実行します。
+
+<!-- TODO : IDENTIFY, DIAGNOSE, MITIGATE の 3 ステップのスライドの追加 -->
+
+### FairLearn
+### InterpretML
+### Error Analysis
+### Responsible AI Dashboard
+
+
+---
+
+<br/>
+
+## 3. 機械学習モデルとデータを保護する
+
+本モジュールでは機械学習モデルを敵対的攻撃や潜在的な誤用などから保護するための技術を紹介します。
+
+- 意図的な障害
+    - 攻撃者は、AI システムの誤分類を発生させたり、個人情報などのプライベートなデータの推測、アルゴリズムの盗みを目的とします。
+- 非意図的な障害
+    - AI システムが正しい結果だが完全に安全で無い結果を生成します。
+
+想定される具体的な障害の種類は [Machine Learningの エラー モード](https://docs.microsoft.com/ja-JP/security/engineering/failure-modes-in-machine-learning) を参照ください。
+
+### SmartNoise
+### Confidential Computing
+
 
 ## 参考資料
+
+<!-- TODO : 表に作り替える -->
+
 ### For All
 
 [Microsoft の責任のある AI の原則](https://www.microsoft.com/ja-jp/ai/responsible-ai)
