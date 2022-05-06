@@ -48,16 +48,20 @@ Microsoft 自身も責任のある AI に取り組んでいます。
 
 Microsoft は AI システムの開発および運用管理における責任のある AI の原則を 6 つ定義しています。
 
-<img src='./docs/images/microsoft_rai_principles.png' width=500 />
+<img src='./docs/images/microsoft_rai_principles.png' width=500 /><br/>
 
 
-- Fairness
-- Transparency
-- Innovation
-- Security
-- Responsibility
-- Efficiency
-- Adaptability 
+- 公平性 (Fairness)
+    - AI システムは全ての人を公平に扱い、同じ属性・状況の人たちに対して異なる影響を与えることを回避する必要があります。
+- 信頼性と安全性 (Reliability & Safety)
+- プライバシーとセキュリティ (Privacy & Security)
+    - AI システムではデータを扱うためプライバシーとセキュリティの保護が必要です。
+- 包括性 (Inclusiveness)
+    - AI システムに限らず技術は全ての人にもたらされるべきで、様々なニーズに対応していく必要があります。
+- 透明性 (Transparency)
+    - AI システムが意思決定に利用される場面などでは、どのように AI システムが決定を行ったのかを理解することが重要です。
+- アカウンタビリティ (Accountability)
+    - AI システムを設計・構築・運用管理する人は、システムがどのように動作するかについて説明責任があります。
 
 
 ### 責任のある AI の実践
@@ -71,7 +75,7 @@ Microsoft は AI システムの開発および運用管理における責任の
 最初は、人間中心のデザインに基づくプラクティスです。ソフトウェア開発のライフサイクルにおける問題を予測し、それを解決することで責任のある方法で AI システムを開発することをサポートするガイドラインを提供しています。
 
 - Human-AI Guidelines
-    - As part of eXperience (HAX) Toolkit
+    - これは Human-AI eXperiences (HAX) Toolkit に含まれます。
 - Conversational AI Guidelines
 - Inclusive Design Guidelines
 - AI Fairness Checklist
@@ -79,30 +83,27 @@ Microsoft は AI システムの開発および運用管理における責任の
 - AI Security Guidelines
 
 
-その取り組みの結果として [Transparency Note for Azure Cognitive Service for Language](https://docs.microsoft.com/en-us/legal/cognitive-services/language-service/transparency-note) などの Transparency Note を公開し、AI システムの目的、能力、限界についてのコミュニケーションを支援し、マーケティングと技術文章のギャップを埋め、お客様が責任を持って AI を導入するために知っておくべき情報を積極的に伝えています。
+その取り組みの結果として 例えば [Transparency Note for Azure Cognitive Service for Language](https://docs.microsoft.com/en-us/legal/cognitive-services/language-service/transparency-note) などの Transparency Note を公開し、AI システムの目的、能力、限界についてのコミュニケーションを支援し、マーケティングと技術文章のギャップを埋め、お客様が責任を持って AI を導入するために知っておくべき情報を積極的に伝えています。その他、Azure Cognitive Services 全般における責任のある AI のガイドラインは [Cognitive Services における AI の責任ある使用](https://docs.microsoft.com/ja-jp/azure/cognitive-services/responsible-use-of-ai-overview) で確認できます。
 
 
 #### Tools
 
-開発チームなどがあらゆる AI の構築・運用のライフサイクルにおいて AI を理解し、保護し、制御するためのツールを開発しています。後続のアジェンダで詳細に説明します。
+開発チームなどがあらゆる AI の構築・運用のライフサイクルにおいて AI を理解し、保護し、制御するためのツールを開発しています。
 
-<!-- ### 登場するライブラリ・ツール・フレームワーク
+モデル開発フェーズにおいては、Azure Machine Learning 上であらゆるツールが実行できます。
 
+<img src='./docs/images/azureml_rai_process.png' width=300 />
 
-|Column1  |Column2  |Column3  |
-|---------|---------|---------|
-|Fairlearn|         |         |
-|InterpretML|         |         |
-|Error Analysis|         |         |
-|SmartNoise|         |         |
-|Responsible AI Toolbox|         |         |
-|SHAP|         |         |
-|LIME|         |         | -->
-
-
-- 理解 : Responsible AI Toolbox
-- 保護 : Presidio, SmartNoise, Counterfit
-- 統制 : MLOps, Datasheet
+- 理解 (nderstand)
+    - AI システムの挙動を理解します。公平性、透明性の観点が重要になることが多いです。
+    - ツール : InterpretML、Fairlearn、Error Analysis、Responsible AI Toolbox など。
+- 保護 (Protect)
+    - モデルやデータを外部からの攻撃や潜在的なリスクから保護します。
+    - ツール : 差分プライバシー、機密コンピューティングなど。
+- 制御 (Control)
+    - ガバナンス統制下で責任ある形で開発が進められるようにします。
+    - ツール : MLOps、監査証跡、データシートなど。
+ 
 
 #### Governance
 
