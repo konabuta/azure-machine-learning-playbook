@@ -71,7 +71,7 @@ Microsoft は AI システムの開発および運用管理における責任の
 <img src='./docs/images/microsoft_rai_into_practices.png' width=300 />
 
 
-#### Practices
+#### プラクティス
 最初は、人間中心のデザインに基づくプラクティスです。ソフトウェア開発のライフサイクルにおける問題を予測し、それを解決することで責任のある方法で AI システムを開発することをサポートするガイドラインを提供しています。
 
 - Human-AI Guidelines
@@ -86,7 +86,7 @@ Microsoft は AI システムの開発および運用管理における責任の
 その取り組みの結果として 例えば [Transparency Note for Azure Cognitive Service for Language](https://docs.microsoft.com/en-us/legal/cognitive-services/language-service/transparency-note) などの Transparency Note を公開し、AI システムの目的、能力、限界についてのコミュニケーションを支援し、マーケティングと技術文章のギャップを埋め、お客様が責任を持って AI を導入するために知っておくべき情報を積極的に伝えています。その他、Azure Cognitive Services 全般における責任のある AI のガイドラインは [Cognitive Services における AI の責任ある使用](https://docs.microsoft.com/ja-jp/azure/cognitive-services/responsible-use-of-ai-overview) で確認できます。
 
 
-#### Tools
+#### ツール
 
 開発チームなどがあらゆる AI の構築・運用のライフサイクルにおいて AI を理解し、保護し、制御するためのツールを開発しています。
 
@@ -94,7 +94,7 @@ Microsoft は AI システムの開発および運用管理における責任の
 
 <img src='./docs/images/azureml_rai_process.png' width=300 />
 
-- 理解 (nderstand)
+- 理解 (Understand)
     - AI システムの挙動を理解します。公平性、透明性の観点が重要になることが多いです。
     - ツール : InterpretML、Fairlearn、Error Analysis、Responsible AI Toolbox など。
 - 保護 (Protect)
@@ -105,7 +105,12 @@ Microsoft は AI システムの開発および運用管理における責任の
     - ツール : MLOps、監査証跡、データシートなど。
  
 
-#### Governance
+責任のある AI に関連したツールの一覧表です。最新の情報は [責任ある AI のリソース](https://www.microsoft.com/ja-JP/ai/responsible-ai-resources) や [Advancing AI trustworthiness: Updates on responsible AI research](https://www.microsoft.com/en-us/research/blog/advancing-ai-trustworthiness-updates-on-responsible-ai-research/) を参照ください。
+
+
+
+
+#### ガバナンス
 
 Microsoft は Hub and Spokes モデルでガバナンスの体制を構築しています。
 
@@ -158,30 +163,55 @@ Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これ
 
 
 
-### ユースケース
-ローンの履行・不履行を予測するモデルを作成します。UCI Adault Dataset を用いた擬似データを利用します。
+### デモンストレーションのシナリオ
+ローンの履行・不履行を予測するモデルを作成するシナリオで責任のある AI を考慮した AI システムを構築していきます。UCI Adault Dataset を用いた擬似データを利用します。
 
 
 ### Phase1 : AI システムの評価と準備
 
-このフェーズでは、AI システムの要件を整理し、責任のある形でシステムが構築可能かどうかの検証を行い、潜在的なリスクを洗い出し、必要に応じてリスクを緩和する方法を考えます。
+このフェーズでは、AI システムの要件を整理し、責任のある形でシステムが構築可能かどうかの検証を行い、潜在的なリスクを洗い出し、必要に応じてリスクを緩和する方法を考えます。下記の質問に回答してみてください。
 
+> AI/ML の技術が本当に必要か？
+> 潜在的なリスクがあるか？それはどのようなものか？
+> AI システムが誤った挙動や動作停止することがあるか？
 
+以上の情報をベースに AI システムが抱えるリスクと利益 (ステークホルダーの誰が得をして、誰が損害を被る可能性があるか etc)、リスクに対する軽減策と残存するリスク、公平性、セキュリティ、プライバシーの影響などに関して、必要に応じてテストを行い、ドキュメントを作成します。
+
+<img src='https://docs.microsoft.com/en-us/azure/architecture/guide/responsible-innovation/images/stakeholder-process-table.png' width=500 />
+
+例えば今回のシナリオで AI システムはローンの審査で利用され、適切なモデルであればローン申込者や銀行へ利益をもたらしますが、AI システムが誤った or 想定とは異なる挙動を起こし、返済不可能な債務を抱える人・企業が増えてしまえば、社会的影響は大きくなる可能性があります。
+
+このような損害 (Harms) はさまざまな種類があります。次のフェーズに入る前に AI システムがそれぞれの損害の種類に該当するのかどうか、該当する場合の損害の大きさを評価します。
+
+<img src='https://docs.microsoft.com/en-us/azure/architecture/guide/responsible-innovation/images/harms-model-example.png' width=500 />
+
+<br/>
 
 ### Phase2 : AI システムの設計・構築と文章化
 
-#### データパイプライン
+近年 Data-centric AI というフレーズが出てきているようにデータの品質が AI システムに大きな影響を与えるため、データの詳細な情報をドキュメントに残しておくことが重要です。[Datasheets for Datasets](https://www.microsoft.com/en-us/research/project/datasheets-for-datasets/) (→[Template](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4t8QB)) を利用することで、データの透明性と信頼性を高め、ステークホルダー間のコミュニケーションを促進します。
 
-データを収集・ロードするフェーズでは、[datasheets for datasets]() を用いてデータの入手方法、特徴、ユースケースを記載します。
+<br/>
 
 ### Phase3 : AI システムの検証とサポート
 
+Phase2 で精度と責任ある AI の原則とのトレードオフを考慮したモデルが選択されました。Phase3 では本番環境にモデルをデプロイしていきます。主に機械学習エンジニア、DevOps エンジニアがデータサイエンティストと連携していきます。
 
+Azure Machine Learning では GitHub (GitHub Actions) and/or Azure DevOps (Azure Pipelines) を用いて CI/CD のパイプラインを構築します。一般的に下記のような MLOps のプラクティスを実装します。
 
+- 再現可能な機械学習パイプラインの構築
+- 機械学習ライフサイクルの自動化
+- 監査証跡の自動取得
+- AI システムやモデルの監視
+- 通知とアラートの仕組みづくり
+
+Azure Machine Learning における MLOps は [MLOps: Model management, deployment, lineage, and monitoring with Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/concept-model-management-and-deployment) を参照ください。
+
+<br/>
 
 ---
 
-<br/>
+
 
 ## 3. 機械学習モデルとデータを保護する
 
