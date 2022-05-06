@@ -191,21 +191,35 @@ Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これ
 
 近年 Data-centric AI というフレーズが出てきているようにデータの品質が AI システムに大きな影響を与えるため、データの詳細な情報をドキュメントに残しておくことが重要です。[Datasheets for Datasets](https://www.microsoft.com/en-us/research/project/datasheets-for-datasets/) (→[Template](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4t8QB)) を利用することで、データの透明性と信頼性を高め、ステークホルダー間のコミュニケーションを促進します。
 
+最初のモデル構築は勾配ブースティングのライブラリ CatBoost を用います。
+
+
+次に解釈可能性の高いモデルである一般化加法モデルを Explainable Boosting Machine (aka EBM) を用いて構築します。
+
+
+次に最初に構築した CatBoost に InterpretML を利用して説明性を付与します。また、FairLearn を用いて公平性の評価を行い、不公平性を軽減する処置を行います。
+
+
+
 <br/>
 
 ### Phase3 : AI システムの検証とサポート
 
-Phase2 で精度と責任ある AI の原則とのトレードオフを考慮したモデルが選択されました。Phase3 では本番環境にモデルをデプロイしていきます。主に機械学習エンジニア、DevOps エンジニアがデータサイエンティストと連携していきます。
+Phase2 で精度と責任ある AI の原則とのトレードオフを考慮したモデルが選択されました。Phase3 では本番環境にモデルをデプロイしていきます。主に機械学習エンジニア、DevOps エンジニアが作業を進めますが、データサイエンティストとシームレスに連携する必要があったり、短いサイクルでモデルのリリースや再学習を行う必要性があるため、MLOps を導入します。
 
-Azure Machine Learning では GitHub (GitHub Actions) and/or Azure DevOps (Azure Pipelines) を用いて CI/CD のパイプラインを構築します。一般的に下記のような MLOps のプラクティスを実装します。
+今回利用している Azure Machine Learning では GitHub (GitHub Actions) and/or Azure DevOps (Azure Pipelines) 用います。一般的には下記の MLOps のプラクティスを実装します。
 
-- 再現可能な機械学習パイプラインの構築
+- 再現可能な機械学習パイプライン
 - 機械学習ライフサイクルの自動化
 - 監査証跡の自動取得
 - AI システムやモデルの監視
-- 通知とアラートの仕組みづくり
+- 通知とアラートの仕組み
 
-Azure Machine Learning における MLOps は [MLOps: Model management, deployment, lineage, and monitoring with Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/concept-model-management-and-deployment) を参照ください。
+> Azure Machine Learning における MLOps の詳細は [MLOps: Model management, deployment, lineage, and monitoring with Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/concept-model-management-and-deployment) を参照ください。
+
+
+モデルの説明性・解釈可能性は、推論時にも必要になるケースがあります。今回のローン審査においては、ローンの審査の結果に大きく影響を与えた属性 (年齢、勤続年数、負債額 etc) が分かることで、銀行がユーザに謝絶理由を説明できたり、銀行の担当者が結果の妥当性を確認することができます。
+
 
 <br/>
 
