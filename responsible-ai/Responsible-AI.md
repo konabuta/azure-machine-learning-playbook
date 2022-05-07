@@ -17,13 +17,13 @@ AI のテクノロジーが大きな注目を浴びています。便利で画�
 ---
 
 ## 1. 責任のある AI 概要
-本モジュールでは Microsoft が定義する Responsible AI (aka RAI) にフォーカスし、「責任のある AI の 6 つの原則」、「社内の標準化の活動」、「機械学習ライフサイクルにおける RAI の設計な実践」、「ツール」を紹介します。
+本モジュールでは 責任のある AI について Microsoft の取り組みを踏まえながら説明をしてきます。
 
 <br/>
 
 ### 背景
 
-AI の技術が急速に進化しています。AI は人間に近いような動作をするということもあり、意思決定に利用されることが多くなってきました。そのため AI システム全体の透明性に対するニーズが高まっています。AI モデルの観点では説明可能性が高いことが求められます。透明性が無い AI システムはステークホルダーの信頼を失い、AI の社会実装を妨げる一つの大きな要因です。しかしながら、責任のある AI はまだ十分に浸透しているとは言えません。AI システムのプライバイシーの懸念、誤動作、副作用などの課題に対して、誰が責任を取るのか、どのように対処するのかがルール化されていないことがあります。本資料では、責任のある AI の概念や技術について説明を行い、人間中心で信頼された透明性の高い AI システムの構築・運用管理をサポートすることを目的として記載しています。
+AI の技術が急速に進化しています。AI が人間に近いような動作をしたり能力を保持し、社会的影響も大きいことから AI システム全体の透明性に対するニーズが高まっています。透明性が無い AI システムはステークホルダーの信頼を失い、AI の社会実装を妨げる一つの大きな要因です。しかしながら、責任のある AI はまだ十分に浸透しているとは言えません。AI システムのプライバイシーの懸念、誤動作、副作用などの課題に対して、誰が責任を取るのか、どのように対処するのかがルール化されていないことがあります。本資料では、責任のある AI の概念や技術について説明を行い、人間中心で信頼された透明性の高い AI システムの構築・運用管理をサポートすることを目的として記載しています。
 
 "The more powerful the tool, the greater the benefit or damage it can cause ... Technology innovation is not going to slow down. The work to manage it needs to speed up." Brad Smith, President and Chief Legal Officer, Microsoft
 
@@ -116,7 +116,16 @@ Microsoft は Hub and Spokes モデルでガバナンスの体制を構築して
 
 <img src='./docs/images/microsoft_rai_governance.png' width=300 />
 
-また、Microsoft では AI システムの開発の各段階において実行すべき推奨事項をまとめた Responsible AI Standard を作成しています (社内限定の公開)。
+- Responsible AI Council
+    - Microsoft のエグゼクティブメンバーや責任のある AI の各グループ (Aether Comittee, Office of Responsible AI, RAISE) の代表者から構成され、全社的に責任のある AI への取り組みをサポートします。
+- Aether Committee
+    - Aether (AI, Ethics, and Effects in Engineering and Research) は Microsoft 社内の部門を横断する様々な専門家グループから構成され、Microsoft 社内のシニアリーダーシップや Office of Responsible AI (ORA) に対して、AI システムに関する疑問・課題などについて助言するアドバイザリーを提供します。また 6 つの作業グループがあり、それぞれの分野で有益なツール、ベストプラクティス、実装ガイダンスなどを開発しています。
+- Office of Responsible AI (ORA)
+    - 責任のある AI の原則を実践に向けたガバナンスの実装と管理をします。代表的な取り組みとしては Responsible AI Standard を作成し、社内の責任のある AI の実践をサポートしています。
+- RAISE (Responsible AI Strategy in Engineering)
+    - エンジニアリンググループにおける責任のある AI のルールの策定、システム戦略、プロセスの実装を実行します。
+- Responsible AI Champs
+    - Responsible AI Champs はスポークの役割を果たし、組織全体にわたるルールの実装や、認知度の向上をサポートします。お客様や社内におけるセンシティブなユースケースに対するアドバイザリーを行なったり、
 
 
 <br/>
