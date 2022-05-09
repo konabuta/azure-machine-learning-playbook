@@ -135,10 +135,10 @@ Microsoft は Hub and Spokes モデルでガバナンスの体制を構築して
 
 Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これは Responsible AI Standard に沿った形で責任のある AI をシステムに構築・デプロイするためのフレームワークです。詳細は公開されていませんが、下記が概略です。
 
-- 評価と準備
+- AI システムの評価と準備
     - 製品がもたらす利益、技術、潜在的なリスク、チームを評価する。
-- 設計、構築、文章化
-    - 製品がもたらす影響、独自の考慮事項、文章の実践などをレビューする。
+- AI システムの設計・構築とドキュメンテーション
+    - モデルや関連するシステムの設計・構築を行い、AI システムについて文章を作成する。
 - 検証とサポート
     - テスト手順を選択し、製品が意図した通りに動作するか確認する。
 
@@ -182,7 +182,7 @@ Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これ
 
 #### SHAP
 
-SHAP (SHapley Additive exPlanations) はゲーム理論のシャープレイ値の枠組みを利用して、モデルの種類に関わらず、ここのデータの特徴量ごとの貢献度をみることができます。SHAP 単体でライブラリが公開されています (GitHub - [SHAP](https://github.com/slundberg/shap))
+SHAP (SHapley Additive exPlanations) はゲーム理論のシャープレイ値の枠組みを利用して、モデルの種類に関わらず、ここのデータの特徴量ごとの貢献度をみることができます。SHAP 単体でライブラリが公開されています ([github.com/slundberg/SHAP](https://github.com/slundberg/shap))
 
 
 <br/>
@@ -252,9 +252,10 @@ Fairlearn はこういった危害を評価し、必要に応じて軽減する�
 
 ### Phase2 : AI システムの設計・構築と文章化
 
-近年 Data-centric AI というフレーズが出てきているようにデータの品質が AI システムに大きな影響を与えるため、データの詳細な情報をドキュメントに残しておくことが重要です。[Datasheets for Datasets](https://www.microsoft.com/en-us/research/project/datasheets-for-datasets/) (→[Template](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4t8QB)) を利用することで、データの透明性と信頼性を高め、ステークホルダー間のコミュニケーションを促進します。
+近年 Data-centric AI というフレーズが出てきているようにデータの品質が AI システムに大きな影響を与えるため、データの詳細な情報をドキュメントに残しておくことが重要です。[Datasheets for Datasets](https://www.microsoft.com/en-us/research/project/datasheets-for-datasets/) ([Template](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4t8QB)) を利用することで、データの透明性と信頼性を高め、ステークホルダー間のコミュニケーションを促進します。
 
-最初のモデル構築は勾配ブースティングのライブラリ CatBoost を用います。
+
+次にモデル構築を進めていきます。最初のモデル構築は勾配ブースティングのライブラリ CatBoost を用います。
 
 
 次に解釈可能性の高いモデルである一般化加法モデルを Explainable Boosting Machine (aka EBM) を用いて構築します。
@@ -270,8 +271,8 @@ model_1 = CatBoostClassifier(
 
 
 pipeline_1 = Pipeline(steps=[
-    ('preprocessor', column_transformer),
-    ('classifier_CBC', model_1)])
+    ('preprocessor', column_transformer), # 前処理
+    ('classifier_CBC', model_1)]) # モデル
 
 catboost_predictor = pipeline_1.fit(X_train, Y_train)
 
@@ -302,7 +303,6 @@ explainer = TabularExplainer(catboost_predictor,
 # explain overall model predictions (global explanation)
 global_explanation = explainer.explain_global(X_test)
 
-# ExplanationDashboard(global_explanation, catboost_predictor)
 ExplanationDashboard(global_explanation, catboost_predictor, dataset=X_test, true_y=Y_test)
 ```
 
@@ -412,66 +412,41 @@ Phase2 で精度と責任ある AI の原則とのトレードオフを考慮し
 
 ## 3. 機械学習モデルとデータを保護する
 
-本モジュールでは機械学習モデルを敵対的攻撃や潜在的な誤用などから保護するための技術を紹介します。
+本モジュールでは機械学習モデルを敵対的攻撃や潜在的な誤用などから保護するための技術を紹介します。差分プライバシーはデータにノイズや乱数を追加することで、データサイエンティストや外部の攻撃者が個々のデータポイントを識別できないようにします。
 
 - 意図的な障害
     - 攻撃者は、AI システムの誤分類を発生させたり、個人情報などのプライベートなデータの推測、アルゴリズムの盗みを目的とします。
 - 非意図的な障害
     - AI システムが正しい結果だが完全に安全で無い結果を生成します。
 
-想定される具体的な障害の種類は [Machine Learningの エラー モード](https://docs.microsoft.com/ja-JP/security/engineering/failure-modes-in-machine-learning) を参照ください。
+想定される具体的な障害の種類は [Machine Learning の エラー モード](https://docs.microsoft.com/ja-JP/security/engineering/failure-modes-in-machine-learning) を参照ください。
 
 ### SmartNoise
+
+SmartNoise は差分プライバシーを利用した AI システムを構築するためのオープンソースのライブラリです。
+
 ### Confidential Computing
 
 
 ## 参考資料
 
-<!-- TODO : 表に作り替える -->
-
 
 |Topics          |Links                                               |Notes    |
 |----------------|----------------------------------------------------|---------|
+|Microsoft RAI   |[Microsoft の責任のある AI の原則](https://www.microsoft.com/ja-jp/ai/responsible-ai)||
+|Microsoft RAI   |[Responsible AI resources](https://www.microsoft.com/en-us/ai/responsible-ai-resources)||
 |Error Analysis  |[Error Analysis Web page](https://erroranalysis.ai/)|         |
-|Row2            |         |         |
-|Row3     |         |         |
-|Row4     |         |         |
-|Row5     |         |         |
-
-
-### For All
-
-[Microsoft の責任のある AI の原則](https://www.microsoft.com/ja-jp/ai/responsible-ai)
-[Responsible AI resources](https://www.microsoft.com/en-us/ai/responsible-ai-resources)
-
-### For Business leaders
-
-<!--`Microsoft Learn -->
-[Discover ways to foster an AI-ready culture in your business](https://docs.microsoft.com/en-us/learn/paths/foster-ai-ready-culture/)
-[Identify principles and practices for responsible AI](https://docs.microsoft.com/en-us/learn/paths/responsible-ai-business-principles/)
-[Identify guiding principles for responsible AI in government](https://docs.microsoft.com/en-us/learn/paths/responsible-ai-government-principles/)
-
-[AI Business School の人工知能コース](https://www.microsoft.com/ja-jp/ai/ai-business-school?rtc=1)
+|Fairlearn       |[Fairlearn Web page](https://fairlearn.org/)        |         |
+|InterpretML     |[InterpretML Web page](https://interpret.ml)        |         |
+|DiCE            |[DiCE repo](https://github.com/interpretml/DiCE)    |         |
+|Microsoft Learn |[Discover ways to foster an AI-ready culture in your business](https://docs.microsoft.com/en-us/learn/paths/foster-ai-ready-culture/)||
+|Microsoft Learn |[Identify principles and practices for responsible AI](https://docs.microsoft.com/en-us/learn/paths/responsible-ai-business-principles/)||
+|Microsoft Learn |[Identify guiding principles for responsible AI in government](https://docs.microsoft.com/en-us/learn/paths/responsible-ai-government-principles/)
+||
+|AI Business School |[AI Business School の人工知能コース](https://www.microsoft.com/ja-jp/ai/ai-business-school?rtc=1)||
 
 
 
 
-### For Product Leaders
-
-|Action                       |Guidelines                                                                                                      |Column3  |
-|-----------------------------|----------------------------------------------------------------------------------------------------------------|---------|
-|Assess & prepare             |Assess merit of developing the product considering organizational values and business objectives                |         |
-|Assess & prepare             |Assemble team reflecting diverse perspectives and with clearly defined roles and responsibilities               |         |
-|Assess & prepare             |Assess potential product impact by including input from domain experts and potentially impacted groups          |         |
-|Design, build & document     |Evaluate data and system outcomes to minimize the risk of fairness harms                                        |         |
-|Design, build & document     |Design AI product to mitigate the potential negative impact on society and the environment                      |         |
-|Design, build & document     |Incorporate features to enable human control                                                                    |         |
-|Design, build & document     |Incorporate features to enable human control                                                                    |         |
-|Design, build & document     |Take measures to safeguard data and AI products                                                                 |         |
-|Design, build & document     |Document throughout the development lifecycle to enable transparency                                            |         |
-|Validate & Support           |Validate product performance and test for unplanned failures as well as foreseeable misuse unique to AI products|         |
-|Validate & Support           |Communicate design choices, performance, limitations, and safety risks to end user                              |         |
 
 
-
-### For Researcher & Data Scientists
