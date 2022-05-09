@@ -171,6 +171,60 @@ Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これ
     - 最小限度の変化のみで目的変数を変化させる反実仮想のデータを生成します。
 
 
+### InterpretML
+<img src='./docs/images/interpretml.png' width=500 /><br/>
+
+
+#### Global Surrogate
+
+グローバルなモデル解釈方法。学習済みモデルへの入力データとその予測値を再度線形回帰などの解釈可能なモデルで学習し直して、モデル解釈をするアプローチ方法。InterpretML では LightGBM や線形回帰のモデルが利用できます。
+
+
+#### SHAP
+
+SHAP (SHapley Additive exPlanations) はゲーム理論のシャープレイ値の枠組みを利用して、モデルの種類に関わらず、ここのデータの特徴量ごとの貢献度をみることができます。SHAP 単体でライブラリが公開されています (GitHub - [SHAP](https://github.com/slundberg/shap))
+
+
+<br/>
+
+### Explainable Boosting Machines (EBM)
+
+Explainable Boosting Machines (EBM) は、一般化加法モデル (GAM) に交互作用項を組み込んだモデル (GA2M) を高速に推定するアルゴリズムです。
+
+$$ y =  f(x_1) + f(x_2) + f(x_3) + ... + \Sigma_{ij} f_{ij}(x_i, x_j)  $$
+
+それぞれの特徴量 $x_i$ は関数 $f(x_i)$ で表現されています。線形回帰などの線形モデルとは違い目的変数 $y$ との関係性は線形性は前提としていません。この関数を推定する方法はいくつかありますが、EBM ではこの関数をブースティングで推定します。また交互作用項を推定するアルゴリズム (FAST) も実装されており精度向上に寄与しています。
+
+<br/>
+
+### Error Analysis
+
+<img src='https://techcommunity.microsoft.com/t5/image/serverpage/image-id/255440i28671D47179C4A7D/image-size/large?v=v2&px=999' width=500 /><br/>
+
+Error Analysis はモデルの誤差を深堀り分析するツールです。よく機械学習モデルの精度を 90 % などと集計された数値で見ることが多いと思います (上図) が、ユースケース次第ではそれでは不十分です。誤差がデータのどこに潜んでいるのかはこれでは分からないので、例えば性別や人種の違いで誤差が異なれば公平性の問題になりますし、病理診断などのシナリオでも子供や高齢者の精度が悪いと、社会的な問題になることが考えられます。
+
+<img src='./docs/images/erroranalysis.png' width=500 /><br/>
+
+
+そのため、誤差を深掘りし、誤差が大きくなる・小さくなるコホートを特定することで、ステークホルダーに対してモデルの潜在的なリスクを伝えることができたり、誤差が大きいコホートのデータの品質を改善することで精度が向上することが期待できます。
+
+<br/>
+
+### Fairlearn
+<img src='./docs/images/fairlearn.png' width=500 /><br/>
+
+モデルの不公平性な挙動が課題になる場合があります。
+
+- 割り当ての害
+    - AI システムによって、特定のグループの機会、リソース、または情報が増減されます。 たとえば、雇用、入学許可、融資などで、モデルにより、特定のグループの人が、他のグループより、適切な候補をうまく選択される場合があります。
+- サービス品質の買
+    - AI システムによる対応のよさが、ユーザーのグループによって異なります。 たとえば、音声認識システムでは、女性に対する対応が男性より悪くなる場合があります。
+
+
+Fairlearn はこういった危害を評価し、必要に応じて軽減することができます。
+
+
+<br/>
 
 ### デモンストレーションのシナリオ
 ローンの履行・不履行を予測するモデルを作成するシナリオで責任のある AI を考慮した AI システムを構築していきます。UCI Adault Dataset を用いた擬似データを利用します。
@@ -209,6 +263,126 @@ Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これ
 次に最初に構築した CatBoost に InterpretML を利用して説明性を付与します。また、FairLearn を用いて公平性の評価を行い、不公平性を軽減する処置を行います。
 
 
+```python
+from catboost import CatBoostClassifier
+model_1 = CatBoostClassifier(
+    random_seed=42, logging_level="Silent", iterations=150)
+
+
+pipeline_1 = Pipeline(steps=[
+    ('preprocessor', column_transformer),
+    ('classifier_CBC', model_1)])
+
+catboost_predictor = pipeline_1.fit(X_train, Y_train)
+
+```
+
+次に解釈可能性の高いモデルである EBM を構築します。
+
+```python
+from interpret.glassbox import ExplainableBoostingClassifier
+seed = 1234
+
+#  No pipeline needed due to EBM handling string datatypes
+ebm_predictor = ExplainableBoostingClassifier(random_state=seed, interactions=4)
+ebm_predictor.fit(X_train, Y_train)
+```
+
+次に CatBoost のモデルに説明性を付与します。
+
+```python
+from raiwidgets import ExplanationDashboard
+from interpret.ext.blackbox import TabularExplainer
+
+# explain predictions on your local machine
+# "features" and "classes" fields are optional
+explainer = TabularExplainer(catboost_predictor, 
+                             X_train)
+
+# explain overall model predictions (global explanation)
+global_explanation = explainer.explain_global(X_test)
+
+# ExplanationDashboard(global_explanation, catboost_predictor)
+ExplanationDashboard(global_explanation, catboost_predictor, dataset=X_test, true_y=Y_test)
+```
+
+誤差分析を行います。
+
+```python
+from raiwidgets import ErrorAnalysisDashboard
+ErrorAnalysisDashboard(global_explanation, catboost_predictor, dataset=X_test, true_y=Y_test)
+```
+
+これからの一連の流れを統合されたダッシュボードである Responsible AI Toolbox を用いて表現します。
+
+```python
+from raiwidgets import ResponsibleAIDashboard
+from responsibleai import RAIInsights
+
+
+# データや目的変数などの情報
+rai_insights = RAIInsights(pipeline_1, train_data, test_data, target_feature, 'classification',
+                               categorical_features=categorical_features, maximum_rows_for_test=7000)
+# モデル説明性 (InterpretML)
+rai_insights.explainer.add()
+# モデル誤差解析 (Error Analysis)
+rai_insights.error_analysis.add()
+
+# 計算処理
+rai_insights.compute()
+
+# ダッシュボード出力
+ResponsibleAIDashboard(rai_insights, locale="ja")
+```
+
+次に公平性の評価と不公平性を軽減していきます。まずは最初に CatBoost モデルを性別の観点で公平性を確認します。
+
+```python
+from raiwidgets import FairnessDashboard
+Y_pred = catboost_predictor.predict(X_test)
+FairnessDashboard(sensitive_features=A_test,
+                  y_true=Y_test,
+                  y_pred=Y_pred)
+```
+
+次に、GridSearch を用いて不公平性を軽減したモデルを複数作成します
+
+```python
+from fairlearn.reductions import GridSearch
+from fairlearn.reductions import DemographicParity, ErrorRate
+
+sweep = GridSearch(
+    model_1,
+    constraints=DemographicParity(),
+    grid_size=70)
+
+sweep.fit(X_train, Y_train, sensitive_features=A_train.Sex)
+```
+
+公平性を再度確認します。
+
+```python
+from raiwidgets import FairnessDashboard
+mitigated_predictors = sweep.predictors_
+
+ys_mitigated_predictors = {} # it contains (<model_id>, <predictions>) pairs
+
+# the original prediction:
+ys_mitigated_predictors["census_unmitigated"]=catboost_predictor.predict(X_test)
+
+base_predictor_name="mitigated_predictor_{0}"
+model_id=1
+
+for mp in mitigated_predictors:
+    id=base_predictor_name.format(model_id)
+    ys_mitigated_predictors[id]=mp.predict(X_test)
+    model_id=model_id+1
+    
+FairnessDashboard(
+    sensitive_features=A_test,
+    y_true=Y_test,
+    y_pred=ys_mitigated_predictors)
+```
 
 <br/>
 
@@ -254,6 +428,16 @@ Phase2 で精度と責任ある AI の原則とのトレードオフを考慮し
 ## 参考資料
 
 <!-- TODO : 表に作り替える -->
+
+
+|Topics          |Links                                               |Notes    |
+|----------------|----------------------------------------------------|---------|
+|Error Analysis  |[Error Analysis Web page](https://erroranalysis.ai/)|         |
+|Row2            |         |         |
+|Row3     |         |         |
+|Row4     |         |         |
+|Row5     |         |         |
+
 
 ### For All
 
