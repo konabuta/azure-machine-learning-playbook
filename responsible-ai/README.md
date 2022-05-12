@@ -379,7 +379,7 @@ Y_pred = catboost_predictor.predict(X_test)
 FairnessDashboard(sensitive_features=A_test,
                   y_true=Y_test,
                   y_pred=Y_pred)
-``
+```
 <img src='./docs/images/fairlearn_dashboard.png' width=500 />
 
 <img src='./docs/images/fairlearn_assess_selection_rate.png' width=500 />
@@ -423,7 +423,7 @@ FairnessDashboard(
     y_pred=ys_mitigated_predictors)
 ```
 
-ダッシュボードで精度で公平性のトレードオフを確認し、採用するモデルを決めていきます。
+オレンジ色にハイライトされているモデルが軽減前のモデルです。ダッシュボードで精度で公平性のトレードオフを確認し、採用するモデルを決めていきます。
 
 <img src='./docs/images/fairlearn_mitigate_dpratio
 .png' width=500 />
@@ -472,7 +472,7 @@ Phase2 で精度と責任ある AI の原則とのトレードオフを考慮し
 
 ### Confidential Computing
 
-[Azure Confidential Computing](https://azure.microsoft.com/ja-jp/solutions/confidential-compute/) を利用して Azure 上で機密データの処理を安全に行うことができます。Azure 内部ではデフォルトで Microsoft がデータを暗号化していますが、Microsoft がそのデータにアクセスしないことを確認するのは難しいことです。また機密データに対する攻撃者の手法も多様化しています。Azure Confidential Computing は使用中のデータ (Data In Use) を TEE (Trusted Execution Environments) を利用して保護します。現在は Intel SGX、AMD SEV-SNP が利用できます。
+[Azure Confidential Computing](https://azure.microsoft.com/ja-jp/solutions/confidential-compute/) を利用して Azure 上で機密データの処理を安全に行うことができます。Azure 内部ではデフォルトで Microsoft がデータを暗号化していますが、Microsoft がそのデータにアクセスしないことを確認するのは難しいことです。また機密データに対する攻撃者の手法も多様化しています。Azure Confidential Computing は使用中のデータ (Data In Use) を TEE (Trusted Execution Environments) を利用して保護します。現在は Intel SGX、AMD SEV-SNP、また Nvidia A100 GPUs with APM (Private Preview) が利用できます。
 
 <br/>
 
