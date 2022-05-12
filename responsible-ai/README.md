@@ -279,6 +279,8 @@ $$ y =  f(x_1) + f(x_2) + f(x_3) + ... + \Sigma_{ij} f_{ij}(x_i, x_j)  $$
 次に最初に構築した CatBoost に InterpretML を利用して説明性を付与します。また、FairLearn を用いて公平性の評価を行い、不公平性を軽減する処置を行います。
 
 
+最初に CatBoost のモデルを構築します。
+
 ```python
 from catboost import CatBoostClassifier
 model_1 = CatBoostClassifier(
@@ -304,6 +306,15 @@ ebm_predictor = ExplainableBoostingClassifier(random_state=seed, interactions=4)
 ebm_predictor.fit(X_train, Y_train)
 ```
 
+各変数の貢献度や推定された関数を確認します。
+
+<img src='./docs/images/ebm_global.png' width=500 />
+<img src='./docs/images/ebm_global_age.png' width=500 />
+<img src='./docs/images/ebm_global_interaction.png' width=500 />
+
+<br/>
+
+
 次に CatBoost のモデルに説明性を付与します。
 
 ```python
@@ -321,12 +332,19 @@ global_explanation = explainer.explain_global(X_test)
 ExplanationDashboard(global_explanation, catboost_predictor, dataset=X_test, true_y=Y_test)
 ```
 
+<img src='./docs/images/interpretml_dashboard.png' width=500 />
+
+
 誤差分析を行います。
 
 ```python
 from raiwidgets import ErrorAnalysisDashboard
 ErrorAnalysisDashboard(global_explanation, catboost_predictor, dataset=X_test, true_y=Y_test)
 ```
+<img src='./docs/images/erroranalysis_dashboard_decisiontree.png' width=500 />
+<img src='./docs/images/erroranalysis_dashboard_heatmap.png' width=500 />
+
+
 
 これからの一連の流れを統合されたダッシュボードである Responsible AI Toolbox を用いて表現します。
 
@@ -349,7 +367,10 @@ rai_insights.compute()
 # ダッシュボード出力
 ResponsibleAIDashboard(rai_insights, locale="ja")
 ```
+<img src='./docs/images/raitoolbox_dashboard.gif' width=500 />
 
+
+<br/>
 次に公平性の評価と不公平性を軽減していきます。まずは最初に CatBoost モデルを性別の観点で公平性を確認します。
 
 ```python
@@ -358,7 +379,10 @@ Y_pred = catboost_predictor.predict(X_test)
 FairnessDashboard(sensitive_features=A_test,
                   y_true=Y_test,
                   y_pred=Y_pred)
-```
+``
+<img src='./docs/images/fairlearn_dashboard.png' width=500 />
+
+<img src='./docs/images/fairlearn_assess_selection_rate.png' width=500 />
 
 次に、GridSearch を用いて不公平性を軽減したモデルを複数作成します
 
@@ -399,6 +423,12 @@ FairnessDashboard(
     y_pred=ys_mitigated_predictors)
 ```
 
+ダッシュボードで精度で公平性のトレードオフを確認し、採用するモデルを決めていきます。
+
+<img src='./docs/images/fairlearn_mitigate_dpratio
+.png' width=500 />
+
+
 <br/>
 
 ### Phase3 : AI システムの検証とサポート
@@ -413,7 +443,7 @@ Phase2 で精度と責任ある AI の原則とのトレードオフを考慮し
 - AI システムやモデルの監視
 - 通知とアラートの仕組み
 
-> Azure Machine Learning における MLOps の詳細は [MLOps: Model management, deployment, lineage, and monitoring with Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/concept-model-management-and-deployment) を参照ください。
+※ Azure Machine Learning における MLOps の詳細は [MLOps: Model management, deployment, lineage, and monitoring with Azure Machine Learning](https://docs.microsoft.com/en-us/azure/machine-learning/concept-model-management-and-deployment) を参照ください。
 
 
 モデルの説明性・解釈可能性は、推論時にも必要になるケースがあります。今回のローン審査においては、ローンの審査の結果に大きく影響を与えた属性 (年齢、勤続年数、負債額 etc) が分かることで、銀行がユーザに謝絶理由を説明できたり、銀行の担当者が結果の妥当性を確認することができます。
@@ -438,12 +468,17 @@ Phase2 で精度と責任ある AI の原則とのトレードオフを考慮し
 
 ### SmartNoise
 
-SmartNoise は差分プライバシーを利用した AI システムを構築するためのオープンソースのライブラリです。
+[SmartNoise](https://smartnoise.org/) は差分プライバシーを利用した AI システムを構築するためのオープンソースのライブラリです。差分プライバシーは機密データにノイズを加え、個人情報などの特定を防ぐことでデータを保護をします。
 
 ### Confidential Computing
 
+[Azure Confidential Computing](https://azure.microsoft.com/ja-jp/solutions/confidential-compute/) を利用して Azure 上で機密データの処理を安全に行うことができます。Azure 内部ではデフォルトで Microsoft がデータを暗号化していますが、Microsoft がそのデータにアクセスしないことを確認するのは難しいことです。また機密データに対する攻撃者の手法も多様化しています。Azure Confidential Computing は使用中のデータ (Data In Use) を TEE (Trusted Execution Environments) を利用して保護します。現在は Intel SGX、AMD SEV-SNP が利用できます。
 
-## 参考資料
+<br/>
+
+---
+
+## 4. 参考資料
 
 
 |Topics          |Links                                               |Notes    |
