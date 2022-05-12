@@ -75,13 +75,13 @@ Microsoft は AI システムの開発および運用管理における責任の
 #### プラクティス
 最初は、人間中心のデザインに基づくプラクティスです。ソフトウェア開発のライフサイクルにおける問題を予測し、それを解決することで責任のある方法で AI システムを開発することをサポートするガイドラインを提供しています。
 
-- Human-AI Guidelines
-    - これは Human-AI eXperiences (HAX) Toolkit に含まれます。
-- Conversational AI Guidelines
-- Inclusive Design Guidelines
-- AI Fairness Checklist
-- Datasheets for Datasets
-- AI Security Guidelines
+- [Human-AI Guidelines](https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/)
+    - これは [Human-AI eXperiences (HAX)](https://www.microsoft.com/en-us/haxtoolkit/) Toolkit に含まれます。
+- [Conversational AI Guidelines](https://www.microsoft.com/en-us/research/publication/responsible-bots/)
+- [Inclusive Design Guidelines](https://www.microsoft.com/design/inclusive/)
+- [AI Fairness Checklist](https://www.microsoft.com/en-us/research/project/ai-fairness-checklist/)
+- [Datasheets for Datasets](https://www.microsoft.com/en-us/research/project/datasheets-for-datasets/)
+- [AI Security Guidelines](https://blogs.microsoft.com/on-the-issues/2019/12/06/ai-machine-learning-security/)
 
 
 その取り組みの結果として 例えば [Transparency Note for Azure Cognitive Service for Language](https://docs.microsoft.com/en-us/legal/cognitive-services/language-service/transparency-note) などの Transparency Note を公開し、AI システムの目的、能力、限界についてのコミュニケーションを支援し、マーケティングと技術文章のギャップを埋め、お客様が責任を持って AI を導入するために知っておくべき情報を積極的に伝えています。その他、Azure Cognitive Services 全般における責任のある AI のガイドラインは [Cognitive Services における AI の責任ある使用](https://docs.microsoft.com/ja-jp/azure/cognitive-services/responsible-use-of-ai-overview) で確認できます。
