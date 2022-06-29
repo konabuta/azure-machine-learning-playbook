@@ -6,18 +6,18 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Azure Machine Learning Playbook',
+  tagline: 'Tips & Practices from Azure CXP - FastTrack for Azure',
+  url: 'https://github.com/Azure/',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.svg',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Azure', // Usually your GitHub org/user name.
+  projectName: 'azure-machine-learning-playbook', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -37,14 +37,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/konabuta/azure-machine-learning-playbook',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/konabuta/azure-machine-learning-playbook',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -57,9 +57,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'Azure Machine Learning',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Azure Machine Learning',
           src: 'img/logo.svg',
         },
         items: [
@@ -71,7 +71,7 @@ const config = {
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/konabuta/azure-machine-learning-playbook',
             label: 'GitHub',
             position: 'right',
           },
@@ -94,15 +94,11 @@ const config = {
             items: [
               {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                href: 'https://stackoverflow.com/questions/tagged/azure-machine-learning-service?tab=Newest',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Microsoft Tech Community',
+                href: 'https://techcommunity.microsoft.com/',
               },
             ],
           },
@@ -110,17 +106,13 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Sample codes',
+                href: 'https://github.com/Azure/azureml-examples',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Microsoft Corporation. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
