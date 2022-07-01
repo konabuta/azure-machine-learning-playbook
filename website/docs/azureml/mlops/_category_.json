@@ -1,0 +1,8 @@
+{
+  "label": "AzureML - MLOps",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "learn the fundamentals of MLOps with AzureML."
+  }
+}

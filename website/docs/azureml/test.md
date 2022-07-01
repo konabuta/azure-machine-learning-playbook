@@ -1,4 +1,0 @@
----
-id: readme
----
-# README.md

@@ -63,9 +63,18 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {to: '/docs', label: 'AzureML', sidebarId: 'azuremlSidebar', position: 'left'},
-          //{to: '/docs/azureml', activeBasePath: 'azureml', label: 'test',   position: 'left'},
-          //{to: '/docs', activeBasePath: 'docusaurus-tutorials', label: 'Tutorials', sidebarId: 'tutorialSidebar', position: 'left'},
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'azuremlSidebar',
+            label: 'AzureML',
+          },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'tutorialSidebar',
+            label: 'Tutorials',
+          },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/konabuta/azure-machine-learning-playbook',
