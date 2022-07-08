@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[1839],{922:e=>{e.exports=JSON.parse('{"label":"hello","permalink":"/azure-machine-learning-playbook/ja/blog/tags/hello","allTagsPath":"/azure-machine-learning-playbook/ja/blog/tags","count":2}')}}]);
