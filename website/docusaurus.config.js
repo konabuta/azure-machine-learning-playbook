@@ -57,21 +57,23 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Azure Machine Learning',
+        title: 'Playbook',
         logo: {
           alt: 'Azure Machine Learning',
           src: 'img/logo.svg',
         },
         items: [
           {
-            type: 'localeDropdown',
+            type: 'docSidebar',
             position: 'left',
+            sidebarId: 'azuremlSidebar',
+            label: 'AzureML',
           },
           {
-            type: 'doc',
-            docId: 'intro',
+            type: 'docSidebar',
             position: 'left',
-            label: 'Tutorial',
+            sidebarId: 'tutorialSidebar',
+            label: 'Tutorials',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
@@ -79,20 +81,15 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
+          {
+            type: 'localeDropdown',
+            position: 'left',
+          },
         ],
       },
       footer: {
         style: 'dark',
         links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
           {
             title: 'Community',
             items: [
@@ -123,6 +120,17 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+};
+
+// default theme to Dark
+module.exports = {
+  themeConfig: {
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: false,
+      respectPrefersColorScheme: false,
+    },
+  },
 };
 
 module.exports = config;

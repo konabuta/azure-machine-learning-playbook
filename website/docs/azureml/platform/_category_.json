@@ -1,0 +1,8 @@
+{
+  "label": "Platform",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "design guides and best practices to build & manage Azure Machine Learning."
+  }
+}
