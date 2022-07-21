@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Azure Machine Learning Playbook',
   tagline: 'Tips & Practices from Azure CXP - FastTrack for Azure',
-  url: 'https://github.com/konabuta',
+  url: 'https://github.com/konabuta/',
   baseUrl: '/azure-machine-learning-playbook/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
