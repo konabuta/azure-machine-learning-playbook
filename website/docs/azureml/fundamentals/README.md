@@ -1,5 +1,0 @@
----
-id: fundamentals-readme
----
-
-# Fundamentals
