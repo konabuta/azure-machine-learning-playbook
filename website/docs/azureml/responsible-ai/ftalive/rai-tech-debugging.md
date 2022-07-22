@@ -46,7 +46,7 @@ Fairlearn はこういった不公平性の危害を評価し、必要に応じ�
 
 #### Error Analysis
 
-<img src={require('https://techcommunity.microsoft.com/t5/image/serverpage/image-id/255440i28671D47179C4A7D/image-size/large?v=v2&px=999').default} width="500" /><br/>
+<img src='https://techcommunity.microsoft.com/t5/image/serverpage/image-id/255440i28671D47179C4A7D/image-size/large?v=v2&px=999' width="500" /><br/>
 
 Error Analysis はモデルの誤差を深堀り分析するツールです。よく機械学習モデルの精度を 90 % などと集計された数値で見ることが多いと思います (上図) が、ユースケース次第ではそれでは不十分です。誤差がデータのどこに潜んでいるのかはこれでは分からないので、例えば性別や人種の違いで誤差が異なれば公平性の問題になりますし、病理診断などのシナリオでも子供や高齢者の精度が悪いと、社会的な問題になることが考えられます。
 
@@ -102,7 +102,7 @@ $$
 モデルの説明性付与、誤差分析、データ可視化、反事仮想分析、因果推論の機能をより簡単にスムーズに利用するために Responsible AI Toolbox という統合されたダッシュボードを提供しています。モデルをデバッグする機能と意思決定をサポートする機能の 2 つを提供しています。
 
 
-<img src={require('https://techcommunity.microsoft.com/t5/image/serverpage/image-id/331674i5FBF69F2E05F85A3/image-size/medium?v=v2&px=400').default} width="300" /><br/>
+<img src='https://techcommunity.microsoft.com/t5/image/serverpage/image-id/331674i5FBF69F2E05F85A3/image-size/medium?v=v2&px=400' width="300" /><br/>
 
 
 
