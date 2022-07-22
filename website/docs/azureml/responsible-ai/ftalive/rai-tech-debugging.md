@@ -46,7 +46,7 @@ Fairlearn はこういった不公平性の危害を評価し、必要に応じ�
 
 #### Error Analysis
 
-<img src='https://techcommunity.microsoft.com/t5/image/serverpage/image-id/255440i28671D47179C4A7D/image-size/large?v=v2&px=999' width="500" /><br/>
+<img src='https://techcommunity.microsoft.com/t5/image/serverpage/image-id/255440i28671D47179C4A7D/image-size/large' width="500" /><br/>
 
 Error Analysis はモデルの誤差を深堀り分析するツールです。よく機械学習モデルの精度を 90 % などと集計された数値で見ることが多いと思います (上図) が、ユースケース次第ではそれでは不十分です。誤差がデータのどこに潜んでいるのかはこれでは分からないので、例えば性別や人種の違いで誤差が異なれば公平性の問題になりますし、病理診断などのシナリオでも子供や高齢者の精度が悪いと、社会的な問題になることが考えられます。
 
@@ -79,14 +79,7 @@ Error Analysis はモデルの誤差を深堀り分析するツールです。�
 
 Explainable Boosting Machines (EBM) は、一般化加法モデル (GAM) に交互作用項を組み込んだモデル (GA2M) を高速に推定するアルゴリズムです。
 
-$$
-y =  f(x_1) + f(x_2) + f(x_3) + ... + \Sigma_{ij} f_{ij}(x_i, x_j)
-$$ 
-
-<!-- it uses [Math >> Image](https://marketplace.visualstudio.com/items?itemName=MeowTeam.vscode-math-to-image) to render math in github markdown. -->
-
-<!-- <div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math=y%20%3D%20%20f(x_1)%20%2B%20f(x_2)%20%2B%20f(x_3)%20%2B%20...%20%2B%20%5CSigma_%7Bij%7D%20f_%7Bij%7D(x_i%2C%20x_j)"></div> -->
-
+$$y =  f(x_1) + f(x_2) + f(x_3) + ... + \Sigma_{ij} f_{ij}(x_i, x_j)$$ 
 
 それぞれの特徴量 $x_i$ は関数 $f(x_i)$ で表現されています。線形回帰などの線形モデルとは違い目的変数 $y$ との関係性は線形性は前提としていません。この関数を推定する方法はいくつかありますが、EBM ではこの関数をブースティングで推定します。また交互作用項を推定するアルゴリズム (FAST) も実装されており精度向上に寄与しています。
 
