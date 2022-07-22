@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[6160],{807:e=>{e.exports=JSON.parse('{"permalink":"/azure-machine-learning-playbook/blog/tags/scikit-learn","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
