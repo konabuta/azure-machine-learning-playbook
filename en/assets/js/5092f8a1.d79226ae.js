@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[922],{2475:e=>{e.exports=JSON.parse('{"label":"docusaurus","permalink":"/azure-machine-learning-playbook/en/blog/tags/docusaurus","allTagsPath":"/azure-machine-learning-playbook/en/blog/tags","count":4}')}}]);
