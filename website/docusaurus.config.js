@@ -24,7 +24,7 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'ja',
-    locales: ['en', 'ja'],
+    locales: ['ja'],
   },
 
   presets: [
@@ -56,10 +56,16 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      docs: {
+        sidebar: {
+          hideable: true,
+          // autoCollapseCategories: true,
+        },
+      },
       navbar: {
         title: 'Playbook',
         logo: {
-          alt: 'Azure Machine Learning',
+          alt: 'Playbook',
           src: 'img/logo.svg',
         },
         items: [
@@ -69,13 +75,14 @@ const config = {
             sidebarId: 'azuremlSidebar',
             label: 'AzureML',
           },
-          {
-            type: 'docSidebar',
-            position: 'left',
-            sidebarId: 'tutorialSidebar',
-            label: 'Tutorials',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          // //URL is http://127.0.0.1:3000/azure-machine-learning-playbook/docs/docusaurus-tutorials/docusaurus-intro
+          // {
+          //   type: 'docSidebar',
+          //   position: 'left',
+          //   sidebarId: 'tutorialSidebar',
+          //   label: 'Tutorials',
+          // },
+          // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/konabuta/azure-machine-learning-playbook',
             label: 'GitHub',
