@@ -1,5 +1,5 @@
 ---
-id: fundamentals-readme
+id: azureml-basic
 title: "Azure Machine Learning とは"
 ---
 
@@ -42,7 +42,7 @@ Azure Machine Learning (aka Azure ML) は Azure が提供する機械学習の�
 :::
 
 
-### 従来の方法との比較
+∑∑w### 従来の方法との比較
 
 オープンソース (Python/R など)を利用する観点で言えば、Azure Machine Learning を利用せずともモデル学習や推論はもちろん可能ですが、Azure Machine Learning を使うことで多くのメリットがあります。
 
