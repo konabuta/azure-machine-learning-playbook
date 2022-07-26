@@ -42,9 +42,11 @@ Azure Machine Learning (aka Azure ML) は Azure が提供する機械学習の�
 :::
 
 
-またオープンソース (Python/R など)を利用する観点で言えば、Azure Machine Learning を利用せずともモデル学習や推論はもちろん可能ですが、Azure Machine Learning を使うことで多くのメリットがあります。
+### 従来の方法との比較
 
-| プロセス      | 従来の方法 | Azure ML | 
+オープンソース (Python/R など)を利用する観点で言えば、Azure Machine Learning を利用せずともモデル学習や推論はもちろん可能ですが、Azure Machine Learning を使うことで多くのメリットがあります。
+
+| 機械学習ライフサイクル    | 従来の方法 | Azure ML | 
 |-----------|---------|---------|
 | 計算リソースの用意 |<li>CPU/GPUのサーバーを調達</li><li>電源を確保し、ネットワークに接続</li>|<li> Azure ML 付属の計算環境である Compute Instance や Compute Clusters を起動</li><li>既存の計算環境をアタッチ</li>|
 | 環境構築      |<li>Python 環境と Jupyter 環境をインストール</li><li>GPU のドライバ/ライブラリをインストール</li>|<li>Compute Instance のインストール済みの Python やそのライブラリ、Jupyter Notebook や VSCode （Remove) を利用</li><li>環境 (Environment) を利用して共有の Python 環境を作成・運用</li>|
