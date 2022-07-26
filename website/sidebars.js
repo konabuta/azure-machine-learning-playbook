@@ -63,17 +63,17 @@ const sidebars = {
       label: 'Responsible AI',
       collapsed: false,
       items:[
-            'azureml/responsible-ai/ftalive/rai-introduction',
-            'azureml/responsible-ai/ftalive/rai-concept',
+            'azureml/responsible-ai/rai-introduction',
+            'azureml/responsible-ai/rai-concept',
             {
               type: 'category',
               label: '責任のある AI の技術',
               link:{type: 'generated-index'},
               collapsed: true,
               items:[
-                'azureml/responsible-ai/ftalive/rai-tech-debugging',
-                'azureml/responsible-ai/ftalive/rai-tech-decision-making',
-                'azureml/responsible-ai/ftalive/rai-tech-security-privacy'
+                'azureml/responsible-ai/rai-tech-debugging',
+                'azureml/responsible-ai/rai-tech-decision-making',
+                'azureml/responsible-ai/rai-tech-security-privacy'
               ]
             },
         'azureml/responsible-ai/rai-reference',
