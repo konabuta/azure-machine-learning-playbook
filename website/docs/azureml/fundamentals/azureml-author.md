@@ -18,6 +18,8 @@ Python のオブジェクトの名前、種類、長さ、サンプルデータ�
 #### 他の IDE・エディタとの連携
 JupyterLab, Jupyter Notebook, Visual Studio Code に切り替えて作業を続けることができます。
 
+<br />
+
 ---
 
 ## 自動機械学習 AutoML
@@ -29,6 +31,24 @@ Microsoft Research のメタ学習のアルゴリズム[^1]を利用して効率
 <img src="https://docs.microsoft.com/en-us/azure/machine-learning/media/concept-automated-ml/automl-concept-diagram2.png" width="500" />
 
 
+### 表形式データ
+- 表形式データ
+    - 分類 Classification
+    - 回帰 Regression
+    - 時系列予測 Forecasting
+- Computer Vision (Preview)
+    - 画像分類 Classification
+        - 複数クラス Multi-class
+        - 複数ラベル Multi-label
+    - オブジェクト検知 Object detection
+    - インスタンスセグメンテーション Instance segmentation
+- Natural language processing (Preivew)
+    - テキスト分類 Image classification
+        - 複数クラス Multi-class
+        - 複数ラベル Multi-label
+    - 名前付きエンティティの認識 Named Entity Recognition
+
+<br />
 
 ---
 
@@ -37,6 +57,8 @@ Microsoft Research のメタ学習のアルゴリズム[^1]を利用して効率
 デザイナー Designer は直感的なマウス操作でモデル学習・推論のパイプラインを構築し実行することができる UI 機能です。Microsoft が用意している prebuild のモジュール以外にも、ユーザー自信でコンポーネント Components を作ることもでき、あらゆるパイプライン要件に柔軟に対応しています。
 
 <img src="https://docs.microsoft.com/en-us/azure/machine-learning/media/concept-designer/designer-drag-and-drop.gif" width="500" />
+
+<br />
 
 ---
 
