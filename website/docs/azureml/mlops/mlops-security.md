@@ -28,7 +28,7 @@ title: MLOps におけるセキュリティ
 - [実稼働環境に移行 (Go to production)](#実稼働環境に移行-go-to-production)
 - [運用 (Operate)](#運用-operate)
 
-## 計画と開発 (Plan and Develop)
+## 1. 計画と開発 (Plan and Develop)
 アジャイル開発の計画フェーズにおける取り組み例です。
 
 ### 脅威モデリング
@@ -59,7 +59,7 @@ Pull request を通じてピアレビューを行い、コード上の欠陥、�
 ### セキュリティ標準コーディング
 セキュリティを考慮したコーディングの標準ガイドラインを作成し利用することで、コードの品質を高めることができます。例えば [OWASP Secure Coding Practices-Quick Reference Guide](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/migrated_content) などが公開されています。
 
-## コードをコミットする (Commit the code)
+## 2. コードをコミットする (Commit the code)
 
 通常、開発者はコードを GitHub などのサービスを利用してコードを管理します。コードのバージョン管理ができるようになり、チーム内での共有も簡単になります。しかしながら例えば脆弱性を含むコードが共有され、デプロイされてしまう危険もあります。そこでコードをスキャン・解析して、脆弱性や認証情報などを検出し、必要に応じて修正していくことが必要になります。
 
@@ -98,18 +98,24 @@ Azure と GitHub の接続はサービスプリンシパルを利用します。
 
 
 **Azure**
+Azure Active Dirrectory を用いて ID 管理をします。個々のユーザー単位ではなく、Azure AD グループを利用して、グループごとにロールを割り当てるのがベストプラクティスです。
+
+
+既存の環境が破壊されたり、権限のない人がによる変更を阻止するために、Azure RBAC の適切な設定が必要です。Azure RBAC では `プリンシパル`、`定義`、`スコープ`の組み合わせを管理します。
+
+<img src="https://docs.microsoft.com/ja-jp/azure/cloud-adoption-framework/secure/media/devsecops-role-assignments.svg" />
 
 
 
-## ビルドおよびテスト (Build and test)
+## 3. ビルドおよびテスト (Build and test)
 
 _TODO_
 
-## 実稼働環境に移行 (Go to production)
+## 4. 実稼働環境に移行 (Go to production)
 
 _TODO_
 
-## 運用 (Operate)
+## 5. 運用 (Operate)
 
 _TODO_
 
