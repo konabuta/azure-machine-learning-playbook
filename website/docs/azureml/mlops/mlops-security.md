@@ -61,6 +61,22 @@ Pull request を通じてピアレビューを行い、コード上の欠陥、�
 
 ## コードをコミットする (Commit the code)
 
+通常、開発者はコードを GitHub などのサービスを利用してコードを管理します。コードのバージョン管理ができるようになり、チーム内での共有も簡単になります。しかしながら例えば脆弱性を含むコードが共有され、デプロイされてしまう危険もあります。そこでコードをスキャン・解析して、脆弱性や認証情報などを検出し、必要に応じて修正していくことが必要になります。
+
+### 静的なセキュリティテスト
+[GitHub Advance Security](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors) が提供する [CodeQL](https://codeql.github.com/)を利用することでコードに含間れる脆弱性を検出できます。
+
+また、シークレット情報を検出する [Secret Scanning](https://docs.github.com/en/enterprise-cloud@latest/code-security/secret-scanning/configuring-secret-scanning-for-your-repositories) や Seret Scannint の [Push Protection](https://docs.github.com/ja/enterprise-cloud@latest/code-security/secret-scanning/protecting-pushes-with-secret-scanning) 機能があります。
+
+
+### 依存関係の管理
+機械学習プロジェクトではオープンソースのパッケージが多用されており、複雑な依存関係で構成されるパッケージを管理していく必要があります。一度インストールしたものを更新せずに使い続けると潜在的な脆弱性の問題する可能性があります。[Dependabot](https://docs.github.com/ja/enterprise-cloud@latest/code-security/secret-scanning/protecting-pushes-with-secret-scanning) はコードの情報から利用しているパッケージの脆弱性を検出したり、パッケージを最新に保つための pull request を自動作成する機能を提供しています。
+
+
+
+### CI/CD ワークフローのセキュリティ保護
+アジャイル開発や自動化を取り入れると、セキュリティの管理が複雑になります。開発者・ITエンジニア・管理者などのそれぞれのステークホルダーのアクセス権限やロール設定を行う必要があります。
+
 _TODO_
 
 ## ビルドおよびテスト (Build and test)
@@ -91,3 +107,7 @@ _TODO: コードが GitHub に Commit され、モデル学習されたモデル
 
 
 
+
+# 参考
+
+- [パイプラインと CI/CD ワークフローをセキュリティで保護する](https://docs.microsoft.com/ja-JP/azure/cloud-adoption-framework/secure/best-practices/secure-devops)
