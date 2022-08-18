@@ -77,7 +77,29 @@ Pull request を通じてピアレビューを行い、コード上の欠陥、�
 ### CI/CD ワークフローのセキュリティ保護
 アジャイル開発や自動化を取り入れると、セキュリティの管理が複雑になります。開発者・ITエンジニア・管理者などのそれぞれのステークホルダーのアクセス権限やロール設定を行う必要があります。
 
-_TODO_
+これは Git を利用した一般的な CI/CD のワークフローです。赤い構成アイコン <img src="https://raw.githubusercontent.com/MicrosoftDocs/cloud-adoption-framework/main/docs/secure/media/devsecops-iconmonstr-gear-10.svg" /> は特にセキュリティの考慮が必要なものです。
+
+<img src="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/secure/media/devsecops-workflow.svg" />
+
+**Protected Branch**
+通常、本番環境への破壊変更を防ぐために、main ブランチを直接コード変更することは設定で禁止し、他のブランチからの Pull Request を実施します。例えば下記にような設定を考えます。
+
+
+| Branch name | Requires PR? | Deploys? | Developer access | Admin access |
+|:--|:--|:--|--:|--:|
+| `feat/*` | No | No | Read/write | Read/write |
+| `main` | Yes | Staging | Read | Read/write |
+| `production` | Yes, from `main` only | Production | Read | Read/write |
+
+**Credentials**
+機械学習モデルを学習したり、機械学習システムをデプロイする際は、クラウドへの資格情報・接続文字列・アクセスキーなどを利用しますが、安全に管理する必要があります。
+
+Azure と GitHub の接続はサービスプリンシパルを利用します。Azure Active Directory のフェデレーションを用いた OpenID 接続や、サービスプリンシパルのシークレットを用いた方法があります。
+
+
+**Azure**
+
+
 
 ## ビルドおよびテスト (Build and test)
 
@@ -111,3 +133,4 @@ _TODO: コードが GitHub に Commit され、モデル学習されたモデル
 # 参考
 
 - [パイプラインと CI/CD ワークフローをセキュリティで保護する](https://docs.microsoft.com/ja-JP/azure/cloud-adoption-framework/secure/best-practices/secure-devops)
+- [GitHub Actions を使用して Azure に接続する](https://docs.microsoft.com/ja-JP/azure/developer/github/connect-from-azure?tabs=azure-portal%2Clinux)
