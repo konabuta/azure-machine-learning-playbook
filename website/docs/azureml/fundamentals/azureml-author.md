@@ -40,33 +40,29 @@ JupyterLab, Jupyter Notebook, Visual Studio Code に切り替えて作業を続�
 
 ## 自動機械学習 AutoML
 
-自動機械学習 Automated Machine Learning (aka AutoML) は、シンプルな設定だけで **特徴量エンジニアリング** + **アルゴリズムとパラメータ選択** のさまざまなパターンを並列でモデル学習し、得られたモデルの **精度検証や解釈** を自動で行うことができる機能です。
+自動機械学習 (AutoML) は、シンプルな設定だけで **特徴量エンジニアリング** + **アルゴリズムとパラメータ選択** のさまざまなパターンを並列でモデル学習し、得られたモデルの **精度検証や解釈** を自動で行うことができる機能です。
 
 Microsoft Research が開発したメタ学習のアルゴリズム[^1]を利用して効率的に精度が高いパイプラインを探索しています。
 
 <img src="https://docs.microsoft.com/en-us/azure/machine-learning/media/concept-automated-ml/automl-concept-diagram2.png" width="500" />
 
-### 操作インターフェース
+操作インタフェースとして Python SDK、 CLI、 Azure ML Studio (Web UI) の 3 つの API・インターフェースから利用することができます。Azure ML Studio は非常に便利なのですが、設定項目が最小限度に抑えられているため、細かい設定をしたい場合や操作履歴を正確に残しておきたい場合は、Python SDK や CLI といったコード・コマンドを利用します。
 
-自動機械学習は Python SDK、 CLI、 Azure ML (Web UI) の 3 つの API・インターフェースから利用することができます。
 
-### 表形式データ
+### サポートされているシナリオ
+#### 表形式データ
+表形式データが利用できます。従来の機械学習手法を中心とした機械学習アルゴリズムが適用されます[^2]。回帰、分類、時系列予測が利用できます。非教師なし学習手法のクラスタリングなどは利用できません。
 
-- 表形式データ
-    - 分類 Classification
-    - 回帰 Regression
-    - 時系列予測 Forecasting
-- Computer Vision (Preview)
-    - 画像分類 Classification
-        - 複数クラス Multi-class
-        - 複数ラベル Multi-label
-    - オブジェクト検知 Object detection
-    - インスタンスセグメンテーション Instance segmentation
-- Natural language processing (Preivew)
-    - テキスト分類 Image classification
-        - 複数クラス Multi-class
-        - 複数ラベル Multi-label
-    - 名前付きエンティティの認識 Named Entity Recognition
+#### Computer Vision (preview)
+画像データが利用できます。深層学習の手法を中心したアルゴリズムが適用されます。画像分類 (マルチクラス、マルチラベル)、オブジェクト検知、インスタンスセグメンテーションが利用できます。
+
+#### NLP (preview)
+テキストデータが利用できます。深層学習の手法を中心としたアルゴリズムが適用されます。テキスト分類 (マルチクラス、マルチラベル)、名前付きエンティティ認識 (NER) が利用できます。
+
+
+### 参考情報
+- [自動機械学習 (AutoML) とは](https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-automated-ml)
+
 
 <br />
 
@@ -74,9 +70,15 @@ Microsoft Research が開発したメタ学習のアルゴリズム[^1]を利用
 
 ## デザイナー Designer
 
-デザイナー Designer は直感的なマウス操作でモデル学習・推論のパイプラインを構築し実行することができる UI 機能です。Microsoft が用意している prebuild のモジュール以外にも、ユーザー自信でコンポーネント Components を作ることもでき、あらゆるパイプライン要件に柔軟に対応しています。
+デザイナー (Designer() は直感的なマウス操作でモデル学習・推論のパイプラインを構築し実行することができる UI 機能です。Microsoft が用意している prebuild のモジュール以外にも、ユーザー自信でコンポーネント (Component) を作ることもでき、あらゆるパイプライン要件に柔軟に対応しています。
 
 <img src="https://docs.microsoft.com/en-us/azure/machine-learning/media/concept-designer/designer-drag-and-drop.gif" width="500" />
+
+
+### 参考情報
+- [Azure Machine Learning デザイナーとは](https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-designer)
+- [Azure Machine Learning コンポーネントとは](https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-component)
+
 
 <br />
 
@@ -84,8 +86,11 @@ Microsoft Research が開発したメタ学習のアルゴリズム[^1]を利用
 
 ## Frequently Asked Question
 
-- Python や機械学習の知識が無い場合でも AutoML や Designer は利用できますか？
-    - Azure Machine Learning Studio の UI 機能を利用すれば簡単にモデルを作ることができます。しかしながら、モデルの要件によっては、構築されたモデルの精度を詳細に検証したり、モデルの妥当性を確認することが必要になり、やはり機械学習・統計の知識が必要になってきます。
+- Python や機械学習の知識が無い場合でも 自動機械学習 (AutoML) やデザイナー (Designer) は利用できますか？
+    - Azure Machine Learning Studio の UI 機能を利用すれば簡単にモデルを作ることができます。しかしながら、モデルの要件によっては、構築されたモデルの精度を詳細に検証したり、モデルの妥当性を確認することが必要になります。となると、やはり機械学習・統計の知識が必要になると考えられます。
 
 
 [^1]: [Probabilistic Matrix Factorization for Automated Machine Learning](https://www.microsoft.com/en-us/research/publication/probabilistic-matrix-factorization-for-automated-machine-learning/)
+
+
+[^2]: 一部 Neural Network による特徴量エンジニアリングや機械学習アルゴリズムの手法もサポートしています。
