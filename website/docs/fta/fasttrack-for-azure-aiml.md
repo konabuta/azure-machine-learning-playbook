@@ -15,7 +15,7 @@ FastTrack for Azure の AI & ML (人工知能 & 機械学習) の領域では、
 |MLOps : Process Automation|Azure Machine Learning, GitHub, Azure DevOps|パイプライン (モデル学習、デプロイ、監視) を作成し、機械学習プロセスを自動化する設計・実装方法のレクチャー、設計レビュー|         |
 |Acceleration : AI at Scale|Azure Machine Learning|大規模データに対するモデル学習、分散学習、ハイパーパラメータチューニングを高速実行するためのアーキテクチャの設計・実装方法のレクチャー、設計レビュー|         |
 |Acceleration : Productivity|Azure Machine Learning, Azure Container Registry, Visual Studio Code|VSCode などの IDE 上で PyTorch, Scikit Learn などの OSS フレームワークを用いた開発環境の設計・整備方法のレクチャー、設計レビュー|※ IDE は VSCode, Jupyter, JupyterLab, RStudio の想定|
-|Responsible AI : Model Debug​|Azure Machine Learning|機械学習モデルへの説明性の付与、誤差分析の実装方法のレクチャー、責任のある AI に関するワークショップの開催|         |
+|Responsible AI : Model Debug​|Azure Machine Learning|機械学習モデルへの説明性の付与、誤差分析の実装方法のレクチャー、責任のある AI に関するワークショップの提供|         |
 
 
 

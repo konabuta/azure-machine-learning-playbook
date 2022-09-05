@@ -73,7 +73,7 @@ const config = {
             type: 'docSidebar',
             position: 'left',
             sidebarId: 'azuremlSidebar',
-            label: 'AzureML',
+            label: 'Azure Machine Learning',
           },
           {
             type: 'docSidebar',
