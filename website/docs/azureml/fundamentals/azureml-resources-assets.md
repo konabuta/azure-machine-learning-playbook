@@ -21,8 +21,12 @@ Workspace は Azure Machine Learning を構成する最上位のリソースで�
 
 #### 関連する Azure サービス
 
-_TODO_
-
+- Azure Container Registry
+    - モデル学習や推論で利用する Docker コンテナを管理します。Azure Machine Learning Environment によって管理されます。
+- Azure Application Insights
+    - 推論エンドポイントの監視をします。
+- Azure Key Vault
+    - シークレット・機密情報を格納します。
 
 ### Compute
 モデル学習や推論で利用する計算環境です。Azure Machine Learning が管理するマネージドな計算環境としてコンピューティングインスタンス (Compute Instance) とコンピューティングクラスター (Compute Cluster) があります。 その他にも Kubernetes などの外部の計算環境をアタッチして利用することもできます。
