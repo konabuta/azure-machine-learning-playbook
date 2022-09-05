@@ -141,3 +141,4 @@ def get_csvs_df(path):
 ## 参考情報
 - [CLI (v2) のインストールと設定](https://docs.microsoft.com/ja-JP/azure/machine-learning/how-to-configure-cli?tabs=public)
 - [CLI (v2) を使用したモデルをトレーニングする](https://docs.microsoft.com/ja-jp/azure/machine-learning/how-to-train-cli)
+- [Azure Machine Learning examples](https://github.com/Azure/azureml-examples)

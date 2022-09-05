@@ -67,7 +67,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Responsible AI',
-      collapsed: false,
+      collapsed: true,
       items:[
             'azureml/responsible-ai/rai-concept',
             {
