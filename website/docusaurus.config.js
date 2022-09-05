@@ -75,6 +75,12 @@ const config = {
             sidebarId: 'azuremlSidebar',
             label: 'AzureML',
           },
+          {
+            type: 'docSidebar',
+            position: 'left',
+            sidebarId: 'fta',
+            label: 'FastTrack for Azure',
+          },
           // //URL is http://127.0.0.1:3000/azure-machine-learning-playbook/docs/docusaurus-tutorials/docusaurus-intro
           // {
           //   type: 'docSidebar',

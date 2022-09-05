@@ -88,8 +88,17 @@ const sidebars = {
         }
       ]
     },
-  ]
-
+  ],
+  fta:[
+    {
+      type: 'category',
+      label: 'FasTrack for Azure',
+      items:[
+            'fta/fastrack-for-azure-aiml',
+            'fta/ftalive'
+      ]
+    },
+  ],
 };
 
 module.exports = sidebars;
