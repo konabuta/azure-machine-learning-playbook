@@ -1,6 +1,6 @@
 ---
 id: azureml-resources-assets
-title: "リソース、アセット、関連 Azure サービス"
+title: "リソース、アセット"
 ---
 
 Azure Machine Learning の内部の仕組み (リソース & アセット & 関連する Azure サービス) を紹介します。
