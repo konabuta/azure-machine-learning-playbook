@@ -44,7 +44,7 @@ JupyterLab, Jupyter Notebook, Visual Studio Code に切り替えて作業を続�
 
 Microsoft Research が開発したメタ学習のアルゴリズム[^1]を利用して効率的に精度が高いパイプラインを探索しています。
 
-<img src="https://docs.microsoft.com/en-us/azure/machine-learning/media/concept-automated-ml/automl-concept-diagram2.png" width="500" />
+<img src="https://docs.microsoft.com/en-us/azure/machine-learning/media/concept-automated-ml/automl-concept-diagram2.png" width="800" />
 
 操作インタフェースとして Python SDK、 CLI、 Azure ML Studio (Web UI) の 3 つの API・インターフェースから利用することができます。Azure ML Studio は非常に便利なのですが、設定項目が最小限度に抑えられているため、細かい設定をしたい場合や操作履歴を正確に残しておきたい場合は、Python SDK や CLI といったコード・コマンドを利用します。
 
@@ -72,7 +72,7 @@ Microsoft Research が開発したメタ学習のアルゴリズム[^1]を利用
 
 デザイナー (Designer() は直感的なマウス操作でモデル学習・推論のパイプラインを構築し実行することができる UI 機能です。Microsoft が用意している prebuild のモジュール以外にも、ユーザー自信でコンポーネント (Component) を作ることもでき、あらゆるパイプライン要件に柔軟に対応しています。
 
-<img src="https://docs.microsoft.com/en-us/azure/machine-learning/media/concept-designer/designer-drag-and-drop.gif" width="500" />
+<img src="https://docs.microsoft.com/en-us/azure/machine-learning/media/concept-designer/designer-drag-and-drop.gif" width="800" />
 
 
 ### 参考情報
@@ -87,7 +87,7 @@ Microsoft Research が開発したメタ学習のアルゴリズム[^1]を利用
 ## Frequently Asked Question
 
 - Python や機械学習の知識が無い場合でも 自動機械学習 (AutoML) やデザイナー (Designer) は利用できますか？
-    - Azure Machine Learning Studio の UI 機能を利用すれば簡単にモデルを作ることができます。しかしながら、モデルの要件によっては、構築されたモデルの精度を詳細に検証したり、モデルの妥当性を確認することが必要になります。となると、やはり機械学習・統計の知識が必要になると考えられます。
+    - Azure Machine Learning Studio の UI 機能を利用すれば簡単にモデルを作ることができます。しかしながら、モデルの要件によっては、構築されたモデルの精度を詳細に検証したり、モデルの妥当性を確認することが必要になります。となると、やはり機械学習・統計の知識が必要になってきますし、Python の知識があった方がより細かい操作を行うことができます。
 
 
 [^1]: [Probabilistic Matrix Factorization for Automated Machine Learning](https://www.microsoft.com/en-us/research/publication/probabilistic-matrix-factorization-for-automated-machine-learning/)
