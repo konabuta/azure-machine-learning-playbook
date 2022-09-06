@@ -22,3 +22,8 @@ Azure Machine Learning は UI (Azure Machine Learning Studio) 以外にも、API
 - 外部システムと連携する (Git など)
 
 etc
+
+
+
+## 参考情報
+- [Azure Machine Learning CLI と Python SDK v2 の概要](https://docs.microsoft.com/ja-jp/azure/machine-learning/concept-v2)
