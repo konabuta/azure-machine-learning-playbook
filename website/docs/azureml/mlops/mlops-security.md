@@ -8,7 +8,7 @@ title: MLOps におけるセキュリティ
 
 # DevSecOps の概念
 
-近年、機械学種システムのセキュリティや攻撃が注目されています。そこで DevSecOps (開発 dev + セキュリティ sec + 運用 ops) というソフトウェア開発の全てのフェーズにおいてセキュリティのベストプラクティスを遵守する開発方針・概念が出てきました。従来のソフトウェアを作成してからセキュリティレビューを行い問題を発見に修正していたプロセスではなく、設計・計画フェーズからセキュリティを考慮した開発が機械学習の領域でも重要視されてきています。
+近年、機械学習システムのセキュリティや攻撃が注目されています。DevSecOps (開発 dev + セキュリティ sec + 運用 ops) というソフトウェア開発の全てのフェーズにおいてセキュリティのベストプラクティスを遵守する開発方針・概念が重要になってきます。従来のように、ソフトウェアを開発してからセキュリティレビューを行い、問題を発見に修正するプロセスではなく、設計・計画フェーズからセキュリティを考慮する DevSecOps が機械学習の分野でも重要視されてきています。
 
 
 <br />
@@ -98,7 +98,7 @@ Azure と GitHub の接続はサービスプリンシパルを利用します。
 
 
 **Azure**
-Azure Active Dirrectory を用いて ID 管理をします。個々のユーザー単位ではなく、Azure AD グループを利用して、グループごとにロールを割り当てるのがベストプラクティスです。
+Azure Active Directory を用いて ID 管理をします。個々のユーザー単位ではなく、Azure AD グループを利用して、グループごとにロールを割り当てるのがベストプラクティスです。
 
 
 既存の環境が破壊されたり、権限のない人がによる変更を阻止するために、Azure RBAC の適切な設定が必要です。Azure RBAC では `プリンシパル`、`定義`、`スコープ`の組み合わせを管理します。
@@ -108,10 +108,34 @@ Azure Active Dirrectory を用いて ID 管理をします。個々のユーザ�
 
 
 ## 3. ビルドおよびテスト (Build and test)
+通常ビルドパイプラインでモデルを構築し、リリースパイプラインで推論環境にモデルをデプロイすることで、自動化と標準化をおこなっています。このプロセスに自動テストを実行して脆弱性の確認、パブリックエンドポイントの確認、機能テストを含めることでセキュリティの強度を上げることができます。
+
+### 動的アプリケーションセキュリティテスト
+オープンソースの OWASP Zed Attack Proxy (ZAP) などを用いてアプリケーションの脆弱性を発見します。
+
+- [OWASP ZAP](https://owasp.org/www-project-zap/)
+
+また Microsoft Defender for Containers を使用して、機械学習でも用いるコンテナをスキャンして脆弱性を発見します。
+
+- [Microsoft Defender for Containers](https://docs.microsoft.com/azure/defender-for-cloud/defender-for-containers-introduction?tabs=defender-for-container-arch-aks#architecture-overview)
+- [Identify vulnerable container images in your CI/CD workflows](https://docs.microsoft.com/azure/defender-for-cloud/defender-for-container-registries-cicd)
+- [Enhance your CI/CD deployment by using Vulnerability Assessments from Microsoft Defender for ACR](https://techcommunity.microsoft.com/t5/microsoft-defender-for-cloud/enhance-your-ci-cd-deployment-by-using-vulnerability-assessments/ba-p/2102516)
+
+### クラウド構成の検証とインフラストラクチャのスキャン
+#### デプロイ前の確認
+
+_TODO_
+
+#### ビルトインされたガバナンスの制御
+
+_TODO_
+
+#### デプロイ後の確認
 
 _TODO_
 
 ## 4. 実稼働環境に移行 (Go to production)
+運用を始めた後も継続的にセキュリティの状態監視と管理が必要になります。
 
 _TODO_
 
