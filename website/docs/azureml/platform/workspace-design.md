@@ -1,8 +1,8 @@
 ---
 id: workspace-design.md
+title: "ワークスペースの設計"
 ---
 
-# ワークスペース
 
 Workspace (ワークスペース) は Azure Machine Learning の最小サービス単位です。要件によって Azure Machine Learning を構築する際は Workspace (ワークスペース) を複数構築することが必要になります。本ページでは一般的な Workspace の構成方法をご紹介します。
 
