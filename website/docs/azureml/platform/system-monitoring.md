@@ -1,5 +1,5 @@
 ---
 id: system-monitoring
-title: システム監視"
+title: システム監視
 ---
 
