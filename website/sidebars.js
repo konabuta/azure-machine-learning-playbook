@@ -25,7 +25,16 @@ const sidebars = {
           'azureml/fundamentals/azureml-basic',
           'azureml/fundamentals/azureml-resources-assets',
           'azureml/fundamentals/azureml-author',
-          'azureml/fundamentals/azureml-api'
+          'azureml/fundamentals/azureml-api',
+          {
+            type: 'category',
+            label: 'サンプル',
+            link:{type: 'generated-index'},
+            collapsed: true,
+            items:[
+              'azureml/fundamentals/samples/train-with-cli-v2-yaml',
+            ]
+          },
       ]
     },
     {
@@ -65,9 +74,8 @@ const sidebars = {
     {
       type: 'category',
       label: 'Responsible AI',
-      collapsed: false,
+      collapsed: true,
       items:[
-            'azureml/responsible-ai/rai-introduction',
             'azureml/responsible-ai/rai-concept',
             {
               type: 'category',
@@ -96,8 +104,17 @@ const sidebars = {
         }
       ]
     },
-  ]
-
+  ],
+  fta:[
+    {
+      type: 'category',
+      label: 'FasTrack for Azure',
+      items:[
+            'fta/fastrack-for-azure-aiml',
+            'fta/ftalive'
+      ]
+    },
+  ],
 };
 
 module.exports = sidebars;
