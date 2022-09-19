@@ -43,7 +43,7 @@ Azure Machine Learning Workspace を中心にさまざまなリソースやア�
 
 Azure Machine Learning Workspace, Compute Instance, Compute Cluster で対応しているデータソースへの認証方法を整理します。
 
-※データソース側で対応している認証方法は [Datastore が対応しているデータソース](./azureml-datasource#datatstore-が対応しているデータソース) を参照ください。
+※データソース側で対応している認証方法は [Datastore が対応しているデータソース](./datasource#datatstore-が対応しているデータソース) を参照ください。
 
 
 
@@ -76,7 +76,7 @@ Managed Batch Endpoint と Kubernetes Batch Endpoint 共に**トークンベー�
 
 ## ロールの設計
 
-Azure RBAC を用いて Azure ML Workspace の内部リソースへのアクセスを制御する “ロール” をセキュリティプリンシパル (ユーザ、グループ、サービスプリンシパル、マネージド ID) に割り当てます。
+Azure RBAC を用いて Azure ML Workspace の内部リソースへのアクセスを制御する “ロール” をセキュリティプリンシパル (ユーザ、グループ、サービスプリンシパル、マネージド ID) に割り当てます。
 
 次の 4 つの組み込みロールを使うことが多いですが、十分でない場合はこれらをベースにカスタムロールを作成します。
 
