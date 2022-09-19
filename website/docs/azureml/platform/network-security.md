@@ -13,6 +13,7 @@ PaaS サービスを構築するとデフォルトでは Public Endpoint とい�
 Private Endpoint と PaaS サービスの牽連付は **Private Link** が担当します。Public Endpoint を無効化することでインターネット環境などの外部からのアクセスを遮断することができます。
 
 
+<img src={require('./images/private-link-sql.png').default} width="600" /><br />
 
 
 ## Azure Machine Learning のネットワーク閉域化
