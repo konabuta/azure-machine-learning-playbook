@@ -9,6 +9,9 @@ Workspace (ワークスペース) は Azure Machine Learning の最小サービ�
 ## 環境ごとの分離
 一般的な IT システムと同様に **開発環境**、**テスト環境**、**本番環境** のようにシステムを分離することが推奨です。開発環境は試行錯誤をするところで自由度が高い一方、本番運用を想定し始めるテスト環境や本番環境は徐々にユーザーのアクセス制御を厳しく設定します。
 
+<img src={require('./images/multi-workspace.png').default} width="800" /><br />
+
+
 ### 参考情報
 - [機械学習環境とロールベースのアクセス制御](https://docs.microsoft.com/ja-JP/azure/cloud-adoption-framework/innovate/best-practices/set-up-ml-workspaces#machine-learning-environments-and-role-based-access-control)
 
