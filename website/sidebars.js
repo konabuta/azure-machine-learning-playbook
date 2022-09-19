@@ -40,9 +40,20 @@ const sidebars = {
     {
       type: 'category',
       label: 'Platform',
+      collapsed: false,
       items:[
-          'azureml/platform/azureml-compute'
+          'azureml/platform/select-ai-services',
+          'azureml/platform/workspace-design',
+          'azureml/platform/compute',
+          'azureml/platform/datasource',
+          'azureml/platform/network-security',
+          'azureml/platform/auth',
+          'azureml/platform/cost-management',
       ]
+      // items:[
+      //     'azureml/platform/azureml-compute',
+      //     'azureml/platform/select-ai-services',
+      // ]
     },
     // {
     //   type: 'category',

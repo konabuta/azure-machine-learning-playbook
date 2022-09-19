@@ -9,7 +9,14 @@ FastTrack for Azure (aka FTA) では、Azure の様々なサービス・ワー�
     - [AI & ML セッション一覧](https://fasttrack.azure.com/live/category/AI%20&%20ML)
 
 # AI & ML セッションのご紹介
-FastTrack for Azure - AI & ML の Japan で提供されている Live session の概要です。なおセッションは参加者とインタラクティブに実施
+FastTrack for Azure - AI & ML の Japan で提供されている Live session の概要です。なおセッションは参加者とインタラクティブに実施しており、基本的に録画はしていません。個社別の開催はご相談ください。
+
+:::caution
+
+アジェンダや内容は予告なしに変更される場合があります。
+
+:::
+
 ## Azure Machine Learning 基礎編
 
 本ライブセッションでは、[Azure Machine Learning (AzureML)](https://docs.microsoft.com/azure/machine-learning/overview-what-is-azure-machine-learning) の概要を説明し、[AzureML Studio](https://docs.microsoft.com/azure/machine-learning/overview-what-is-machine-learning-studio) の Web ポータル機能や [Azure ML Python SDK](https://docs.microsoft.com/ja-JP/python/api/overview/azure/ml/?view=azure-ml-py) を使って機械学習のプロセスを実行する様子をデモンストレーションを通じて解説します。
@@ -31,4 +38,41 @@ FastTrack for Azure - AI & ML の Japan で提供されている Live session �
 ### 資料
 
 Azure ML ページタブの [Fundamentals](../azureml/fundamentals/azureml-basic) 配下にある Web サイトや参照先の製品ドキュメントなどを利用します。
+
+---
+
+## Azure Machine Learning システム構築 & 運用編
+
+本ライブセッションでは、システム観点から [Azure Machine Learning (AzureML)](https://docs.microsoft.com/azure/machine-learning/overview-what-is-azure-machine-learning) を構築・運用管理するのに役立つ機能の紹介、設計や構成設定のベストプラクティスをご紹介します。
+
+### 対象
+Azure Machine Learning の構築を担当されるシステムエンジニアの方、機械学習エンジニアの方が対象になります。Azure の基本的な知識があることが前提になります。
+
+
+
+### アジェンダ
+
+
+|     | セクション  | トピック | 概要   
+| :-- | :----- | :-----  | :-----
+| 00. | 導入           |            | セッションの概要について説明します。
+| 01. | イントロダクション |            | 本題に入る前に Azure ML の基本的な機能を説明します。<br/> - [説明スライド](./AzureML-Enterprise-Introduction.pdf)
+|     |               | 機械学習サービスの選択 | Azure から提供されるさまざまな機械学習サービスを紹介します。
+|     |               | Azure ML 基本      | Azure ML を構成するコンポーネントや関連サービス、またワークスペースの構成について説明します。
+| 02. | システム設計 & 構築 |            | インフラの観点で構築・運用に必要なポイントを説明します。<br/> - [説明スライド](./AzureML-Enterprise-System-Design-Build.pdf)
+|     |               | 計算リソース  | モデル学習や推論で用いる計算環境について説明します。
+|     |               | データソース  | モデル学習やバッチ推論で利用するデータの保存方法や運用方法について説明します。
+|     |               | ネットワーク構成  | 仮想ネットワークをセキュアな構成について説明します。
+|     |               | 認証認可     |各サービスへの認証方法、ロール設定について説明します。
+|     |               | データ保護    | データの暗号化について説明します。
+|     |               | システム監視  | インフラ環境を監視する方法を説明します。
+|     |               | 監査ポリシー  | 仮想ネットワーク、プライベートエンドポイントを利用したネットワークセキュリティについて説明します。
+|     |               | コスト管理   | コストの考え方や抑制方法について説明します。
+|     |               | データ保護   |　暗号化、フェイルオーバー、災害復旧について説明します。
+
+### 資料
+
+Azure ML ページタブの [Platform](../azureml/platform/workspace) 配下にある Web サイトや参照先の製品ドキュメントなどを利用します。
+
+
 
