@@ -1,5 +1,5 @@
 ---
-id: azureml-datasource
+id: datasource
 title: "データソース"
 ---
 

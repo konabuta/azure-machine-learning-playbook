@@ -1,5 +1,6 @@
 ---
 id: select-ai-services
+title: "機械学習サービスの選択"
 ---
 
 # 機械学習サービスの選択

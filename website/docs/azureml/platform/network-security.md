@@ -1,5 +1,5 @@
 ---
-id: azureml-network
+id: network-security
 title: "ネットワーク"
 ---
 

@@ -1,5 +1,5 @@
 ---
-id: azureml-compute
+id: compute
 title: "計算リソース"
 ---
 

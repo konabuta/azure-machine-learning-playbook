@@ -1,5 +1,5 @@
 ---
-id: workspace-design.md
+id: workspace-design
 title: "ワークスペースの設計"
 ---
 
