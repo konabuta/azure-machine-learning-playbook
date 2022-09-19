@@ -23,6 +23,7 @@ Azure では用途に応じてさまざまな機械学習サービスを提供�
 - セキュリティ機能の実装
 etc
 
+<img src={require('./images/paas-merit.png').default} width="800" /><br />
 
 ## Azure Machine Learning
 
