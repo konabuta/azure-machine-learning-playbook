@@ -72,7 +72,7 @@ Azure Machine Learning の構築を担当されるシステムエンジニアの
 
 ### 資料
 
-Azure ML ページタブの [Platform](../azureml/platform/workspace) 配下にある Web サイトや参照先の製品ドキュメントなどを利用します。
+Azure ML ページタブの [Platform](../azureml/platform/select-ai-services) 配下にある Web サイトや参照先の製品ドキュメントなどを利用します。
 
 
 
