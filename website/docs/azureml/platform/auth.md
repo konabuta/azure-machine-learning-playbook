@@ -90,7 +90,7 @@ Azure RBAC を用いて Azure ML Workspace の内部リソースへのアクセ�
 
 ## ワークロードに応じたロールの設計
 
-[ワークスペースの設計](./workspace-design.md) の記載にあるように複数の Workspace で運用する場合、それぞれの Workspace で付与するロールが変わってきます。
+[ワークスペースの設計](./workspace-design) の記載にあるように複数の Workspace で運用する場合、それぞれの Workspace で付与するロールが変わってきます。
 
 ### 参考情報
 - [Azure Machine Learning ワークスペースへのアクセスの管理](https://learn.microsoft.com/ja-jp/azure/machine-learning/how-to-assign-roles?tabs=labeler)
