@@ -34,6 +34,7 @@ FastTrack for Azure - AI & ML の Japan で提供されている Live session �
 | 02. | Demo : Azure Machine Learning サービス作成 |[Azure Portal](http://portal.azure.com/) | Azure Portal を利用したサービスのデプロイ方法や作成される関連 Azure サービスの説明をします。
 | 03. | Demo : Azure Machine Learning Studio | [AzureML Studio](https://ml.azure.com/) | Azure ML Studio の Web ポータル機能を用いてモデル学習からデプロイまでの一連の流れをデモンストレーションします。
 | 04. | Demo : Azure Machine Learning CLI v2 | [AzureML CLI v2](https://docs.microsoft.com/en-us/cli/azure/ml?view=azure-cli-latests) + [YAML](https://docs.microsoft.com/en-us/azure/machine-learning/reference-yaml-overview) | Azure ML CLI v2 + YAML を使ったモデル学習などsの実行方法をデモンストレーションする。
+| 05. |Q&A        || Azure Machine Learning に関する質問にお答えします。
 
 ### 資料
 
@@ -57,18 +58,17 @@ Azure Machine Learning の構築を担当されるシステムエンジニアの
 | :-- | :----- | :-----  | :-----
 | 00. | 導入           |            | セッションの概要について説明します。
 | 01. | イントロダクション |            | 本題に入る前に Azure ML の基本的な機能を説明します。
-|     |               | 機械学習サービスの選択 | Azure から提供されるさまざまな機械学習サービスを紹介します。
-|     |               | Azure ML 基本      | Azure ML を構成するコンポーネントや関連サービス、またワークスペースの構成について説明します。
+|     |               | Azure Machine Learning 概要| Azure ML を構成するコンポーネントや関連サービスについて説明します。
+|     |               | 機械学習サービスの選択 | Azure から提供される複数の機械学習サービスを紹介します。
 | 02. | システム設計 & 構築 |            | インフラの観点で構築・運用に必要なポイントを説明します。
+|     |               | ワークスペースの設計 | ワークスペースの構成パターンを説明します。
 |     |               | 計算リソース  | モデル学習や推論で用いる計算環境について説明します。
 |     |               | データソース  | モデル学習やバッチ推論で利用するデータの保存方法や運用方法について説明します。
-|     |               | ネットワーク構成  | 仮想ネットワークをセキュアな構成について説明します。
+|     |               | ネットワーク構 | 仮想ネットワークをセキュアな構成について説明します。
 |     |               | 認証認可     |各サービスへの認証方法、ロール設定について説明します。
-|     |               | データ保護    | データの暗号化について説明します。
 |     |               | システム監視  | インフラ環境を監視する方法を説明します。
-|     |               | 監査ポリシー  | 仮想ネットワーク、プライベートエンドポイントを利用したネットワークセキュリティについて説明します。
 |     |               | コスト管理   | コストの考え方や抑制方法について説明します。
-|     |               | データ保護   |　暗号化、フェイルオーバー、災害復旧について説明します。
+| 03. |Q&A            |            | Azure Machine Learning に関する質問にお答えします。
 
 ### 資料
 
