@@ -73,3 +73,20 @@ Job 実行時に Compute Cluster のノード数が 0 の場合、ノードの�
 
 - 最小ノード数を 1 以上にする。
 - Kubernetes を計算リソースにする。
+
+---
+## 補足
+### Job の実行フロー
+
+Azure Machine Learning の Job を実行したときの内部の処理フローは次の通りです。
+
+- Job を Azure CLI (v2) + YAML ファイル から発行する
+- Compute Cluster が起動する
+- Azure ML - Environment に登録してある Docker Image を Pull する
+- Datastore や Data asseet からデータを取得する
+- 学習スクリプトをロードする
+- Compute Cluster で処理が実行される
+- ログやメトリックが取得される
+- Compute Cluster が停止する
+
+<img src={require('./images/job-flow.png').default} width="1000" /><br />
