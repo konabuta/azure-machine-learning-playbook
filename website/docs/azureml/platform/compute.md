@@ -67,19 +67,6 @@ Azure ML v2 から、次の 2 種類の Kubernetes クラスターが Azure Mach
 
 ## 計算リソースの選択や構成における考慮事項
 
-### Public IP or No Public IP
-
-Compute Instance と Compute Cluster の IP アドレスはデフォルトでは Public IP が付与されます。No Public IP の設定は 2022年9月現在 Public Preview の機能としてご利用いただけます。
-
-#### Public IP
-- Public IP の環境下では Network Security Group (NSG) の受信アクセス (Inbound) において、サービスタグで "Azure Machine Learning" と "Batch NodeManagement" を許可する必要があります。
-
-
-#### No Public IP
-- 受信アクセス (Inbound) の設定は不要です。
-- Azure Active Direcotry や Microsoft Container Registry などの Azure/Microsoft 内部のサービスや Azure 外部へのインターネット接続をするために、ユーザー定義ルーティング (UDR) を構成して、Firewall の Public IP や Virtual Network NAT を使用する必要があります。
-
-
 ### Compute Cluster の起動時間
 
 Job 実行時に Compute Cluster のノード数が 0 の場合、ノードの起動に数分時間がかかります。インタラクティブに Job を実行したい場合は、以下の構成を検討ください。

@@ -3,7 +3,7 @@ id: cost-management
 title: "コスト管理"
 ---
 
-Azure Machine Learning は業務用アプリケーションのような定常的なワークロードではなく、Data Scientist が試行錯誤をする環境として使われます。また関連する Azure サービスも多岐に渡っているため、コストの計算が複雑です。ここでは Azure Machine Learning Workspace のコストを中心に説明します。
+Azure Machine Learning は業務用アプリケーションのような定常的なワークロードではなく、Data Scientist が試行錯誤をする環境として使われることが多いため予期せぬコスト増加を防ぐ必要がでてきます。ここでは Azure Machine Learning Workspace のコストの考え方や抑制方法について説明します。
 
 
 ## Azure Machine Learning のコスト
