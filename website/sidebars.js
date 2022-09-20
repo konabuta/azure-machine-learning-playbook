@@ -49,6 +49,7 @@ const sidebars = {
           'azureml/platform/network-security',
           'azureml/platform/auth',
           'azureml/platform/cost-management',
+          'azureml/platform/system-monitoring'
       ]
       // items:[
       //     'azureml/platform/azureml-compute',
