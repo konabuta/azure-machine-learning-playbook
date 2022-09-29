@@ -41,8 +41,15 @@ Azure Machine Learning (aka Azure ML) は Azure が提供する機械学習の�
 あくまで汎用的なプラットフォームのため、業界・業務のシナリオに特化しているものではありません。実現したいことが明確であれば、汎用的な学習済みモデルを提供する Azure Cognitive Services や Azure Applied AI Service などのソリューションをご利用いただくのが良いケースもあります。
 :::
 
+### 機械学習のライフサイクル
 
-∑∑w### 従来の方法との比較
+Azure Machine Learning は機械学習ライフサイクル (MLOps) を構成する 3 つの Loop (Inner、Middle, Outer) の各要素やループ間が高速に回ることを意識しています。
+
+<img src={require('./images/ml-lifecycle.png').default} width="500" /><br />
+
+
+
+### 従来の方法との比較
 
 オープンソース (Python/R など)を利用する観点で言えば、Azure Machine Learning を利用せずともモデル学習や推論はもちろん可能ですが、Azure Machine Learning を使うことで多くのメリットがあります。
 

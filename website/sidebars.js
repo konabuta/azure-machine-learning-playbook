@@ -25,15 +25,36 @@ const sidebars = {
           'azureml/fundamentals/azureml-basic',
           'azureml/fundamentals/azureml-resources-assets',
           'azureml/fundamentals/azureml-author',
-          'azureml/fundamentals/azureml-api'
+          'azureml/fundamentals/azureml-api',
+          {
+            type: 'category',
+            label: 'サンプル',
+            link:{type: 'generated-index'},
+            collapsed: true,
+            items:[
+              'azureml/fundamentals/samples/train-with-cli-v2-yaml',
+            ]
+          },
       ]
     },
     {
       type: 'category',
       label: 'Platform',
+      collapsed: false,
       items:[
-          'azureml/platform/azureml-compute'
+          'azureml/platform/select-ai-services',
+          'azureml/platform/workspace-design',
+          'azureml/platform/compute',
+          'azureml/platform/datasource',
+          'azureml/platform/network-security',
+          'azureml/platform/auth',
+          'azureml/platform/cost-management',
+          'azureml/platform/system-monitoring'
       ]
+      // items:[
+      //     'azureml/platform/azureml-compute',
+      //     'azureml/platform/select-ai-services',
+      // ]
     },
     // {
     //   type: 'category',
@@ -58,7 +79,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Responsible AI',
-      collapsed: false,
+      collapsed: true,
       items:[
             'azureml/responsible-ai/rai-concept',
             {
@@ -88,8 +109,17 @@ const sidebars = {
         }
       ]
     },
-  ]
-
+  ],
+  fta:[
+    {
+      type: 'category',
+      label: 'FasTrack for Azure',
+      items:[
+            'fta/fastrack-for-azure-aiml',
+            'fta/ftalive'
+      ]
+    },
+  ],
 };
 
 module.exports = sidebars;
