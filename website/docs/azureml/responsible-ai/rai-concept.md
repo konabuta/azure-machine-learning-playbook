@@ -139,7 +139,7 @@ Microsoft は Hub and Spokes モデルでガバナンスの体制を構築して
 - [AI Fairness Checklist](https://www.microsoft.com/en-us/research/project/ai-fairness-checklist/)
 - [Datasheets for Datasets](https://www.microsoft.com/en-us/research/project/datasheets-for-datasets/)
 - [AI Security Guidelines](https://blogs.microsoft.com/on-the-issues/2019/12/06/ai-machine-learning-security/)
-
+- [Impact Assessment Guideline](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4ZzOI)
 
 
 
@@ -149,32 +149,31 @@ Microsoft は Hub and Spokes モデルでガバナンスの体制を構築して
 
 Microsoft は Data Scientist などの技術者が機械学習のライフサイクル (=**MLOps**) において機械学習モデルを理解し、保護し、制御するためのさまざまなツールやプラットフォームを開発しています。
 
-#### Impact Assessment
-:::caution
-ドキュメント作成中
-:::
+#### Impact Assessment Template
+Impact Assessment Template は AI システムが人、組織、社会に与える潜在的な影響を特定し、軽減策や対応方法を洗い出すツールです。Impact Assessment Guideline を参考に使います。Microsoft のこれまでの知見が集約されています。
+
+:star: [Impact Assessment Template](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4ZHNX) <br />
+:star: [Impact Assessment Guideline](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4ZzOI)
+
+
 
 #### Responsible AI Dashboard
 :::caution
 ドキュメント更新中
 :::
 
-モデル開発フェーズにおいては、Azure Machine Learning 上であらゆるツールが実行できます。
+Responsible AI Toolbox は Microsoft が主導で開発している責任のある AI のツール群です。
 
-<img
-  src={require('./images/azureml_rai_process.png').default}
-  width="500"
-/>
+<img src="https://raw.githubusercontent.com/microsoft/responsible-ai-widgets/main/img/responsible-ai-toolbox.png" />
 
-- 理解 (Understand)
-    - AI システムの挙動を理解します。公平性、透明性の観点が重要になることが多いです。
-    - ツール : InterpretML、Fairlearn、Error Analysis、Responsible AI Toolbox など。
-- 保護 (Protect)
-    - モデルやデータを外部からの攻撃や潜在的なリスクから保護します。
-    - ツール : 差分プライバシー、機密コンピューティングなど。
-- 制御 (Control)
-    - ガバナンス統制下で責任ある形で開発が進められるようにします。
-    - ツール : MLOps、監査証跡、データシートなど。
+2 つのリポジトリから構成されています。<br/>
+
+:point_right: [Responsible AI Toolbox](https://github.com/microsoft/responsible-ai-toolbox) <br/>
+モデルを評価し意思決定を行うための可視化ウィジェットが含まれます。
+
+:point_right: [Responsible AI Toolbox Mitigations](https://github.com/microsoft/responsible-ai-toolbox-mitigations)
+データの均衡性の分析とデータ拡張を行う Python ライブラリです。
+
 
 :pencil2: **デモサイトはこちら → [AI Lab Project : Responsible AI dashboard](https://www.microsoft.com/en-us/ai/ai-lab-responsible-ai-dashboard)**
 
@@ -185,13 +184,23 @@ Responsible AI Dashboard に含まれていないツールも多数あります�
 Microsoft が提供するツールの最新の情報は [責任ある AI のリソース](https://www.microsoft.com/ja-JP/ai/responsible-ai-resources) 、研究開発の取り組みは [Advancing AI trustworthiness: Updates on responsible AI research](https://www.microsoft.com/en-us/research/blog/advancing-ai-trustworthiness-updates-on-responsible-ai-research/) を参照ください。
 :::
 
-#### MLOps
-こういったツールを Data Scientist が個人で使っていくことだけでなく、MLOps の中でチーム・組織として確実に実装していくことも大事です。Responsible AI Dashboard は Azure Machine Learning との統合機能があり、MLOps の中で使っていくことができます。
+
+- [Interpret](https://github.com/interpretml/interpret) - EBM (交互作用項付き一般化加法モデル) などの解釈可能性の高いモデルアルゴリズムや、ブラックスモデルに説明性を付与する SHAP、LIME、Partial Dependence Plot などを含む Python ライブラリ。
+
+
+#### MLOps における Responsible AI
+こういった責任のある AI をサポートするさまざまなツールを Data Scientist が個人で使っていくだけでなく、MLOps の中でチーム・組織として確実に実装していくことも大事です。Responsible AI Dashboard は Azure Machine Learning との統合機能があり、MLOps の中で使っていくことができます。
+
+
+
+#### 参考資料
+- [責任のある AI とは (プレビュー)](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-responsible-ml)
+- [Azure Machine Learning の責任ある AI ダッシュボードを使用して AI システムを評価し、データ ドリブンの意思決定を行う (プレビュー)](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-responsible-ai-dashboard)
 
 <br/>
 
 
-## Microsoft の取り組み例
+## Microsoft 製品・サービスでの取り組み例
 
 ### Transparency Note の公開
 [Transparency Note for Azure Cognitive Service for Language](https:/.microsoft.com/en-us/legal/cognitive-services/language-service/transparency-note) などの Transparency Note を公開し、AI システムの目的、能力、限界についてのコミュニケーションを支援し、マーケティングと技術文章のギャップを埋め、お客様が責任を持って AI を導入するために知っておくべき情報を積極的に伝えています。その他、Azure Cognitive Services 全般における責任のある AI のガイドラインは [Cognitive Services における AI の責任ある使用](https:/.microsoft.com/ja-jp/azure/cognitive-services/responsible-use-of-ai-overview) で確認できます。
