@@ -1,36 +1,58 @@
 ---
 id: rai-tech-debugging
-title : "機械学習モデルのデバッグ"
+title : "モデルのデバッグ"
 ---
 
-### 2.1. 機械学習モデルのデバッグ
 
-本モジュールでは、モデルをデバッグするための様々な技術を紹介します。例えば、ブラックボックスなモデルは透明性主にモデルの透明性と公平性に言及していきます。
+本モジュールでは、Responsible AI Toolbox に含まれるモデルをデバッグ・アセスメントする技術を紹介します。
 
-- モデルの透明性
-    - 機械学習アルゴリズムの説明性・解釈可能性の技術より、大域的・局所的なトレンドを理解します。これは AI システムを実装する際に Data Scientist が経営者やステークホルダーにモデルを説明する際に役立ちます。また運用中モデルの挙動について説明が求められるようなシーンでも有効ですし、Data Scientist 自身が開発中の機械学習モデルをデバッグする際にも有効です。
-- モデルの公平性
-    - 学習済みモデルの公平性を評価し、必要に応じて軽減を行います。公平性とは特定のグループに対してモデルが他とは異なる挙動しないことを意味します。特にセンシティブな属性 (人種、ジェンダー、年齢、障害の有無 etc) の観点で考慮されます
+## Responsible AI Dashboard
+Responsible AI Dashboard は Responsible AI Toolbox が提供する可視化ウィジェットです。責任のある AI の一連のプロセスを一気通貫で実行できます。この中でもモデルのデバッグ・アセスメントに関連するところは最初の 3 つのステップ (Identify (特定) → Diagnose (診断) → Mitigate (緩和)) になり、Responsible AI Dashboard でカバーしているのはハイライトしている部分です。
 
-
-これらの技術は下記の 3 つのステップ (特定 → 診断 → 緩和) で実行します。モデルの理解だけで良いのであれば `診断` のプロセスまでで十分ですが、公平性に問題があったり、モデルの精度が足りない場合には次の `緩和` のステップが必要になってきます。
+<img src="https://raw.githubusercontent.com/microsoft/responsible-ai-widgets/main/img/responsible-ai-dashboard.png" />
 
 
-<img src={require('./images/understand_ai_model.png').default} width="500" />
+
+:::caution
+Mitigate は Responsible AI Dashboard の機能では提供されていませんが、Responsible AI Toolbox Mitigate や Fairlearn ライブラリを用いることが実行できます。
+:::
+
+Responsible AI Dashboard のバックエンドで利用されているツールを紹介します。
+
+
+|機能     |ベース技術   |概要|
+|---------|---------|---------|
+|[Error Analysis](#error-analysis)|[Error Analysis](https://erroranalysis.ai/)|モデルの誤差の大きいコホートを特定します。|
+|[Fairness Assessment](#fairness-assessment)|[Fairlearn](https://github.com/fairlearn/fairlearn)|モデルの公平性を評価します。|
+|[Model Interpretability](#model-interpretability)|[InterpretML](http://interpret.ml/)|ブラックボックスなモデルに説明性を付与します。|
+|Counterfactual Analysis|[DiCE](https://github.com/interpretml/DiCE)|予測値を変化させる反実仮想のデータを生成します。|
+
+
+## Error Analysis
+
+
+Error Analysis では学習済みの機械学習モデルの誤差の大きいコホート (データのサブセット) を特定します。機械学習モデルを評価する際、精度 73.8 % などと集計された数値で見ることが多いと思います (下図) が、ユースケース次第ではそれでは不十分な場合があります。
+
+集計された数値指標では、誤差がデータのどこに潜んでいるのかはこれでは分かりません。次のようなケースでは特に問題になりやすいです。
+
+- 病理診断モデルにおいて子供や高齢者の誤差が他と比べて大きい
+- 与信モデルや異常検知モデルなどで特定の性別・人種だけ誤差大きい
+
+<img src={require('./images/erroranalysis.png').default} width="800" /><br/>
+
+
+誤差が大きくなる・小さくなるコホートを特定することで、ステークホルダーに対してモデルの潜在的なリスクを伝えることができたり、誤差が大きいコホートのデータの品質を改善することで精度が向上することが期待できます。
 
 <br/>
 
-ここで登場する主な技術を紹介します。
 
-#### Fairlearn
+## Fairness Assessment
 
-<img 
-    src={require('./images/fairlearn.png').default}
-    width="500"
-/>
-<br/>
+Fairness Assessment では学習済み機械学習モデルの公平性の評価を行います。Python ライブラリの [Fairlearn](https://github.com/fairlearn/fairlearn) をベースにしています。
 
-機械学習モデルの公平性の評価と不公平性の緩和を行うライブラリです。
+:::note
+Responsible AI Toolbox には含まれていませんが、不公平性を軽減する機能は Fairlearn に含まれています。
+:::
 
 Fairlearn 対象にしている害 (Harm) は下記の 2 つです。
 
@@ -39,30 +61,27 @@ Fairlearn 対象にしている害 (Harm) は下記の 2 つです。
 - サービス品質の害
     - AI システムによる対応のよさが、ユーザーのグループによって異なります。 たとえば、音声認識システムでは、女性に対する対応が男性より悪くなる場合があります。
 
+<img 
+    src={require('./images/fairlearn.png').default}
+    width="800"
+/>
 
-Fairlearn はこういった不公平性の危害を評価し、必要に応じて緩和することができます。
-
-<br/>
-
-#### Error Analysis
-
-<img src='https://techcommunity.microsoft.com/t5/image/serverpage/image-id/255440i28671D47179C4A7D/image-size/large' width="500" /><br/>
-
-Error Analysis はモデルの誤差を深堀り分析するツールです。よく機械学習モデルの精度を 90 % などと集計された数値で見ることが多いと思います (上図) が、ユースケース次第ではそれでは不十分です。誤差がデータのどこに潜んでいるのかはこれでは分からないので、例えば性別や人種の違いで誤差が異なれば公平性の問題になりますし、病理診断などのシナリオでも子供や高齢者の精度が悪いと、社会的な問題になることが考えられます。
-
-<img src={require('./images/erroranalysis.png').default} width="500" /><br/>
-
-
-そのため、誤差を深掘りし、誤差が大きくなる・小さくなるコホートを特定することで、ステークホルダーに対してモデルの潜在的なリスクを伝えることができたり、誤差が大きいコホートのデータの品質を改善することで精度が向上することが期待できます。
+**Fairlearn** ライブラリの概要
 
 <br/>
 
-#### InterpretML
+## Model Interpretability
+
+学習モデルに説明性を付与する機能を提供します。Python ライブラリの [InterpretML](http://interpret.ml/) をベースにしています。
+
+
+### InterpretML
+
 <img src={require('./images/interpretml.png').default} width="500" /><br/>
 
 [InterpretML](https://interpret.ml/) は、主要な「解釈可能性が高い Glass-box なモデル」 と 「任意の学習済みモデル (Black-box) に対する説明性付与手法」が実装されているライブラリ群です。それぞれに共通してモデル全体の傾向を見る大域的な説明とテストデータ個々の予測値に対する局所的な説明があります。
 
-
+**主要なアルゴリズム**
 ##### Global Surrogate
 
 グローバルなモデル解釈方法。学習済みモデルへの入力データとその予測値を再度線形回帰などの解釈可能なモデルで学習し直して、モデル解釈をするアプローチ方法。InterpretML では LightGBM や線形回帰のモデルが利用できます。
@@ -72,14 +91,14 @@ Error Analysis はモデルの誤差を深堀り分析するツールです。�
 
 [SHAP (SHapley Additive exPlanations)](https://github.com/slundberg/shap) はゲーム理論のシャープレイ値の枠組みを利用して、モデルの種類に関わらず、ここのデータの特徴量ごとの貢献度をみることができます。SHAP 単体でもライブラリが公開されています。
 
-<br/>
-
 
 #### Explainable Boosting Machines (EBM)
 
 Explainable Boosting Machines (EBM) は、一般化加法モデル (GAM) に交互作用項を組み込んだモデル (GA2M) を高速に推定するアルゴリズムです。
 
-$$y =  f(x_1) + f(x_2) + f(x_3) + ... + \Sigma_{ij} f_{ij}(x_i, x_j)$$ 
+$$
+Y =  f(x_1) + f(x_2) + f(x_3) + ... + \Sigma_{ij} f_{ij}(x_i, x_j)
+$$ 
 
 それぞれの特徴量 $x_i$ は関数 $f(x_i)$ で表現されています。線形回帰などの線形モデルとは違い目的変数 $y$ との関係性は線形性は前提としていません。この関数を推定する方法はいくつかありますが、EBM ではこの関数をブースティングで推定します。また交互作用項を推定するアルゴリズム (FAST) も実装されており精度向上に寄与しています。
 
