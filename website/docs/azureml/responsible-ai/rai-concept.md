@@ -157,28 +157,45 @@ Impact Assessment Template は AI システムが人、組織、社会に与え�
 
 
 
-#### Responsible AI Dashboard
+#### Responsible AI Toolbox
 :::caution
 ドキュメント更新中
 :::
 
-Responsible AI Toolbox は Microsoft が主導で開発している責任のある AI のツール群です。
+**Responsible AI Toolbox** は Microsoft が主導で開発している責任のある AI のツール群です。
+
+<img src={require('./images/raitoolbox.png').default} width="500" /><br/>
+
+
+モデルの説明性付与、誤差分析、データ可視化、反事仮想分析、因果推論の機能をより簡単にスムーズに利用するための機能を提供しています。大きく分類すると「モデルのデバッグ」と「意思決定への活用」の 2 つの機能を提供しています。
 
 <img src="https://raw.githubusercontent.com/microsoft/responsible-ai-widgets/main/img/responsible-ai-toolbox.png" />
 
+_**Responsible AI Toolbox がカバーする責任のある AI の機能**_ <br />
+_「モデルのデバッグ」は前半 3 つのステップ(**Identify(特定)**、**Diagnose (診断)**、**Mitigate (軽減)**)、「意思決定への活用」は最後のステップ (**Inform Action (アクションを提示)**) に該当する。_
+
 2 つのリポジトリから構成されています。<br/>
 
-:point_right: [Responsible AI Toolbox](https://github.com/microsoft/responsible-ai-toolbox) <br/>
-モデルを評価し意思決定を行うための可視化ウィジェットが含まれます。
+:point_right: [Responsible AI Toolbox](https://github.com/microsoft/responsible-ai-toolbox) <br />
+モデルを評価し意思決定を行うための可視化ウィジェットである Responsible AI Dashboard が含まれます。
 
-:point_right: [Responsible AI Toolbox Mitigations](https://github.com/microsoft/responsible-ai-toolbox-mitigations)
+:point_right: [Responsible AI Toolbox Mitigations](https://github.com/microsoft/responsible-ai-toolbox-mitigations) <br />
 データの均衡性の分析とデータ拡張を行う Python ライブラリです。
 
+<br />
+
+また、**Responsible AI Dashboard** は Responsible AI Toolbox が提供する責任のある AI を実現する統合されたダッシュボードです。
+
+<img src='https://techcommunity.microsoft.com/t5/image/serverpage/image-id/331674i5FBF69F2E05F85A3/image-size/medium?v=v2&px=400' width="300" /><br/>
+
+<br />
 
 :pencil2: **デモサイトはこちら → [AI Lab Project : Responsible AI dashboard](https://www.microsoft.com/en-us/ai/ai-lab-responsible-ai-dashboard)**
 
+<br/>
+
 #### その他ツール
-Responsible AI Dashboard に含まれていないツールも多数あります。ここでは一部を掲載します。
+Responsible AI Toolbox に含まれていないツールも多数あります。ここでは一部を掲載します。
 
 :::note
 Microsoft が提供するツールの最新の情報は [責任ある AI のリソース](https://www.microsoft.com/ja-JP/ai/responsible-ai-resources) 、研究開発の取り組みは [Advancing AI trustworthiness: Updates on responsible AI research](https://www.microsoft.com/en-us/research/blog/advancing-ai-trustworthiness-updates-on-responsible-ai-research/) を参照ください。
@@ -187,6 +204,7 @@ Microsoft が提供するツールの最新の情報は [責任ある AI のリ�
 
 - [Interpret](https://github.com/interpretml/interpret) - EBM (交互作用項付き一般化加法モデル) などの解釈可能性の高いモデルアルゴリズムや、ブラックスモデルに説明性を付与する SHAP、LIME、Partial Dependence Plot などを含む Python ライブラリ。
 
+<br/>
 
 #### MLOps における Responsible AI
 こういった責任のある AI をサポートするさまざまなツールを Data Scientist が個人で使っていくだけでなく、MLOps の中でチーム・組織として確実に実装していくことも大事です。Responsible AI Dashboard は Azure Machine Learning との統合機能があり、MLOps の中で使っていくことができます。
