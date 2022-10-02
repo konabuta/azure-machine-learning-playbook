@@ -79,21 +79,10 @@ const sidebars = {
     {
       type: 'category',
       label: 'Responsible AI',
-      collapsed: true,
+      collapsed: false,
       items:[
             'azureml/responsible-ai/rai-concept',
-            {
-              type: 'category',
-              label: '責任のある AI の技術',
-              link:{type: 'generated-index'},
-              collapsed: true,
-              items:[
-                'azureml/responsible-ai/rai-tech-debugging',
-                'azureml/responsible-ai/rai-tech-decision-making',
-                'azureml/responsible-ai/rai-tech-security-privacy'
-              ]
-            },
-        'azureml/responsible-ai/rai-reference',
+            'azureml/responsible-ai/rai-tech-debugging',
       ]
     },
   ],
