@@ -109,4 +109,4 @@ AI のテクノロジーが大きな注目を浴びています。画期的で�
 
 ### 資料
 
-Azure ML ページタブの [Responsible AI](../azureml/platform/rai-concept) 配下にある Web サイトや参照先の製品ドキュメントなどを利用します。
+Azure ML ページタブの [Responsible AI](../azureml/responsible-ai/rai-concept) 配下にある Web サイトや参照先の製品ドキュメントなどを利用します。
