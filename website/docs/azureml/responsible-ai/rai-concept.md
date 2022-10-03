@@ -184,7 +184,7 @@ _「モデルのデバッグ」は前半 3 つのステップ(**Identify(特定)
 
 <br />
 
-また、**Responsible AI Dashboard** は Responsible AI Toolbox が提供する責任のある AI を実現する統合されたダッシュボードです。
+また、**Responsible AI Dashboard** は Responsible AI Toolbox が提供する責任のある AI を実現する統合されたダッシュボードです。責任のある AI の一連のプロセスを一気通貫で実行できます。
 
 <img src='https://techcommunity.microsoft.com/t5/image/serverpage/image-id/331674i5FBF69F2E05F85A3/image-size/medium?v=v2&px=400' width="300" /><br/>
 
