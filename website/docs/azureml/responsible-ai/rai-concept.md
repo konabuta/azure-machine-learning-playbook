@@ -4,29 +4,33 @@ title : "責任のある AI の概要"
 ---
 
 
-## 1. 責任のある AI 概要
+# 責任のある AI 概要
 本モジュールでは 責任のある AI について Microsoft の取り組みを踏まえながら説明をしてきます。
 
 <br/>
 
-### 背景
+## 背景
 
-AI の技術が急速に進化しています。AI が人間に近いような能力を保持したり動作をすることや、社会的影響も大きいことから AI システム全体の透明性に対するニーズが高まっています。透明性が無い AI システムはステークホルダーの信頼を失い、AI の社会実装を妨げる一つの大きな要因となります。しかしながら、責任のある AI はまだ十分に浸透しているとは言えません。AI システムのプライバイシーの懸念、誤動作、副作用などの課題に対して、誰が責任を取るのか、どのように対処するのかがルール化されていないことがあります。ここでは、責任のある AI の概念や技術について説明し、皆様の人間中心で信頼された透明性の高い AI システムの構築・運用管理の手助けとなることを目的としています。
+AI の技術が急速に進化しています。AI が人間に近いような能力を保持したり動作をすることや、社会的影響も大きいことから AI システム全体の透明性に対するニーズが高まっています。透明性が無い AI システムはステークホルダーの信頼を失い、AI の社会実装を妨げる一つの大きな要因となります。
+
+しかしながら、責任のある AI はまだ十分に浸透しているとは言えません。AI システムのプライバイシーの懸念、誤動作、副作用などの課題に対して、誰が責任を取るのか、どのように対処するのかがルール化されていないことがあります。本ドキュメントは、責任のある AI の概念や技術について説明し、皆様の人間中心で信頼された透明性の高い AI システムの構築・運用管理の手助けとなることを目的としています。
 
 _"The more powerful the tool, the greater the benefit or damage it can cause ... Technology innovation is not going to slow down. The work to manage it needs to speed up." Brad Smith, President and Chief Legal Officer, Microsoft_
 
 <br/>
 
-### Microsoft の責任のある AI への取り組み
+## Microsoft の責任のある AI への取り組み
 
-Microsoft 自身も責任のある AI に取り組んでいます。
+Microsoft 自身も責任のある AI に取り組んでいます。これまでの取り組みをまとめた年表です。
 
 
 <img
-  src={require('./images/microsoft_rai_journey.png').default}
-  width="500"
+  src={require('./images/microsoft-rai-journey.png').default}
+  width="1000"
 />
 
+<details>
+    <summary> 詳細 </summary>
 
 - 2016年 : Microsoft CEO Satya Nadella が [The Partnership of the Future](https://slate.com/technology/2016/06/microsoft-ceo-satya-nadella-humans-and-a-i-can-work-together-to-solve-societys-challenges.html) という論説を投稿しました。AI システムの透明性、効率性、プライバシーの尊重、バイアスからの保護などに言及しています。
 - 2017年 : Aether (AI, Ethics, and Effects in Engineering and Research) を設立しました。この団体は Microsoft 社内の責任のある AI に関する最高機関になっており、様々な責任のある AI の課題、テクノロジー、プロセス、ベストプラクティスに関する提言を行なっています。
@@ -34,106 +38,70 @@ Microsoft 自身も責任のある AI に取り組んでいます。
 - 2019年 : Office of Responsible AI を設立しました。ポリシーやガバナンスのプロセスを策定しています。また、Responsible AI Standard (v1) を社内用に発行しました。
 - 2020年 : RAISE (Responsible AI Strategy in Engineering) はエンジニアリンググループ全体で責任のある AI のルールとプロセスの実装を促進するために設立されました。
 - 2021年 : Responsible AI Standard (v2) を社内用に発行しました。
-- 2021年 : Responsible AI Standard (v2) を社外に一般公開しました。
-- 
+- 2021年 : Resposible AI Dashboard をオープンソースで公開しました。
+- 2022年 : Responsible AI Standard (v2) を社外に一般公開しました。
+
+</details>
+
 また最近では Microsoft のこれまでの培ってきた知見を社会・お客様に伝えていくべく、[AI Business School](https://www.microsoft.com/ja-JP/ai/ai-business-school) という責任のある AI などについて学べるビジネス向け学習コンテンツ、ガイドライン、オープンソースのツールを公開しています。
+
 
 <br/>
 
-### 責任のある AI の 6 つの原則
+## 責任のある AI の 6 つの原則
 
-Microsoft は AI システムの開発および運用管理における責任のある AI の原則を 6 つ定義しています。
+Microsoft は AI システムの開発および運用管理において、次の 6 つの責任のある AI の原則をガイドしています。
 
 
 <img
   src={require('./images/microsoft_rai_principles.png').default}
-  width="500"
+  width="800"
 />
 
 <br/>
 
 
-- 公平性 (Fairness)
+- **公平性 (Fairness)**
     - AI システムは全ての人を公平に扱い、同じ属性・状況の人たちに対して異なる影響を与えることを回避する必要があります。
-- 信頼性と安全性 (Reliability & Safety)
+- **信頼性と安全性 (Reliability & Safety)**s
     - AI システムは信頼性が高く安全である必要があります。設計されたとおりに動作し、新しい状況にも安全に対応できるようにすることが重要です。
-- プライバシーとセキュリティ (Privacy & Security)
+- **プライバシーとセキュリティ (Privacy & Security)**
     - AI システムではデータを扱うためプライバシーとセキュリティの保護が必要です。
-- 包括性 (Inclusiveness)
+- **包括性 (Inclusiveness)**
     - AI システムに限らず技術は全ての人にもたらされるべきで、様々なニーズに対応していく必要があります。
-- 透明性 (Transparency)
+- **透明性 (Transparency)**
     - AI システムが意思決定に利用される場面などでは、どのように AI システムが決定を行ったのかを理解することが重要です。
-- アカウンタビリティ (Accountability)
+- **アカウンタビリティ (Accountability)**
     - AI システムを設計・構築・運用管理する人は、システムがどのように動作するかについて説明責任があります。
 
 
-### 責任のある AI の実践
+この 6 つの原則は企業としてあるべき姿を定義はしていますが、実はそれだけでは不十分です。というのも原則だけでは現場での活用が進みません。また原則の解釈の仕方も人によってマチマチです。
+
+
+<br/>
+
+## 責任のある AI の実践
 
 これらの 6 つの原則をベースに、設計フェーズから責任のある AI が考慮された AI システムが統制の効いたガバナンスの元に実装されるために Microsoft が社内外に公開している取り組みを紹介します。
 
 
 <img
-  src={require('./images/microsoft_rai_into_practices.png').default}
-  width="300"
+  src={require('./images/microsoft-rai-to-enact-principles.png').default}
+  width="800"
 />
 
-#### 原則 (Principles)
-
-先ほど述べた 6 つの原則 (Fairness, Reliability & Safety, Privacy & Security, Inclusiveness, Transparency, Accountability) を指します。
-
-
-#### プラクティス (Practices)
-人間中心のデザインや、ソフトウェア開発のライフサイクルにおける問題を予測し、それを解決することで責任のある方法で AI システムを開発することをサポートするガイドラインを提供しています。
-
-- [Human-AI Guidelines](https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/)
-    - [Human-AI eXperiences (HAX)](https://www.microsoft.com/en-us/haxtoolkit/) Toolkit に含まれます。
-- [Conversational AI Guidelines](https://www.microsoft.com/en-us/research/publication/responsible-bots/)
-- [Inclusive Design Guidelines](https://www.microsoft.com/design/inclusive/)
-- [AI Fairness Checklist](https://www.microsoft.com/en-us/research/project/ai-fairness-checklist/)
-- [Datasheets for Datasets](https://www.microsoft.com/en-us/research/project/datasheets-for-datasets/)
-- [AI Security Guidelines](https://blogs.microsoft.com/on-the-issues/2019/12/06/ai-machine-learning-security/)
-
-
-その取り組みの結果として 例えば [Transparency Note for Azure Cognitive Service for Language](https:/.microsoft.com/en-us/legal/cognitive-services/language-service/transparency-note) などの Transparency Note を公開し、AI システムの目的、能力、限界についてのコミュニケーションを支援し、マーケティングと技術文章のギャップを埋め、お客様が責任を持って AI を導入するために知っておくべき情報を積極的に伝えています。その他、Azure Cognitive Services 全般における責任のある AI のガイドラインは [Cognitive Services における AI の責任ある使用](https:/.microsoft.com/ja-jp/azure/cognitive-services/responsible-use-of-ai-overview) で確認できます。
-
-
-#### ツール
-
-Data Scientist や機械学習エンジニアなどの技術者が AI の構築・運用のライフサイクルの各所において AI を理解し、保護し、制御するためのツールを開発しています。
-
-モデル開発フェーズにおいては、Azure Machine Learning 上であらゆるツールが実行できます。
-
-<img
-  src={require('./images/azureml_rai_process.png').default}
-  width="500"
-/>
-
-- 理解 (Understand)
-    - AI システムの挙動を理解します。公平性、透明性の観点が重要になることが多いです。
-    - ツール : InterpretML、Fairlearn、Error Analysis、Responsible AI Toolbox など。
-- 保護 (Protect)
-    - モデルやデータを外部からの攻撃や潜在的なリスクから保護します。
-    - ツール : 差分プライバシー、機密コンピューティングなど。
-- 制御 (Control)
-    - ガバナンス統制下で責任ある形で開発が進められるようにします。
-    - ツール : MLOps、監査証跡、データシートなど。
- 
-
-※ Microsoft が提供するツールの最新の情報は [責任ある AI のリソース](https://www.microsoft.com/ja-JP/ai/responsible-ai-resources) 、研究開発の取り組みは [Advancing AI trustworthiness: Updates on responsible AI research](https://www.microsoft.com/en-us/research/blog/advancing-ai-trustworthiness-updates-on-responsible-ai-research/) を参照ください。
-
-
-
-
-#### ガバナンス
+### 1. Governance (ガバナンス)
 
 Microsoft は Hub and Spokes モデルでガバナンスの体制を構築しています。
 
 <img
-  src={require('./images/microsoft_rai_governance.png').default}
-  width="300" />
+  src={require('./images/microsoft-rai-governance.png').default}
+  width="800" />
 
-- Responsible AI Council
-    - Microsoft のエグゼクティブメンバーや責任のある AI の各グループ (Aether Comittee, Office of Responsible AI, RAISE) の代表者から構成され、全社的に責任のある AI への取り組みをサポートします。
+<!-- - Responsible AI Council
+    - Microsoft のエグゼクティブメンバーや責任のある AI の各グループ (Aether Comittee, Office of Responsible AI, RAISE) の代表者から構成され、全社的に責任のある AI への取り組みをサポートします。 -->
+
+
 - Aether Committee
     - Aether (AI, Ethics, and Effects in Engineering and Research) は Microsoft 社内の部門を横断する様々な専門家グループから構成され、Microsoft 社内のシニアリーダーシップや Office of Responsible AI (ORA) に対して、AI システムに関する疑問・課題などについて助言するアドバイザリーを提供します。また 6 つの作業グループがあり、それぞれの分野で有益なツール、ベストプラクティス、実装ガイダンスなどを開発しています。
 - Office of Responsible AI (ORA)
@@ -143,22 +111,8 @@ Microsoft は Hub and Spokes モデルでガバナンスの体制を構築して
 - Responsible AI Champs
     - Responsible AI Champs はスポークの役割を果たし、組織全体にわたるルールの実装や、認知度の向上をサポートします。お客様や社内におけるセンシティブなユースケースに対するアドバイザリーを行なっています。
 
-
-<br/>
-
-
-<!-- ### Responsible AI Lifecycle (RAIL)
-
-Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これは Responsible AI Standard に沿った形で責任のある AI をシステムに構築・デプロイするためのフレームワークです。詳細は公開されていませんが、下記が概略です。
-
-- AI システムの評価と準備
-    - 製品がもたらす利益、技術、潜在的なリスク、チームを評価する。
-- AI システムの設計・構築とドキュメンテーション
-    - モデルや関連するシステムの設計・構築を行い、AI システムについて文章を作成する。
-- AI システムの検証とサポート
-    - テスト手順を選択し、製品が意図した通りに動作するか確認する。 -->
-
-### Responsible AI Standard
+### 2. Rules (ルール)
+#### Responsible AI Standard
 2022年 Microsoft は [Responsible AI Standard v2](https://blogs.microsoft.com/wp-content/uploads/prod/sites/5/2022/06/Microsoft-Responsible-AI-Standard-v2-General-Requirements-3.pdf) を社外に公開しました。元々は Microsoft 社内で活用されていたものです。これは責任のある形で AI システムの開発運用の基準となるフレームワークです。
 
 <br/>
@@ -174,8 +128,109 @@ Microsoft は Responsible AI Lifecycle (aka RAIL) を開発しました。これ
     - 各ステップを実行するのをサポートするツールやプラクティス
 
 
-※ 参考情報 
-- [責任ある AI システム構築のためのマイクロソフトのフレームワーク (抄訳)](https://news.microsoft.com/ja-jp/2022/07/04/220704-microsofts-framework-for-building-ai-systems-responsibly/)
-- [顔認識に関する責任あるAIポリシーの変更とガイダンスについて (抄訳)](https://www.microsoft.com/ja-jp/events/azurebase/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/)
+
+### 3. Training and Practices (トレーニングとプラクティス)
+人間中心のデザインや、ソフトウェア開発のライフサイクルにおける問題を予測し、それを解決することで責任のある方法で AI システムを開発することをサポートするガイドラインを提供しています。
+
+- [Human-AI Guidelines](https://www.microsoft.com/en-us/haxtoolkit/ai-guidelines/)
+    - [Human-AI eXperiences (HAX) Toolkit](https://www.microsoft.com/en-us/haxtoolkit/) に含まれます。
+- [Conversational AI Guidelines](https://www.microsoft.com/en-us/research/publication/responsible-bots/)
+- [Inclusive Design Guidelines](https://www.microsoft.com/design/inclusive/)
+- [AI Fairness Checklist](https://www.microsoft.com/en-us/research/project/ai-fairness-checklist/)
+- [Datasheets for Datasets](https://www.microsoft.com/en-us/research/project/datasheets-for-datasets/)
+- [AI Security Guidelines](https://blogs.microsoft.com/on-the-issues/2019/12/06/ai-machine-learning-security/)
+- [Impact Assessment Guideline](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4ZzOI)
+
+
+
+
+
+###  4. Tools and processes (ツールとプロセス)
+
+Microsoft は Data Scientist などの技術者が機械学習のライフサイクル (=**MLOps**) において機械学習モデルを理解し、保護し、制御するためのさまざまなツールやプラットフォームを開発しています。
+
+#### Impact Assessment Template
+Impact Assessment Template は AI システムが人、組織、社会に与える潜在的な影響を特定し、軽減策や対応方法を洗い出すツールです。Impact Assessment Guideline を参考に使います。Microsoft のこれまでの知見が集約されています。
+
+:star: [Impact Assessment Template](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4ZHNX) <br />
+:star: [Impact Assessment Guideline](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4ZzOI)
+
+
+
+#### Responsible AI Toolbox
+:::caution
+ドキュメント更新中
+:::
+
+**Responsible AI Toolbox** は Microsoft が主導で開発している責任のある AI のツール群です。
+
+<img src={require('./images/raitoolbox.png').default} width="500" /><br/>
+
+
+モデルの説明性付与、誤差分析、データ可視化、反事仮想分析、因果推論の機能をより簡単にスムーズに利用するための機能を提供しています。大きく分類すると「モデルのデバッグ」と「意思決定への活用」の 2 つの機能を提供しています。
+
+<img src="https://raw.githubusercontent.com/microsoft/responsible-ai-widgets/main/img/responsible-ai-toolbox.png" />
+
+_**Responsible AI Toolbox がカバーする責任のある AI の機能**_ <br />
+_「モデルのデバッグ」は前半 3 つのステップ(**Identify(特定)**、**Diagnose (診断)**、**Mitigate (軽減)**)、「意思決定への活用」は最後のステップ (**Inform Action (アクションを提示)**) に該当する。_
+
+2 つのリポジトリから構成されています。<br/>
+
+:point_right: [Responsible AI Toolbox](https://github.com/microsoft/responsible-ai-toolbox) <br />
+モデルを評価し意思決定を行うための可視化ウィジェットである Responsible AI Dashboard が含まれます。
+
+:point_right: [Responsible AI Toolbox Mitigations](https://github.com/microsoft/responsible-ai-toolbox-mitigations) <br />
+データの均衡性の分析とデータ拡張を行う Python ライブラリです。
+
+<br />
+
+また、**Responsible AI Dashboard** は Responsible AI Toolbox が提供する責任のある AI を実現する統合されたダッシュボードです。
+
+<img src='https://techcommunity.microsoft.com/t5/image/serverpage/image-id/331674i5FBF69F2E05F85A3/image-size/medium?v=v2&px=400' width="300" /><br/>
+
+<br />
+
+:pencil2: **デモサイトはこちら → [AI Lab Project : Responsible AI dashboard](https://www.microsoft.com/en-us/ai/ai-lab-responsible-ai-dashboard)**
 
 <br/>
+
+#### その他ツール
+Responsible AI Toolbox に含まれていないツールも多数あります。ここでは一部を掲載します。
+
+:::note
+Microsoft が提供するツールの最新の情報は [責任ある AI のリソース](https://www.microsoft.com/ja-JP/ai/responsible-ai-resources) 、研究開発の取り組みは [Advancing AI trustworthiness: Updates on responsible AI research](https://www.microsoft.com/en-us/research/blog/advancing-ai-trustworthiness-updates-on-responsible-ai-research/) を参照ください。
+:::
+
+
+- [Interpret](https://github.com/interpretml/interpret) - EBM (交互作用項付き一般化加法モデル) などの解釈可能性の高いモデルアルゴリズムや、ブラックスモデルに説明性を付与する SHAP、LIME、Partial Dependence Plot などを含む Python ライブラリ。
+
+<br/>
+
+#### MLOps における Responsible AI
+こういった責任のある AI をサポートするさまざまなツールを Data Scientist が個人で使っていくだけでなく、MLOps の中でチーム・組織として確実に実装していくことも大事です。Responsible AI Dashboard は Azure Machine Learning との統合機能があり、MLOps の中で使っていくことができます。
+
+
+
+#### 参考資料
+- [責任のある AI とは (プレビュー)](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-responsible-ml)
+- [Azure Machine Learning の責任ある AI ダッシュボードを使用して AI システムを評価し、データ ドリブンの意思決定を行う (プレビュー)](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-responsible-ai-dashboard)
+
+<br/>
+
+
+## Microsoft 製品・サービスでの取り組み例
+
+### Transparency Note の公開
+[Transparency Note for Azure Cognitive Service for Language](https:/.microsoft.com/en-us/legal/cognitive-services/language-service/transparency-note) などの Transparency Note を公開し、AI システムの目的、能力、限界についてのコミュニケーションを支援し、マーケティングと技術文章のギャップを埋め、お客様が責任を持って AI を導入するために知っておくべき情報を積極的に伝えています。その他、Azure Cognitive Services 全般における責任のある AI のガイドラインは [Cognitive Services における AI の責任ある使用](https:/.microsoft.com/ja-jp/azure/cognitive-services/responsible-use-of-ai-overview) で確認できます。
+
+
+### Azure OpenAI
+
+:::caution
+ドキュメント作成中
+:::
+
+## 参考情報
+
+- [責任ある AI システム構築のためのマイクロソフトのフレームワーク (抄訳)](https://news.microsoft.com/ja-jp/2022/07/04/220704-microsofts-framework-for-building-ai-systems-responsibly/)
+- [顔認識に関する責任あるAIポリシーの変更とガイダンスについて (抄訳)](https://www.microsoft.com/ja-jp/events/azurebase/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/)
