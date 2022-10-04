@@ -151,41 +151,42 @@ Microsoft は Data Scientist などの技術者が機械学習のライフサイ
 #### Impact Assessment Template
 Impact Assessment Template は AI システムが人、組織、社会に与える潜在的な影響を特定し、軽減策や対応方法を洗い出すツールです。Impact Assessment Guideline を参考に使います。Microsoft のこれまでの知見が集約されています。
 
-:star: [Impact Assessment Template](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4ZHNX) <br />
-:star: [Impact Assessment Guideline](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4ZzOI)
+:star: **[Impact Assessment Template](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4ZHNX)** <br />
+:star: **[Impact Assessment Guideline](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4ZzOI)**
 
 
 
 #### Responsible AI Toolbox
-:::caution
-ドキュメント更新中
-:::
 
-**Responsible AI Toolbox** は Microsoft が主導で開発している責任のある AI のツール群です。
+Responsible AI Toolbox は Microsoft が主導で開発している責任のある AI のツール群です。
 
 <img src={require('./images/raitoolbox.png').default} width="500" /><br/>
 
+<br/>
 
-モデルの説明性付与、誤差分析、データ可視化、反事仮想分析、因果推論の機能をより簡単にスムーズに利用するための機能を提供しています。大きく分類すると「モデルのデバッグ」と「意思決定への活用」の 2 つの機能を提供しています。
+モデルの説明性付与、誤差分析、データ可視化、反事仮想分析、因果推論の機能をより簡単にスムーズに利用するための機能を提供しています。大きく分類すると 2 つの機能があります。
+
+- **モデルのデバッグ** : 機械学習モデルの評価を行い、責任のある AI の観点で問題がないか、どこに問題があるのかを確認し、軽減します。**Identify(特定)**、**Diagnose (診断)**、**Mitigate (軽減)** の 3 つのステップに該当します。
+- **意思決定への活用** : 機械学習モデルや因果推論を用いて、意思決定に役立てます。**Inform Action (アクションを提示)** のステップに該当します。
+
 
 <img src="https://raw.githubusercontent.com/microsoft/responsible-ai-widgets/main/img/responsible-ai-toolbox.png" />
 
-_**Responsible AI Toolbox がカバーする責任のある AI の機能**_ <br />
-_「モデルのデバッグ」は前半 3 つのステップ(**Identify(特定)**、**Diagnose (診断)**、**Mitigate (軽減)**)、「意思決定への活用」は最後のステップ (**Inform Action (アクションを提示)**) に該当する。_
 
 2 つのリポジトリから構成されています。<br/>
 
-:point_right: [Responsible AI Toolbox](https://github.com/microsoft/responsible-ai-toolbox) <br />
+:point_right: **[Responsible AI Toolbox](https://github.com/microsoft/responsible-ai-toolbox)** <br />
 モデルを評価し意思決定を行うための可視化ウィジェットである Responsible AI Dashboard が含まれます。
 
-:point_right: [Responsible AI Toolbox Mitigations](https://github.com/microsoft/responsible-ai-toolbox-mitigations) <br />
+:point_right: **[Responsible AI Toolbox Mitigations](https://github.com/microsoft/responsible-ai-toolbox-mitigations)** <br />
 データの均衡性の分析とデータ拡張を行う Python ライブラリです。
 
 <br />
 
 また、**Responsible AI Dashboard** は Responsible AI Toolbox が提供する責任のある AI を実現する統合されたダッシュボードです。責任のある AI の一連のプロセスを一気通貫で実行できます。
 
-<img src='https://techcommunity.microsoft.com/t5/image/serverpage/image-id/331674i5FBF69F2E05F85A3/image-size/medium?v=v2&px=400' width="300" /><br/>
+<img src={require('./images/raidashboard.png').default} width="500" /><br/>
+
 
 <br />
 
@@ -228,8 +229,5 @@ Microsoft が提供するツールの最新の情報は [責任ある AI のリ�
 :::caution
 ドキュメント作成中
 :::
-
-## 参考情報
-
-- [責任ある AI システム構築のためのマイクロソフトのフレームワーク (抄訳)](https://news.microsoft.com/ja-jp/2022/07/04/220704-microsofts-framework-for-building-ai-systems-responsibly/)
-- [顔認識に関する責任あるAIポリシーの変更とガイダンスについて (抄訳)](https://www.microsoft.com/ja-jp/events/azurebase/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/)
+#### 参考情報
+- [Azure OpenAI Service (Web サイト)](https://azure.microsoft.com/ja-jp/products/cognitive-services/openai-service/#get-started)
