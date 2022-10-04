@@ -83,6 +83,7 @@ const sidebars = {
       items:[
             'azureml/responsible-ai/rai-concept',
             'azureml/responsible-ai/rai-tech-debugging',
+            'azureml/responsible-ai/rai-tech-security-privacy'
       ]
     },
   ],
