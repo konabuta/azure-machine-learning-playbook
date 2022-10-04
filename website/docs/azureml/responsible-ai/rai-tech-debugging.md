@@ -47,7 +47,7 @@ Error Analysis では学習済みの機械学習モデルの誤差の大きい�
 
 ### 参考情報
 - [Error Analysis (Web ページ)](https://erroranalysis.ai/)
-- [ML モデルのエラーを評価する (プレビュー)s](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-error-analysis)
+- [ML モデルのエラーを評価する (プレビュー)](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-error-analysis)
 
 ---
 
