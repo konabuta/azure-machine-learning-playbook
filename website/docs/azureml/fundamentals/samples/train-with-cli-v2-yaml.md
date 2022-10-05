@@ -19,7 +19,7 @@ az ml job create --file train-model.yml
 
 ```yaml
 $schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
-code: model
+code: ../src/model
 command: >-
   python train.py --reg_rate ${{inputs.reg_rate}} --training_data ${{inputs.training_data}}
 inputs:
