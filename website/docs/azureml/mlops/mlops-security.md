@@ -1,6 +1,6 @@
 ---
 id: mlops-security
-title: MLOps におけるセキュリティ
+title: MLOps とセキュリティ
 
 ---
 
