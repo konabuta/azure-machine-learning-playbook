@@ -60,19 +60,34 @@ Microsoft は AI システムの開発および運用管理において、次の
 <br/>
 
 
-- **公平性 (Fairness)**
-    - AI システムは全ての人を公平に扱い、同じ属性・状況の人たちに対して異なる影響を与えることを回避する必要があります。
-- **信頼性と安全性 (Reliability & Safety)**
-    - AI システムは信頼性が高く安全である必要があります。設計されたとおりに動作し、新しい状況にも安全に対応できるようにすることが重要です。
-- **プライバシーとセキュリティ (Privacy & Security)**
-    - AI システムではデータを扱うためプライバシーとセキュリティの保護が必要です。
-- **包括性 (Inclusiveness)**
-    - AI システムに限らず技術は全ての人にもたらされるべきで、様々なニーズに対応していく必要があります。
-- **透明性 (Transparency)**
-    - AI システムが意思決定に利用される場面などでは、どのように AI システムが決定を行ったのかを理解することが重要です。
-- **アカウンタビリティ (Accountability)**
-    - AI システムを設計・構築・運用管理する人は、システムがどのように動作するかについて説明責任があります。
+**公平性 (Fairness)**<br/>
+AI システムは全ての人を公平に扱い、同じ属性・状況の人たちに対して異なる影響を与えることを回避する必要があります。
+- 例
+    - [Racial Bias in Healthcare Algorithm](https://www.nature.com/articles/d41586-019-03228-6)
+    - [Gender Bias in roles](https://www.bing.com/images/search?q=ceo&form=HDRSC3&first=1&tsc=ImageHoverTitle)
+**信頼性と安全性 (Reliability & Safety)**<br />
+AI システムは信頼性が高く安全である必要があります。設計されたとおりに動作し、新しい状況にも安全に対応できるようにすることが重要です。
+- 例
+    - [Driving to Safety](https://www.rand.org/pubs/research_reports/RR1478.html)
 
+**プライバシーとセキュリティ (Privacy & Security)** <br/>
+AI システムではデータを扱うためプライバシーとセキュリティの保護が必要です。
+- 例
+    - [How Target Figured Out A Teen Girl Was Pregnant Before Her Father Did](https://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/?sh=1826a54c6668)
+
+
+**包括性 (Inclusiveness)** <br/>
+AI システムに限らず技術は全ての人にもたらされるべきで、様々なニーズに対応していく必要があります。
+
+
+**透明性 (Transparency)** <br />
+AI システムが意思決定に利用される場面などでは、どのように AI システムが決定を行ったのかを理解することが重要です。
+
+
+**アカウンタビリティ (Accountability)** <br />
+AI システムを設計・構築・運用管理する人は、システムがどのように動作するかについて説明責任があります。
+- 例
+    - [UK Official Says It's Too Expensive to Delete All the Mugshots of Innocent People in Police Databases](https://gizmodo.com/uk-official-says-its-too-expensive-to-delete-all-the-mu-1825388626)
 
 この 6 つの原則は企業としてあるべき姿を定義はしていますが、実はそれだけでは不十分です。というのも原則だけでは現場での活用が進みません。また原則の解釈の仕方も人によってマチマチです。
 
