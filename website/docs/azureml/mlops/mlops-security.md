@@ -1,7 +1,6 @@
 ---
 id: mlops-security
 title: MLOps とセキュリティ
-
 ---
 
 本ページではセキュリティを考慮した MLOps (= DevSecOps) のベストプラクティスを紹介していきます。
