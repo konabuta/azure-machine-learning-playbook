@@ -1,11 +1,11 @@
 ---
 id: mlops-maturity-concept
-title : "コンセプト"
+title : "概要"
 ---
 
 本ページでは Microsoft が定義する MLOps 成熟度モデルの各レベルの概要について説明します。
 
-## MLOps 成熟度モデルとは？
+## MLOps 成熟度モデルとは
 
 MLOps 成熟度モデルは MLOps の原則と実践方法を明確にするために策定されました。このモデルを活用することで次の 2 点ができるようになります。
 
@@ -21,13 +21,16 @@ MLOps 成熟度モデルは MLOps の原則と実践方法を明確にするた�
 
  **Maturity Level**|**Training Process**|**Release Process**|**Integration into app**                                                    
 -------|-------|-------|--------
- Level 0 - No MLOps                        | Untracked, file is provided for handoff                                                                                | Manual, hand-off                                                                               | Manual, heavily DS driven                                                   
- Level 1 - DevOps no MLOps                 | Untracked, file is provided for handoff                                                                                | Manual, hand-off to SWE                                                                        | Manual, heavily DS driven, basic integration tests added                    
- Level 2 - Automated Training              | Tracked, run results and model artifacts are captured in a repeatable way                                              | Manual release, clean handoff process, managed by SWE team                                     | Manual, heavily DS driven, basic integration tests added                    
- Level 3 - Automated Model Deployment      | Tracked, run results and model artifacts are captured in a repeatable way                                              | Automated, CI/CD pipeline set up, everything is version controlled                             | Semi-automated, unit and integration tests added, still needs human signoff 
- Level 4 - Full MLOps Automated Retraining | Tracked, run results and model artifacts are captured in a repeatable way, retraining set up based on metrics from app | Automated, CI/CD pipeline set up, everything is version controlled, A/B testing has been added | Semi-automated, unit and integration tests added, may need human signoff    
+ Level 0 - No MLOps                        | 追跡されない。アセットは手動で共有される。| 手動で実行される。| 主に Data Scientist によって手動で実行される。                                                  
+ Level 1 - DevOps no MLOps                 | 追跡されない。アセットは手動で共有される。| 主に Software Engineer によって手動で実行される。| 主に Data Scientist によって手動で実行される。基本的なテストが導入される。
+ Level 2 - Automated Training              | 追跡される。アセットは再現可能な方法で取得される。| 主に Software Engineer によって管理されて実行される。| 主に Data Scientist によって手動で実行される。基本的なテストが導入される。
+ Level 3 - Automated Model Deployment      | 追跡される。アセットは再現可能な方法で取得される。| CI/CD パイプラインが構築されて自動化される。バージョン管理が導入される。| 多くの処理が自動で実行されるがまだ手動で実行されるものもある。テストが導入される。
+ Level 4 - Full MLOps Automated Retraining | 追跡される。アセットは再現可能な方法で取得される。推論システムからのメトリックに基づき再学習が実行される。 | CI/CD パイプラインが構築されて自動化される。バージョン管理が導入される。A/B テストが導入される。 | 多くの処理が自動化されて、最小限の処理のみ手動で実行される。テストが実行される。  
 
  
+
+次のセクションからは各レベルにおける取り組み内容や課題、また、次のレベルにステップにステップアップするために必要なことを説明します。
+
 ---
 
 
