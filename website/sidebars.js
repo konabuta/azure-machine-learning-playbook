@@ -73,17 +73,17 @@ const sidebars = {
             'azureml/mlops/mlops-maturity-azureml'
           ]
         },
-        {
-          type: 'category',
-          label: 'MLOps の技術',
-          link:{type: 'generated-index'},
-          collapsed: true,
-          items:[
-            'azureml/mlops/mlops-dev-method',
-            'azureml/mlops/mlops-architecture'
-          ]
-        },
-        'azureml/mlops/mlops-security',
+        // {
+        //   type: 'category',
+        //   label: 'MLOps の技術',
+        //   link:{type: 'generated-index'},
+        //   collapsed: true,
+        //   items:[
+        //     'azureml/mlops/mlops-dev-method',
+        //     'azureml/mlops/mlops-architecture'
+        //   ]
+        // },
+        // 'azureml/mlops/mlops-security',
       ]
     },
     // {
