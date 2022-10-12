@@ -86,18 +86,6 @@ MLOps は単に技術を指しているのではなく、技術を用いたビ�
 
 ---
 
-## 機械学習ライフサイクルのループ
-
-
-## その他 
-### 可観測性 (Observability)
-機械学習ライフサイクルでは大きく分けて 2 種類の可観測性を考える。
-
-#### For Inner & Middle Loop
-#### For Outer Loop
-#### ツール
-<!-- ツールは Inner、Middle、Outer で被るものがあるのでここでまとめて書く方針 -->
-
 ## 参考情報
 - [Step-by-Step MLOps and Microsoft Products](https://speakerdeck.com/shisyu_gaku/step-by-step-mlops-and-microsoft-products)
 - [Code with Engineering](https://microsoft.github.io/code-with-engineering-playbook/)
