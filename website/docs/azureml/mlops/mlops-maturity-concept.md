@@ -35,7 +35,7 @@ MLOps 成熟度モデルは MLOps の原則と実践方法を明確にするた�
 
 
 ## Level 0 : No MLOps
-この段階は機械学習プロジェクトでは PoC や実験フェーズと呼ばれることが多いです。Data Scientist は手動で各データソースからデータを取得し、モデルを構築し評価するという作業を探索的にインタラクティブに行います。個人単位や少人数の Data Scientist が主導します。
+この段階は機械学習プロジェクトでは PoC や実験フェーズと呼ばれます。Data Scientist は手動で各データソースからデータを取得し、モデルを構築し評価するという作業を探索的にインタラクティブに行います。個人単位や少人数の Data Scientist が主導します。
 
 <img src={require('./images/level0.png').default} width="1000" /><br/>
 
