@@ -7,9 +7,11 @@ title: "MLOps とは"
 
 ## MLOps の定義
 
-MLOps は Machine Learning Operations の略称で、**DevOps の原則と実践に基づいて、機械学習ライフサイクルを管理する手法・概念** を指します。企業は MLOps を導入することで責任のある形でスケーラブルに機械学習のワークロードを実施することができるようになります。
+MLOps は Machine Learning Operations の略称で、「**DevOps の原則と実践に基づいて、機械学習ライフサイクルを管理する手法・概念**」を指します。企業は MLOps を導入することで責任のある形でスケーラブルに機械学習のワークロードを実施することができるようになります。
 
-
+### 参考情報
+- [機械学習の運用 (MLOps)](https://azure.microsoft.com/ja-jp/products/machine-learning/mlops/)
+- [DevOps とは](https://learn.microsoft.com/ja-jp/devops/what-is-devops)
 
 ## 機械学習プロジェクトにおける課題
 
