@@ -7,9 +7,11 @@ title: "MLOps とは"
 
 ## MLOps の定義
 
-MLOps は Machine Learning Operations の略称で、**DevOps の原則と実践に基づいて、機械学習ライフサイクルを管理する手法・概念** を指します。企業は MLOps を導入することで責任のある形でスケーラブルに機械学習のワークロードを実施することができるようになります。
+MLOps は Machine Learning Operations の略称で、「**DevOps の原則と実践に基づいて、機械学習ライフサイクルを管理する手法・概念**」を指します。企業は MLOps を導入することで責任のある形でスケーラブルに機械学習のワークロードを実施することができるようになります。
 
-
+### 参考情報
+- [機械学習の運用 (MLOps)](https://azure.microsoft.com/ja-jp/products/machine-learning/mlops/)
+- [DevOps とは](https://learn.microsoft.com/ja-jp/devops/what-is-devops)
 
 ## 機械学習プロジェクトにおける課題
 
@@ -30,7 +32,7 @@ MLOps は Machine Learning Operations の略称で、**DevOps の原則と実践
 - 手動で実行されるためライフサイクルの実行が遅くなる
 
 ### 変化の対応
-- データの増加、データの特性の変化に対応できるモデルの精度が下がる
+- データの増加、データの特性の変化に対応できずモデルの精度が下がる
 - 要件の変化に対応できずモデルの精度が下がる
 
 ### リソース管理
@@ -69,7 +71,7 @@ MLOps は Machine Learning Operations の略称で、**DevOps の原則と実践
 MLOps は単に技術を指しているのではなく、技術を用いたビジネスの変革です。そのため次の 3 つの要素が必要になります。
 
 ### :blush: People
-- チームで共同で開発を進め、他人が引き継ぐことを前提として品質確保を継続的に行う体制構築と文化情勢
+- チームで共同で開発を進め、他人が引き継ぐことを前提として品質確保を継続的に行う体制構築と文化醸成
 - 無駄なくスキルをビジネス価値へと変換するために必要な体制・技術へ金銭的/人的投資
 
 ### :recycle: Process
@@ -83,18 +85,6 @@ MLOps は単に技術を指しているのではなく、技術を用いたビ�
 - 必要に応じて可及的かつ安全に本番への機能投入を可能とするシステム
 
 ---
-
-## 機械学習ライフサイクルのループ
-
-
-## その他 
-### 可観測性 (Observability)
-機械学習ライフサイクルでは大きく分けて 2 種類の可観測性を考える。
-
-#### For Inner & Middle Loop
-#### For Outer Loop
-#### ツール
-<!-- ツールは Inner、Middle、Outer で被るものがあるのでここでまとめて書く方針 -->
 
 ## 参考情報
 - [Step-by-Step MLOps and Microsoft Products](https://speakerdeck.com/shisyu_gaku/step-by-step-mlops-and-microsoft-products)

@@ -62,7 +62,7 @@ const sidebars = {
       collapsed: false,
       items:[
         'azureml/mlops/mlops-concept',
-        'azureml/mlops/ml-lifecycle',
+        // 'azureml/mlops/ml-lifecycle',
         {
           type: 'category',
           label: 'MLOps 成熟度',
