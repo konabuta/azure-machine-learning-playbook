@@ -36,7 +36,7 @@ Azure Machine Learning の概要は次のページを参照ください。
 
 ## Level 1 : DevOps no MLOops
 
-チーム・組織での標準的なコラボレーションができる機械学習環境として Azure Machine Learning を導入します。`Data` の機能を利用して透過的にさまざまなデータソースにアクセスし、`Compute Instance` で探索的にモデル学習を行います。モデル学習後は `Model` でモデルを管理し、`Managed Online Endpoint` など Azure Machine Learning が提供する推論環境にモデルをデプロイします。
+この段階では、チーム・組織での標準的なコラボレーションができる機械学習環境として Azure Machine Learning を導入します。`Data` の機能を利用して透過的にさまざまなデータソースにアクセスし、`Compute Instance` で探索的にモデル学習を行います。モデル学習後は `Model` でモデルを管理し、`Managed Online Endpoint` など Azure Machine Learning が提供する推論環境にモデルをデプロイします。
 
 コード管理のツールとして GitHub を利用し、Azure Machine Learning で利用する学習コードや推論コードを管理します。また、GitHub Actions を利用して pull request ごとにテストを自動化する仕組みを導入します。
 
@@ -48,6 +48,9 @@ Azure Machine Learning の概要は次のページを参照ください。
 ---
 
 ## Level 2 : Automated Training
+この段階では、モデル学習が自動化されています。Azure Machine Learning の `Pipeline` を利用して、モデル学習の複雑なワークフローを管理し、再現性を確保しています。ログ、パラメータ、メトリックを自動的に取得するために `Job` を利用した学習方式を導入します。Job は Azure Machine Learning CLI v2 と設定事項が宣言的に記載された YAML ファイルを利用して実行されます。Python ライブラリなどのソフトウェア環境は `Environment` を利用し、モデル学習や推論環境の再現性を確保します。
+
+また、モデル学習をトリガー実行 & スケジュール実行するための仕組みとして GitHub Actions を利用します。
 
 <img src={require('./images/level2-azureml.png').default} width="1000" /><br/>
 
