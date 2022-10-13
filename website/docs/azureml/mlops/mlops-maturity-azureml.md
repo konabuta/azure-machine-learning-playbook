@@ -20,6 +20,7 @@ Azure Machine Learning の概要は次のページを参照ください。
 **統合開発環境** : Visual Studio Code <br/>
 **コード管理** : GitHub <br/>
 **パイプライン** : GitHub Actions <br/>
+**責任のある AI** : Responsible AI Toolbox <br/>
 
 
 ---
@@ -63,6 +64,9 @@ Azure Machine Learning の概要は次のページを参照ください。
 
 <img src={require('./images/level3-azureml.png').default} width="1000" /><br/>
 
+### 参考情報
+- [Azure Machine Learning エンドポイントとは](https://learn.microsoft.com/ja-JP/azure/machine-learning/concept-endpoints)
+- [Resposible AI Toolbox](https://github.com/microsoft/responsible-ai-toolbox)
 ---
 
 ## Level 4 : Full MLOps Automated Retraining
@@ -70,4 +74,7 @@ Azure Machine Learning の概要は次のページを参照ください。
 
 <img src={require('./images/level4-azureml.png').default} width="1000" /><br/>
 
+
+### 参考情報
+- [ブルーグリーンデプロイメント](https://learn.microsoft.com/ja-JP/azure/machine-learning/concept-endpoints#native-bluegreen-deployment)
 ---
