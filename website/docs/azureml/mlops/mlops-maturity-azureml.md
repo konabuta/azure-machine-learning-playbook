@@ -48,7 +48,7 @@ Azure Machine Learning の概要は次のページを参照ください。
 ---
 
 ## Level 2 : Automated Training
-この段階では、モデル学習が自動化されています。Azure Machine Learning の `Pipeline` を利用して、モデル学習の複雑なワークフローを管理し、再現性を確保しています。ログ、パラメータ、メトリックを自動的に取得するために `Job` を利用した学習方式を導入します。Job は Azure Machine Learning CLI v2 と設定事項が宣言的に記載された YAML ファイルを利用して実行されます。Python ライブラリなどのソフトウェア環境は `Environment` を利用し、モデル学習や推論環境の再現性を確保します。
+この段階では、モデル学習が自動化します。Azure Machine Learning の `Pipeline` を利用して、モデル学習の複雑なワークフローを管理し、再現性を確保しています。ログ、パラメータ、メトリックを自動的に取得するために `Job` を利用した学習方式を導入します。Job は Azure Machine Learning CLI v2 と設定事項が宣言的に記載された YAML ファイルを利用して実行されます。Python ライブラリなどのソフトウェア環境は `Environment` を利用し、モデル学習や推論環境の再現性を確保します。
 
 また、モデル学習をトリガー実行 & スケジュール実行するための仕組みとして GitHub Actions を利用します。
 
@@ -57,12 +57,16 @@ Azure Machine Learning の概要は次のページを参照ください。
 ---
 
 ## Level 3 : Automated Model Deployment
+この段階では、デプロイメントが自動化します。`Managed Online Endpoint` や `Batch Endpoint` を推論環境として利用します。GitHub Environment を利用し、テスト環境での検証を終えてから本番環境にデプロイする際の承認ゲートを設けるます。
+
+また、本番展開するモデルに関しては Responsible AI を考慮しモデルの説明性・透明性を確保するために、`Responsible AI Toolbox` を用います。
 
 <img src={require('./images/level3-azureml.png').default} width="1000" /><br/>
 
 ---
 
 ## Level 4 : Full MLOps Automated Retraining
+この段階では、モデルを再実験・再学習する仕組みを導入します。推論環境のログやメトリックは Azure Monitor で統合的に取り込み分析します。人間の判断、もしくはメトリックに基づいて自動的にモデルの再実験・再学習をトリガーします。モデル更新の際は、ユーザーへの影響を最小限に抑えるために、ブルーグリーンデプロイメントを利用して、新しいモデルに対するトラフィックを制御します。s
 
 <img src={require('./images/level4-azureml.png').default} width="1000" /><br/>
 
