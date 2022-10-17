@@ -12,10 +12,19 @@ FastTrack for Azure (aka FTA) では、Azure の様々なサービス・ワー�
 FastTrack for Azure - AI & ML の Japan で提供されている Live session の概要です。なおセッションは参加者とインタラクティブに実施しており、基本的に録画はしていません。個社別の開催はご相談ください。
 
 :::caution
-
 アジェンダや内容は予告なしに変更される場合があります。
-
 :::
+
+## 提供しているセッション一覧
+
+現在、次の 4 つのセッションを提供しています。詳細はリンク先の記載をご確認ください。
+
+:star: [Azure Machine Learning 基礎編](#azure-machine-learning-基礎編)<br/>
+:star: [Azure Machine Learning システム構築 & 運用編](#azure-machine-learning-システム構築--運用編)<br/>
+:star: [Responsible AI の概要と実装](#responsible-ai-の概要と実装)<br/>
+:star: [MLOps の概要と実装](#mlops-の概要と実装)<br/>
+
+---
 
 ## Azure Machine Learning 基礎編
 
