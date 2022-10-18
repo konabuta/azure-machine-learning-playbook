@@ -15,7 +15,7 @@ MLOps は Machine Learning Operations の略称で、「**DevOps の原則と実
 
 ## 機械学習のライフサイクル
 
-Azure Machine Learning は機械学習ライフサイクル (MLOps) を構成する 3 つの Loop (Protopyping、Training, Operationalizing) の各要素やループ間が高速に回ることを意識しています。
+Microsoft は機械学習ライフサイクルを 3 つの Loop (Prototyping、Training, Operationalizing) で定義しています。MLOps はこの 3 つの Loop 全てが対象です。
 
 <img src={require('./images/ml-lifecycle.png').default} width="1000" /><br />
 
