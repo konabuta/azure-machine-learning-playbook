@@ -43,9 +43,9 @@ Azure Machine Learning (aka Azure ML) は Azure が提供する機械学習の�
 
 ### 機械学習のライフサイクル
 
-Azure Machine Learning は機械学習ライフサイクル (MLOps) を構成する 3 つの Loop (Inner、Middle, Outer) の各要素やループ間が高速に回ることを意識しています。
+Azure Machine Learning は機械学習ライフサイクル (MLOps) を構成する 3 つの Loop (Prototyping、Training, Operationalizing) の各要素やループ間が高速に回ることを意識しています。
 
-<img src={require('./images/ml-lifecycle.png').default} width="500" /><br />
+<img src={require('./images/ml-lifecycle.png').default} width="1000" /><br />
 
 
 
