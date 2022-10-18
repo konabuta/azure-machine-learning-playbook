@@ -13,6 +13,15 @@ MLOps は Machine Learning Operations の略称で、「**DevOps の原則と実
 - [機械学習の運用 (MLOps)](https://azure.microsoft.com/ja-jp/products/machine-learning/mlops/)
 - [DevOps とは](https://learn.microsoft.com/ja-jp/devops/what-is-devops)
 
+## 機械学習のライフサイクル
+
+Azure Machine Learning は機械学習ライフサイクル (MLOps) を構成する 3 つの Loop (Inner、Middle, Outer) の各要素やループ間が高速に回ることを意識しsています。
+
+<img src={require('./images/ml-lifecycle.png').default} width="1000" /><br />
+
+
+---
+
 ## 機械学習プロジェクトにおける課題
 
 企業の中で機械学習の取り組みが進むにつれて、下記の理由から機械学習のライフサイクルを実行や運用管理が難しくなります。
