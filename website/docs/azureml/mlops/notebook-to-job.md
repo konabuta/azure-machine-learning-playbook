@@ -67,6 +67,16 @@ Azure Machine Learning の Job を利用して実行します。必要なもの�
 - Azure CLI 実行環境
     - 実行環境に Azure CLI の `ml` 拡張機能をインストールします。
 
+次にコマンドを実行します。
+
+
+```bash
+az ml job create -f train-job.yml
+```
+
+
+結果は Azure Machine Learning studio の Job の画面から確認することができます。
+
 
 ### 参考情報
 - [Azure CLI (v2) のインストールと設定](https://learn.microsoft.com/ja-jp/azure/machine-learning/how-to-configure-cli?tabs=public)
