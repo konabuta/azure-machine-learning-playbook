@@ -13,7 +13,7 @@ Prototyping Loop から Training Loop に遷移する際、Data Scientist の成
 
 1. [Notebook のリファクタリング](#notebook-のリファクタリング)
 1. [アセットの疎結合](#アセットの疎結合)
-    - データアセット    
+    - データ   
     - 環境
     - 計算環境
 1. [ジョブの作成](#ジョブの作成)
@@ -39,7 +39,7 @@ Prototyping Loop から Training Loop に遷移する際、Data Scientist の成
 
 コードの中で利用される次のアセットは Azure Machine Learning のアセット管理の機能に置き換えることで、チームで共有し開発・運用管理の効率性を上げます。
 
-- データアセット
+- データ
     - モデル学習で用いるデータを管理します。
     - Azure Machine Learning の `Data` を利用します。
 - 環境
