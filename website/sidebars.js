@@ -73,6 +73,7 @@ const sidebars = {
             'azureml/mlops/mlops-maturity-azureml'
           ]
         },
+        'azureml/mlops/notebook-to-job'
         // {
         //   type: 'category',
         //   label: 'MLOps の技術',
