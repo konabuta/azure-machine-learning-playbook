@@ -67,6 +67,7 @@ Notebook は属人化していることが多いため、次のような取り�
 - モデル学習で用いるデータを管理します。
 - Azure Machine Learning の `Data` を利用します。
     - データが格納されている Azure Storage へのパスを指定します。
+- Python スクリプトの実行時にデータファイルのパスを引数に設定できるようにコードを編集します。
 
 **計算環境**<br/>
 - 計算環境を管理します。
@@ -96,7 +97,7 @@ Azure Machine Learning の Job を利用して実行します。必要なもの�
 
 **YAML ファイル**<br/>
 各アセットの情報を記載します。
-- Python スクリプトのパス
+- コード : Python スクリプトのパス
 - Azure Machine Learning のアセット
     - `Data` : 名前、バージョン、アクセス方法
     - `Environment` : 名前、バージョン
