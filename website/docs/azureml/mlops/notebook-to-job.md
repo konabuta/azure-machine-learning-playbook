@@ -6,28 +6,30 @@ title: "Notebook の Job への変換"
 Prototyping Loop から Training Loop に遷移する際、Data Scientist の成果物である Notebook を Azure Machine Learning の Job で実行する形態に変更することが推奨されます。
 本ページでは Notebook を Azure Machine Learning Job で実行するためのステップを説明します。
 
+:::note
+機械学習ライフサイクルにおける Loop の考え方は [MLOps とは - 機械学習のライフサイクル"](./mlops-concept#機械学習のライフサイクル) のセクションを確認してください。
+:::
 
 ---
 
 ## 全体の流れ
 
-次の流れで Notebook を変換していきます。
+Notebook で試行錯誤した成果物を Azure Machine Learning の Job で実行する形態に変更するまでの大まかな流れを示します。
 
 1. [Notebook のリファクタリング](#1-notebook-のリファクタリング)
+    - Notebook をリファクタリングし、他の人に共有しメンテナンスできる状態にします。
 1. [アセットの疎結合](#2-アセットの疎結合)
-    - データ   
-    - 計算環境
-    - 環境
+    - `データ`、`計算環境`、`環境` といったアセットの部分を Notebook やコードから切り離して Azure Machine Learning で管理するようにします。
 1. [ジョブの作成](#3-ジョブの作成)
+    - YAML ファイルを作成し、Azure Machine Learning の Job を実行します。
 
+<br/>
+Notebook は Python　スクリプトで変更され、GitHub で管理します。また関連するアセットは Azure Machine Learning Workspace/Registry で管理することで、チームに共有したり、可観測性・再現性を向上させます。
+<br/>
 
 
 <br/>
 <img src={require('./images/notebook-to-job-abstract.png').default} width="1000" />
-<br />
-<br/>
-Notebook は Python Script の変更され、GitHub で管理されます。また関連するアセットは Azure Machine Learning で管理することで、チームに共有することができたり、可観測性・再現性を確保することができます。
-
 <br/>
 
 ---
@@ -57,7 +59,7 @@ Notebook は属人化していることが多いため、次のような取り�
 
 <br/>
 
-
+---
 
 ## 2. アセットの疎結合
 
@@ -89,6 +91,7 @@ Notebook は属人化していることが多いため、次のような取り�
 - [Fundamentals - リソース、アセット](../fundamentals/azureml-resources-assets)
 
 
+---
 
 ## 3. ジョブの作成
 
@@ -139,6 +142,8 @@ az ml job create -f train-job.yml
 
 
 ### 参考情報
+- [ジョブ作成 UI (プレビュー) を使用してトレーニング ジョブを作成する](https://learn.microsoft.com/ja-JP/azure/machine-learning/how-to-train-with-ui)
+- [スタジオでジョブを監視および分析する](https://learn.microsoft.com/ja-jp/azure/machine-learning/how-to-track-monitor-analyze-runs)
 - [Azure CLI (v2) のインストールと設定](https://learn.microsoft.com/ja-jp/azure/machine-learning/how-to-configure-cli?tabs=public)
 
 ---
