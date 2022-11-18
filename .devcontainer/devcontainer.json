@@ -1,7 +1,6 @@
 //devcontainer json from docusaurus github repo
 {
 	"name": "Docusaurus Dev Container",
-	"build": {"dockerfile": "Dockerfile"},
 	"image": "mcr.microsoft.com/vscode/devcontainers/typescript-node:16-bullseye",
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash"
