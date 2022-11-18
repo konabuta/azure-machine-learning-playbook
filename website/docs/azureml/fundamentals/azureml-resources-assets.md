@@ -81,6 +81,7 @@ Azure Storage へのセキュアな接続情報を管理します。v2 でサポ
 パイプラインを構成する 1 つのステップ(処理)をパッケージ化したものです。ユーザーは任意のコンポーネントを作ることができます。
 
 <img src={require('./images/component.png').default} width="800" /><br />
+
 ---
 
 
