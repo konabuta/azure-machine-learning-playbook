@@ -24,7 +24,7 @@ Managed Online Endpoint は Azure Machine Learning で管理される独自の�
 
 一方で Kubernetes Online Endpoint や Kubernetes Batch Endpoint は Kubernetes を計算環境としており、
 
-|          |Managed/Kubernetes Online Endpoint |Managed/Kubernetes Batch Endpoint |
+|          |Managed/Kubernetes Online Endpoint |Batch Endpoint (Managed & Kubernetes)|
 |---------|---------|---------|
 |用途|リアルタイム推論|バッチ推論|
 |方式|Rest API|Rest API, Job|
