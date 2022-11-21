@@ -48,6 +48,7 @@ Azure Machine Learning v2 では Azure SQL Database などの Database 系のサ
 - Azure Data Lake Storage Gen2 の利用
     - 階層型ストレージの Azure Data Lake Storage Gen2 を利用することでファイル編集速度が向上する場合有り。
 
+---
 
 ### 参考情報
 - [Azure Data Lake Storage Gen2 の階層型名前空間 - 階層型名前空間の利点](https://learn.microsoft.com/ja-jp/azure/storage/blobs/data-lake-storage-namespace#the-benefits-of-a-hierarchical-namespac)
