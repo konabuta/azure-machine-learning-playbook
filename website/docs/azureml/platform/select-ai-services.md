@@ -44,6 +44,14 @@ Azure Databricks は Apache Spark をベースにした統合的な分析プラ�
 
 Azure Data Science VM (aka DSVM) は Azure VM をベースとし、データ分析、AI・機械学習でよく使用されるツールやライブラリが予めインストール・構築された VM 環境になります。CPU だけなく、GPU ドライバがインストール済みの GPU の VM も選択することができます。OS は Windows ベースのものと Linux ベースのものを用意しています。
 
+:::note
+Azure Machine Learning の Compute Instance を代替するクライアント環境として 
+、自由度の高い Azure Data Science VM を利用することがあります。
+:::
+
+### 参考情報
+- [Data Science Virtual Machines](https://azure.microsoft.com/ja-jp/products/virtual-machines/data-science-virtual-machines/#product-overview)
+
 
 ## Azure Machine Learning と Azure Databricks
 
