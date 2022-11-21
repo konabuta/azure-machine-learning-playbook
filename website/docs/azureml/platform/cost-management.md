@@ -12,7 +12,7 @@ Azure Machine Learning は業務用アプリケーションのような定常的
 
 |サービス名  |コストの対象|
 |---------|---------|
-|Azure Machine Learning Workspace|マネージドな計算リソース (後述) に対してコストが発生|
+|Azure Machine Learning Workspace|[マネージドな計算リソース](#マネージドな計算リソースのコスト) に対してコストが発生|
 |Azure Key Vault|シークレットの操作|
 |Azure Storage|学習データ、ログの保持、操作|
 |Azure Container Registry|Docker Image の保持、ビルド操作|
