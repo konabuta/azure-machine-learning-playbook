@@ -39,7 +39,7 @@ Azure Machine Learning のマネージドな計算環境の Compute Instance と
 
 #### Compute Cluster
 
-Compute Clusters は**起動中のみコスト**が発生します。
+Compute Cluster は**起動中のみコスト**が発生します。
 
 <コスト対象リソース>
 - VM

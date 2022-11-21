@@ -31,7 +31,7 @@ Azure Machine Learning も同様に Azure Monitor を用いて監視の機能を
 
 ---
 ## ネットワークの監視
-[外部へのインターネット通信の必要性](./network-security#azure-外部へのインターネット通信の必要性) にあるように、Data Scientist はインターネット上にあるさまざまなコンテンツを利用します。Hub 構成で Azure Firewall の利用した場合、通信ログが一元的に取得できるため、Azure Machine Learning を利用しているユーザーがアクセス履歴を分析し、ネットワーク制御の設定に役立てることができます。
+[外部へのインターネット通信の必要性](./network-security#azure-外部へのインターネット通信の必要性) にあるように、Data Scientist はインターネット上にあるさまざまなコンテンツを利用します。Hub 構成で Azure Firewall の利用した場合、通信ログが一元的に取得できるため、ユーザのアクセス履歴を分析し、ネットワーク制御の設定に役立てることができます。
 
 Azure Firewall の監視用のダッシュボード (Workbook) が公開されているのでご活用ください。
 
