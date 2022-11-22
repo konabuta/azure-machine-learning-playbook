@@ -33,3 +33,4 @@ GDPR などの地域の法令の関係でデータの移動 (EU から Japan etc
 ## 参考情報
 - [Azure Machine Learning 環境の整理とセットアップ](https://docs.microsoft.com/ja-JP/azure/cloud-adoption-framework/ready/azure-best-practices/ai-machine-learning-resource-organization)
 - [ワークスペースの設定方法](https://docs.microsoft.com/ja-JP/azure/cloud-adoption-framework/innovate/best-practices/set-up-ml-workspaces)
+- [MLOps 向けの Azure Machine Learning レジストリ (プレビュー)](https://learn.microsoft.com/ja-JP/azure/machine-learning/concept-machine-learning-registries-mlops)
