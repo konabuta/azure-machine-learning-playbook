@@ -5,14 +5,14 @@ title : "責任のある AI の概要"
 
 
 # 責任のある AI 概要
-本モジュールでは 責任のある AI について Microsoft の取り組みを踏まえながら説明をしてきます。
+本ページでは 責任のある AI について Microsoft の取り組みを踏まえながら説明します。
 
 
 ## 背景
 
 AI の技術が急速に進化しています。AI が人間に近いような能力を保持したり動作をすることや、社会的影響も大きいことから AI システム全体の透明性に対するニーズが高まっています。透明性が無い AI システムはステークホルダーの信頼を失い、AI の社会実装を妨げる一つの大きな要因となります。
 
-しかしながら、責任のある AI はまだ十分に浸透しているとは言えません。AI システムのプライバイシーの懸念、誤動作、副作用などの課題に対して、誰が責任を取るのか、どのように対処するのかがルール化されていないことがあります。本ドキュメントは、責任のある AI の概念や技術について説明し、皆様の人間中心で信頼された透明性の高い AI システムの構築・運用管理の手助けとなることを目的としています。
+しかしながら、責任のある形での AI の開発や運用管理はまだ十分に浸透しているとは言えません。AI システムのプライバイシーの懸念、誤動作、副作用などの課題に対して、誰が責任を取るのか、どのように対処するのかがルール化されていないことが多いです。本ドキュメントは、責任のある AI の概念や技術について説明し、人間中心で信頼された透明性の高い AI システムの構築・運用管理の手助けとなることを目的としています。
 
 _"The more powerful the tool, the greater the benefit or damage it can cause ... Technology innovation is not going to slow down. The work to manage it needs to speed up." Brad Smith, President and Chief Legal Officer, Microsoft_
 
@@ -60,19 +60,41 @@ Microsoft は AI システムの開発および運用管理において、次の
 <br/>
 
 
-- **公平性 (Fairness)**
-    - AI システムは全ての人を公平に扱い、同じ属性・状況の人たちに対して異なる影響を与えることを回避する必要があります。
-- **信頼性と安全性 (Reliability & Safety)**
-    - AI システムは信頼性が高く安全である必要があります。設計されたとおりに動作し、新しい状況にも安全に対応できるようにすることが重要です。
-- **プライバシーとセキュリティ (Privacy & Security)**
-    - AI システムではデータを扱うためプライバシーとセキュリティの保護が必要です。
-- **包括性 (Inclusiveness)**
-    - AI システムに限らず技術は全ての人にもたらされるべきで、様々なニーズに対応していく必要があります。
-- **透明性 (Transparency)**
-    - AI システムが意思決定に利用される場面などでは、どのように AI システムが決定を行ったのかを理解することが重要です。
-- **アカウンタビリティ (Accountability)**
-    - AI システムを設計・構築・運用管理する人は、システムがどのように動作するかについて説明責任があります。
+**公平性 (Fairness)**<br/>
+AI システムは全ての人を公平に扱い、同じ属性・状況の人たちに対して異なる影響を与えることを回避する必要があります。
+- 例
+    - [Racial Bias in Healthcare Algorithm](https://www.nature.com/articles/d41586-019-03228-6)
+    - [Gender Bias in roles](https://www.bing.com/images/search?q=ceo&form=HDRSC3&first=1&tsc=ImageHoverTitle)
 
+**信頼性と安全性 (Reliability & Safety)**<br/>
+AI システムは信頼性が高く安全である必要があります。設計されたとおりに動作し、新しい状況にも安全に対応できるようにすることが重要です。
+- 例
+    - [Driving to Safety](https://www.rand.org/pubs/research_reports/RR1478.html)
+
+**プライバシーとセキュリティ (Privacy & Security)** <br/>
+AI システムではデータを扱うためプライバシーとセキュリティの保護が必要です。
+- 例
+    - [How Target Figured Out A Teen Girl Was Pregnant Before Her Father Did](https://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/?sh=1826a54c6668)
+
+
+**包括性 (Inclusiveness)** <br/>
+AI システムの利点が全ての人にもたらされるべきで、様々なニーズに対応していく必要があります。
+
+<br/>
+
+> 上記のベースとなる基本原則が**透明性**と**アカウンタビリティ**です。
+
+<br/>
+
+
+**透明性 (Transparency)** <br />
+AI システムが人の地位に大きく影響する意思決定に利用される場面などでは、どのように AI システムが決定を行ったのかを理解することが重要です。
+
+
+**アカウンタビリティ (Accountability)** <br />
+AI システムを設計・構築・運用管理する人は、システムがどのように動作するかについて説明責任があります。
+- 例
+    - [UK Official Says It's Too Expensive to Delete All the Mugshots of Innocent People in Police Databases](https://gizmodo.com/uk-official-says-its-too-expensive-to-delete-all-the-mu-1825388626)
 
 この 6 つの原則は企業としてあるべき姿を定義はしていますが、実はそれだけでは不十分です。というのも原則だけでは現場での活用が進みません。また原則の解釈の仕方も人によってマチマチです。
 
@@ -81,7 +103,7 @@ Microsoft は AI システムの開発および運用管理において、次の
 
 ## 責任のある AI の実践
 
-これらの 6 つの原則をベースに、設計フェーズから責任のある AI が考慮された AI システムが統制の効いたガバナンスの元に実装されるために Microsoft が社内外に公開している取り組みを紹介します。
+これらの 6 つの原則をベースに、設計フェーズから責任のある AI が考慮された AI システムを構築・実装するために Microsoft 社内で実践し、社外に共有してる取り組みを紹介します。
 
 
 <img
@@ -112,7 +134,7 @@ Microsoft は Hub and Spokes モデルでガバナンスの体制を構築して
 
 ### 2. Rules (ルール)
 #### Responsible AI Standard
-2022年 Microsoft は [Responsible AI Standard v2](https://blogs.microsoft.com/wp-content/uploads/prod/sites/5/2022/06/Microsoft-Responsible-AI-Standard-v2-General-Requirements-3.pdf) を社外に公開しました。元々は Microsoft 社内で活用されていたものです。これは責任のある形で AI システムの開発運用の基準となるフレームワークです。
+2022年 Microsoft は [Responsible AI Standard v2](https://blogs.microsoft.com/wp-content/uploads/prod/sites/5/2022/06/Microsoft-Responsible-AI-Standard-v2-General-Requirements-3.pdf) を社外に公開しました。Microsoft 社内で活用されていたものをベースにしています。これは責任のある形で AI システムの開発運用の基準となるフレームワークです。
 
 <br/>
 
@@ -146,7 +168,7 @@ Microsoft は Hub and Spokes モデルでガバナンスの体制を構築して
 
 ###  4. Tools and processes (ツールとプロセス)
 
-Microsoft は Data Scientist などの技術者が機械学習のライフサイクル (=**MLOps**) において機械学習モデルを理解し、保護し、制御するためのさまざまなツールやプラットフォームを開発しています。
+Microsoft は Data Scientist を中心とした技術者が機械学習のライフサイクルにおいて、機械学習モデルを理解し、保護し、制御するためのさまざまなツールやプラットフォームを開発しています。
 
 #### Impact Assessment Template
 Impact Assessment Template は AI システムが人、組織、社会に与える潜在的な影響を特定し、軽減策や対応方法を洗い出すツールです。Impact Assessment Guideline を参考に使います。Microsoft のこれまでの知見が集約されています。
@@ -154,7 +176,7 @@ Impact Assessment Template は AI システムが人、組織、社会に与え�
 :star: **[Impact Assessment Template](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4ZHNX)** <br />
 :star: **[Impact Assessment Guideline](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4ZzOI)**
 
-
+<br/>
 
 #### Responsible AI Toolbox
 
@@ -166,24 +188,29 @@ Responsible AI Toolbox は Microsoft が主導で開発している責任のあ�
 
 モデルの説明性付与、誤差分析、データ可視化、反事仮想分析、因果推論の機能をより簡単にスムーズに利用するための機能を提供しています。大きく分類すると 2 つの機能があります。
 
-- **モデルのデバッグ** : 機械学習モデルの評価を行い、責任のある AI の観点で問題がないか、どこに問題があるのかを確認し、軽減します。**Identify(特定)**、**Diagnose (診断)**、**Mitigate (軽減)** の 3 つのステップに該当します。
-- **意思決定への活用** : 機械学習モデルや因果推論を用いて、意思決定に役立てます。**Inform Action (アクションを提示)** のステップに該当します。
+- **モデルのデバッグ**
+    - 機械学習モデルの評価を行い、責任のある AI の観点で問題がないか、どこに問題があるのかを確認し、軽減します。**Identify(特定)**、**Diagnose (診断)**、**Mitigate (軽減)** の 3 つのステップに該当します。
+- **意思決定への活用**
+    - 機械学習モデルや因果推論を用いて、意思決定に役立てます。**Inform Action (アクションを提示)** のステップに該当します。
 
 
 <img src="https://raw.githubusercontent.com/microsoft/responsible-ai-widgets/main/img/responsible-ai-toolbox.png" />
 
 
+<br/>
+
 2 つのリポジトリから構成されています。<br/>
 
-:point_right: **[Responsible AI Toolbox](https://github.com/microsoft/responsible-ai-toolbox)** <br />
+:rocket: **[Responsible AI Toolbox](https://github.com/microsoft/responsible-ai-toolbox)** <br />
 モデルを評価し意思決定を行うための可視化ウィジェットである Responsible AI Dashboard が含まれます。
 
-:point_right: **[Responsible AI Toolbox Mitigations](https://github.com/microsoft/responsible-ai-toolbox-mitigations)** <br />
+:rocket: **[Responsible AI Toolbox Mitigations](https://github.com/microsoft/responsible-ai-toolbox-mitigations)** <br />
 データの均衡性の分析とデータ拡張を行う Python ライブラリです。
 
 <br />
 
-また、**Responsible AI Dashboard** は Responsible AI Toolbox が提供する責任のある AI を実現する統合されたダッシュボードです。責任のある AI の一連のプロセスを一気通貫で実行できます。
+**Responsible AI Dashboard**<br/>
+Responsible AI Dashboard は Responsible AI Toolbox が提供する責任のある AI を実現する統合されたダッシュボードです。責任のある AI の一連のプロセスを一気通貫で実行できます。
 
 <img src={require('./images/raidashboard.png').default} width="500" /><br/>
 
@@ -195,7 +222,7 @@ Responsible AI Toolbox は Microsoft が主導で開発している責任のあ�
 <br/>
 
 #### その他ツール
-Responsible AI Toolbox に含まれていないツールも多数あります。ここでは一部を掲載します。
+Responsible AI Toolbox に含まれていないツールを一部紹介します。
 
 :::note
 Microsoft が提供するツールの最新の情報は [責任ある AI のリソース](https://www.microsoft.com/ja-JP/ai/responsible-ai-resources) 、研究開発の取り組みは [Advancing AI trustworthiness: Updates on responsible AI research](https://www.microsoft.com/en-us/research/blog/advancing-ai-trustworthiness-updates-on-responsible-ai-research/) を参照ください。
@@ -212,8 +239,8 @@ Microsoft が提供するツールの最新の情報は [責任ある AI のリ�
 
 
 #### 参考資料
-- [責任のある AI とは (プレビュー)](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-responsible-ml)
-- [Azure Machine Learning の責任ある AI ダッシュボードを使用して AI システムを評価し、データ ドリブンの意思決定を行う (プレビュー)](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-responsible-ai-dashboard)
+- [責任のある AI とは？](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-responsible-ml)
+- [責任のある AI ダッシュボードを使用して AI システムを評価する](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-responsible-ai-dashboard)
 
 <br/>
 
@@ -229,4 +256,5 @@ Microsoft が提供するツールの最新の情報は [責任ある AI のリ�
 GPT-3 などもモデルが利用できる Open AI Service (プレビュー) は責任のある AI が考慮されたサービスになっています。例えばコンテンツフィルタの機能があり、プロンプトや生成されたコンテンツがフィルタリングされます。
 
 #### 参考情報
-- [Azure OpenAI Service (Web サイト)](https://azure.microsoft.com/ja-jp/products/cognitive-services/openai-service/#get-started)
+- [Azure OpenAI Service (Web サイト)](https://azure.microsoft.com/ja-jp/products/cognitive-services/openai-service)
+- [Data, privacy, and security for Azure OpenAI Service](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy)
