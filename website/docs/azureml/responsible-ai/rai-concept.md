@@ -176,7 +176,7 @@ Impact Assessment Template は AI システムが人、組織、社会に与え�
 :star: **[Impact Assessment Template](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4ZHNX)** <br />
 :star: **[Impact Assessment Guideline](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4ZzOI)**
 
-
+<br/>
 
 #### Responsible AI Toolbox
 
@@ -188,12 +188,16 @@ Responsible AI Toolbox は Microsoft が主導で開発している責任のあ�
 
 モデルの説明性付与、誤差分析、データ可視化、反事仮想分析、因果推論の機能をより簡単にスムーズに利用するための機能を提供しています。大きく分類すると 2 つの機能があります。
 
-- **モデルのデバッグ** : 機械学習モデルの評価を行い、責任のある AI の観点で問題がないか、どこに問題があるのかを確認し、軽減します。**Identify(特定)**、**Diagnose (診断)**、**Mitigate (軽減)** の 3 つのステップに該当します。
-- **意思決定への活用** : 機械学習モデルや因果推論を用いて、意思決定に役立てます。**Inform Action (アクションを提示)** のステップに該当します。
+- **モデルのデバッグ**
+    - 機械学習モデルの評価を行い、責任のある AI の観点で問題がないか、どこに問題があるのかを確認し、軽減します。**Identify(特定)**、**Diagnose (診断)**、**Mitigate (軽減)** の 3 つのステップに該当します。
+- **意思決定への活用**
+    - 機械学習モデルや因果推論を用いて、意思決定に役立てます。**Inform Action (アクションを提示)** のステップに該当します。
 
 
 <img src="https://raw.githubusercontent.com/microsoft/responsible-ai-widgets/main/img/responsible-ai-toolbox.png" />
 
+
+<br/>
 
 2 つのリポジトリから構成されています。<br/>
 
@@ -205,7 +209,8 @@ Responsible AI Toolbox は Microsoft が主導で開発している責任のあ�
 
 <br />
 
-また、**Responsible AI Dashboard** は Responsible AI Toolbox が提供する責任のある AI を実現する統合されたダッシュボードです。責任のある AI の一連のプロセスを一気通貫で実行できます。
+**Responsible AI Dashboard**<br/>
+Responsible AI Dashboard は Responsible AI Toolbox が提供する責任のある AI を実現する統合されたダッシュボードです。責任のある AI の一連のプロセスを一気通貫で実行できます。
 
 <img src={require('./images/raidashboard.png').default} width="500" /><br/>
 
@@ -217,7 +222,7 @@ Responsible AI Toolbox は Microsoft が主導で開発している責任のあ�
 <br/>
 
 #### その他ツール
-Responsible AI Toolbox に含まれていないツールも多数あります。ここでは一部を掲載します。
+Responsible AI Toolbox に含まれていないツールを一部紹介します。
 
 :::note
 Microsoft が提供するツールの最新の情報は [責任ある AI のリソース](https://www.microsoft.com/ja-JP/ai/responsible-ai-resources) 、研究開発の取り組みは [Advancing AI trustworthiness: Updates on responsible AI research](https://www.microsoft.com/en-us/research/blog/advancing-ai-trustworthiness-updates-on-responsible-ai-research/) を参照ください。
@@ -234,8 +239,8 @@ Microsoft が提供するツールの最新の情報は [責任ある AI のリ�
 
 
 #### 参考資料
-- [責任のある AI とは (プレビュー)](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-responsible-ml)
-- [Azure Machine Learning の責任ある AI ダッシュボードを使用して AI システムを評価し、データ ドリブンの意思決定を行う (プレビュー)](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-responsible-ai-dashboard)
+- [責任のある AI とは？](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-responsible-ml)
+- [責任のある AI ダッシュボードを使用して AI システムを評価する](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-responsible-ai-dashboard)
 
 <br/>
 
@@ -251,4 +256,5 @@ Microsoft が提供するツールの最新の情報は [責任ある AI のリ�
 GPT-3 などもモデルが利用できる Open AI Service (プレビュー) は責任のある AI が考慮されたサービスになっています。例えばコンテンツフィルタの機能があり、プロンプトや生成されたコンテンツがフィルタリングされます。
 
 #### 参考情報
-- [Azure OpenAI Service (Web サイト)](https://azure.microsoft.com/ja-jp/products/cognitive-services/openai-service/#get-started)
+- [Azure OpenAI Service (Web サイト)](https://azure.microsoft.com/ja-jp/products/cognitive-services/openai-service)
+- [Data, privacy, and security for Azure OpenAI Service](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy)
