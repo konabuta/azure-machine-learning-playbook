@@ -65,7 +65,8 @@ AI システムは全ての人を公平に扱い、同じ属性・状況の人�
 - 例
     - [Racial Bias in Healthcare Algorithm](https://www.nature.com/articles/d41586-019-03228-6)
     - [Gender Bias in roles](https://www.bing.com/images/search?q=ceo&form=HDRSC3&first=1&tsc=ImageHoverTitle)
-**信頼性と安全性 (Reliability & Safety)**<br />
+
+**信頼性と安全性 (Reliability & Safety)**<br/>
 AI システムは信頼性が高く安全である必要があります。設計されたとおりに動作し、新しい状況にも安全に対応できるようにすることが重要です。
 - 例
     - [Driving to Safety](https://www.rand.org/pubs/research_reports/RR1478.html)
@@ -77,11 +78,17 @@ AI システムではデータを扱うためプライバシーとセキュリ�
 
 
 **包括性 (Inclusiveness)** <br/>
-AI システムに限らず技術は全ての人にもたらされるべきで、様々なニーズに対応していく必要があります。
+AI システムの利点が全ての人にもたらされるべきで、様々なニーズに対応していく必要があります。
+
+<br/>
+
+> 上記のベースとなる基本原則が**透明性**と**アカウンタビリティ**です。
+
+<br/>
 
 
 **透明性 (Transparency)** <br />
-AI システムが意思決定に利用される場面などでは、どのように AI システムが決定を行ったのかを理解することが重要です。
+AI システムが人の地位に大きく影響する意思決定に利用される場面などでは、どのように AI システムが決定を行ったのかを理解することが重要です。
 
 
 **アカウンタビリティ (Accountability)** <br />
@@ -96,7 +103,7 @@ AI システムを設計・構築・運用管理する人は、システムが�
 
 ## 責任のある AI の実践
 
-これらの 6 つの原則をベースに、設計フェーズから責任のある AI が考慮された AI システムが統制の効いたガバナンスの元に実装されるために Microsoft が社内外に公開している取り組みを紹介します。
+これらの 6 つの原則をベースに、設計フェーズから責任のある AI が考慮された AI システムを構築・実装するために Microsoft 社内で実践し、社外に共有してる取り組みを紹介します。
 
 
 <img
@@ -127,7 +134,7 @@ Microsoft は Hub and Spokes モデルでガバナンスの体制を構築して
 
 ### 2. Rules (ルール)
 #### Responsible AI Standard
-2022年 Microsoft は [Responsible AI Standard v2](https://blogs.microsoft.com/wp-content/uploads/prod/sites/5/2022/06/Microsoft-Responsible-AI-Standard-v2-General-Requirements-3.pdf) を社外に公開しました。元々は Microsoft 社内で活用されていたものです。これは責任のある形で AI システムの開発運用の基準となるフレームワークです。
+2022年 Microsoft は [Responsible AI Standard v2](https://blogs.microsoft.com/wp-content/uploads/prod/sites/5/2022/06/Microsoft-Responsible-AI-Standard-v2-General-Requirements-3.pdf) を社外に公開しました。Microsoft 社内で活用されていたものをベースにしています。これは責任のある形で AI システムの開発運用の基準となるフレームワークです。
 
 <br/>
 
@@ -161,7 +168,7 @@ Microsoft は Hub and Spokes モデルでガバナンスの体制を構築して
 
 ###  4. Tools and processes (ツールとプロセス)
 
-Microsoft は Data Scientist などの技術者が機械学習のライフサイクル (=**MLOps**) において機械学習モデルを理解し、保護し、制御するためのさまざまなツールやプラットフォームを開発しています。
+Microsoft は Data Scientist を中心とした技術者が機械学習のライフサイクルにおいて、機械学習モデルを理解し、保護し、制御するためのさまざまなツールやプラットフォームを開発しています。
 
 #### Impact Assessment Template
 Impact Assessment Template は AI システムが人、組織、社会に与える潜在的な影響を特定し、軽減策や対応方法を洗い出すツールです。Impact Assessment Guideline を参考に使います。Microsoft のこれまでの知見が集約されています。
@@ -190,10 +197,10 @@ Responsible AI Toolbox は Microsoft が主導で開発している責任のあ�
 
 2 つのリポジトリから構成されています。<br/>
 
-:point_right: **[Responsible AI Toolbox](https://github.com/microsoft/responsible-ai-toolbox)** <br />
+:rocket: **[Responsible AI Toolbox](https://github.com/microsoft/responsible-ai-toolbox)** <br />
 モデルを評価し意思決定を行うための可視化ウィジェットである Responsible AI Dashboard が含まれます。
 
-:point_right: **[Responsible AI Toolbox Mitigations](https://github.com/microsoft/responsible-ai-toolbox-mitigations)** <br />
+:rocket: **[Responsible AI Toolbox Mitigations](https://github.com/microsoft/responsible-ai-toolbox-mitigations)** <br />
 データの均衡性の分析とデータ拡張を行う Python ライブラリです。
 
 <br />
