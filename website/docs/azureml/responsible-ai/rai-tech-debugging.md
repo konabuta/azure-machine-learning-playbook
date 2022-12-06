@@ -150,13 +150,11 @@ $$
 - [InterpretML (GitHub)](https://github.com/interpretml)
 - [Interpretable Machine Learning](https://christophm.github.io/interpretable-ml-book/)
 
-<br/>
-
 ---
 
 ## Counterfactual Analysis and What If
 
-学習済みモデルが出力する予測値を変化させる反実仮想の入力データを生成します。反実仮想の世界「もし入力データが xxx だったら予測結果は xxx に変わります。」を用いて機械学習モデルを評価します。Python ライブラリの DiCE をベースにしています。
+学習済みモデルが出力する予測値を変化させる反実仮想の入力データを生成します。反実仮想の世界 (例:もし入力データの変数の値が x → y に変化したら、予測結果は False から True に変わります) を用いて機械学習モデルを評価します。Python ライブラリの [DiCE](https://github.com/interpretml/DiCE) をベースにしています。
 
 <img src={require('./images/dice-loan.gif').default} width="500" /><br/>
 

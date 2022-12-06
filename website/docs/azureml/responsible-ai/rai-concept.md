@@ -248,7 +248,7 @@ Microsoft が提供するツールの最新の情報は [責任ある AI のリ�
 ## Microsoft 製品・サービスでの取り組み例
 
 ### Transparency Note の公開
-[Transparency Note for Azure Cognitive Service for Language](https://learn.microsoft.com/en-us/legal/cognitive-services/language-service/transparency-note) などの Transparency Note を公開し、AI システムの目的、能力、限界についてのコミュニケーションを支援し、マーケティングと技術文章のギャップを埋め、お客様が責任を持って AI を導入するために知っておくべき情報を積極的に伝えています。その他、Azure Cognitive Services 全般における責任のある AI のガイドラインは [Cognitive Services における AI の責任ある使用](https://learn.microsoft.com/ja-JP//azure/cognitive-services/responsible-use-of-ai-overview) で確認できます。
+[Transparency Note for Azure Cognitive Service for Language](https://learn.microsoft.com/en-us/legal/cognitive-services/language-service/transparency-note) などの Transparency Note と呼ばれる透明性に関するドキュメントを公開し、サービスの目的、能力の制限、利用する際の考慮事項などについてまとめた資料です。Azure Cognitive Services 全般における責任のある AI のガイドラインは [Cognitive Services における AI の責任ある使用](https://learn.microsoft.com/ja-JP//azure/cognitive-services/responsible-use-of-ai-overview) で確認できます。
 
 
 ### Azure OpenAI Service (プレビュー)
