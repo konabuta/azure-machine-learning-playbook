@@ -4,10 +4,10 @@ title : "モデルのデバッグ"
 ---
 
 
-本モジュールでは、Responsible AI Toolbox に含まれるモデルをデバッグ・アセスメントする技術を紹介します。
+本ページでは、Responsible AI Toolbox に含まれるモデルをデバッグ・アセスメントする技術を紹介します。
 
 ## Responsible AI Toolbox での対応
-Responsible AI Toolbox において、モデルのデバッグ・アセスメントに関連するところは最初の 3 つのステップ **Identify (特定) → Diagnose (診断) → Mitigate (緩和)** になり、Responsible AI Dashboard でカバーしているのは下図のハイライトされている部分です。
+Responsible AI Toolbox において、モデルのデバッグ・アセスメントに関連するところは最初の 3 つのステップ **Identify (特定) → Diagnose (診断) → Mitigate (緩和)** になり、UI 機能の Responsible AI Dashboard でカバーしているのは下図で緑でハイライトされている部分です。
 
 <img src="https://raw.githubusercontent.com/microsoft/responsible-ai-widgets/main/img/responsible-ai-dashboard.png" />
 
@@ -43,11 +43,14 @@ Error Analysis では学習済みの機械学習モデルの誤差の大きい�
 
 誤差が大きくなる・小さくなるコホートを特定することで、ステークホルダーに対してモデルの潜在的なリスクを伝えることができたり、誤差が大きいコホートのデータの品質を改善することで精度が向上することが期待できます。
 
+なお、Error Analysis は Responsible AI Toolbox に直接組み込まれています。
+
 <br/>
+
 
 ### 参考情報
 - [Error Analysis (Web ページ)](https://erroranalysis.ai/)
-- [ML モデルのエラーを評価する (プレビュー)](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-error-analysis)
+- [機械学習モデルでエラーを評価する](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-error-analysis)
 
 ---
 
