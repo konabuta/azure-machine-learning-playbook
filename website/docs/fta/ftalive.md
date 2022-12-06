@@ -12,10 +12,19 @@ FastTrack for Azure (aka FTA) では、Azure の様々なサービス・ワー�
 FastTrack for Azure - AI & ML の Japan で提供されている Live session の概要です。なおセッションは参加者とインタラクティブに実施しており、基本的に録画はしていません。個社別の開催はご相談ください。
 
 :::caution
-
 アジェンダや内容は予告なしに変更される場合があります。
-
 :::
+
+## 提供しているセッション一覧
+
+現在、次の 4 つのセッションを提供しています。詳細はリンク先の記載をご確認ください。
+
+:star: [Azure Machine Learning 基礎編](#azure-machine-learning-基礎編)<br/>
+:star: [Azure Machine Learning システム構築 & 運用編](#azure-machine-learning-システム構築--運用編)<br/>
+:star: [Responsible AI の概要と実装](#responsible-ai-の概要と実装)<br/>
+:star: [MLOps の概要と実装](#mlops-の概要と実装)<br/>
+
+---
 
 ## Azure Machine Learning 基礎編
 
@@ -110,3 +119,36 @@ AI のテクノロジーが大きな注目を浴びています。画期的で�
 ### 資料
 
 Azure ML ページタブの [Responsible AI](../azureml/responsible-ai/rai-concept) 配下にある Web サイトや参照先の製品ドキュメントなどを利用します。
+
+---
+
+## MLOps の概要と実装
+
+本セッションでは、MLOps の概要を説明した上で、Azure Machine Learning と GitHub を利用した MLOps の実装方法を説明します。
+
+### 対象
+機械学習のプロジェクトの責任者、Data Scientist、機械学習エンジニアの方が対象になります。機械学習の基本的な知識があることが前提になります。Azure の知識は不要です。
+
+
+
+### アジェンダ
+
+
+|     | セクション  | トピック | 概要   
+| :-- | :----- | :-----  | :-----
+| 00. | 導入           |            | セッションの概要について説明します。
+| 01. | MLOps 概要|            | 
+|     |                |MLOps の定義 | MLOps の定義をします。
+|     |                |機械学習における課題 | 機械学習をスケールさせる際の障壁を紹介します。
+|     |                |アプローチ方法 | MLOps を実現するための要素を説明します。 
+| 02. | MLOps 成熟度モデル|            | 
+|     |                |概要         | MLOps 成熟度モデルの概要を Level 毎に説明します。
+|     |                |実装         | MLOps 成熟度モデルの実装方法を Level 毎に説明します。
+|     |                |デモンストレーション |
+| 03. |Q&A            |            | MLOps に関する質問にお答えします。
+
+### 資料
+
+Azure ML ページタブの [MLOps](../azureml/mlops/mlops-concept) 配下にある Web サイトや参照先の製品ドキュメントなどを利用します。
+
+---
