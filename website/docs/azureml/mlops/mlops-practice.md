@@ -44,7 +44,7 @@ MLOps を Azure Machine Learning で実装する際に利用する代表的な�
 - [機械学習ライフサイクルの自動化](#機械学習ライフサイクルの自動化)
 
 
-### 再現性のあるモデル学習・推論
+### :brain: 再現性のあるモデル学習・推論
 Azure Machine Learning の**パイプライン (Pipeline)** を使用して、再現性の高い機械学習ライフサイクル (データ準備、特徴量エンジニアリング、モデル学習、ハイパーパラメータチューニング、モデル評価 etc) を実装することができます。
 
 <br/>
@@ -57,14 +57,16 @@ Azure Machine Learning の**パイプライン (Pipeline)** を使用して、�
 Azure Machine Learning Pipeline による推論の形態は、**バッチ推論** を想定しています。
 :::
 
+<br/>
 
-### 再現性のあるソフトウェア環境
+### :globe_with_meridians: 再現性のあるソフトウェア環境
 Azure Machine Learning の**環境 (Environment)** の機能を用いて、モデル学習や推論環境で利用する Python ライブラリなどのソフトウェアを管理します。
 
 特に Python のライブラリの管理は煩雑になっているため、再現性に苦慮することが多いため、早い段階から環境 (Enviornment) を用いたソフトウェア管理に取り組むことを推奨します。
 
+<br/>
 
-### モデルの運用管理
+### :package: モデルの運用管理
 Azure Machine Learning を用いて、実験を紐づけたモデル登録と推論環境へのデプロイを行うことができます。
 
 
@@ -78,7 +80,9 @@ Azure Machine Learning では Batch Endpoint と呼ばれる**バッチ推論**�
 
 また、ユーザーへの影響を極力抑えて安全にデプロイするための仕組みとして Blue/Green デプロイメントもサポートしています。
 
-### エンドツーエンド監査証跡
+<br/>
+
+### :recycle: エンドツーエンド監査証跡
 Azure Machine Learning 上で機械学習ライフサイクルを回すことで、エンドツーエンドでの監査証跡が可能になります。
 
 - コードのスナップショットと Git のメタデータ (リポジトリ、ブランチ、コミット ID)
@@ -91,14 +95,17 @@ Azure Machine Learning 上で機械学習ライフサイクルを回すことで
 - 説明性に関するダッシュボードやレポート
 - 推論環境と関連するモデルのメタデータ
 
+<br/>
 
-### 通知・アラート
+### :mega: 通知・アラート
 Azure Event Grid との連携機能を用いて、機械学習ライフサイクルで発生したイベント (実験完了、モデル登録、デプロイ完了、データドリフト etc) をキャッチしアクションを起こせる仕組みを作ることができます。
 
 #### 参考
 - [Azure Machine Learning イベントに基づいてアプリケーション、プロセス、または CI/CD ワークフローをトリガーする (プレビュー)](https://learn.microsoft.com/ja-jp/azure/machine-learning/how-to-use-event-grid)
 
-### モニタリング
+<br/>
+
+### :bar_chart: モニタリング
 Azure Monitor を利用して監視の仕組みを作ることができます。例えば推論環境における CPU 利用率や接続数などのログや、入出力データを取得し、再学習に役立てることができます。
 
 サンプルのモニタリング用のダッシュボードが公開されており、クイックに実装することができます。
@@ -108,12 +115,14 @@ Azure Monitor を利用して監視の仕組みを作ることができます。
 - [Azure Machine Learning の監視](https://learn.microsoft.com/ja-jp/azure/machine-learning/monitor-azure-machine-learning)
 - [オンラインエンドポイントを監視する](https://learn.microsoft.com/ja-jp/azure/machine-learning/how-to-monitor-online-endpoints)
 
+<br/>
 
-### 再学習の実行
+### :chart_with_upwards_trend: 再学習の実行
 多くの機械学習モデルはデータの変化や要件の変化に対応すべく、再学習することが求められます。Azure Machine Learning パイプライン (Pipeline) の仕組みを利用して、新しいデータで構築したモデルを古いものと比較し、あらかじめ設定した閾値・条件に基づいて置換するかどうかを選択するようなフローを構築することができます。
 
+<br/>
 
-### 機械学習ライフサイクルの自動化
+### :oncoming_automobile: 機械学習ライフサイクルの自動化
 Azure Machine Learning パイプライン (Pipeline) 以外にも、GitHub Actions や Azure Pipeline を利用して、Git 操作をトリガーにした自動化を実装することができます。
 
 **例**<br />
