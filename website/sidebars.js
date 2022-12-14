@@ -63,6 +63,7 @@ const sidebars = {
       collapsed: false,
       items:[
         'azureml/mlops/mlops-concept',
+        'azureml/mlops/mlops-practice',
         // 'azureml/mlops/ml-lifecycle',
         {
           type: 'category',
