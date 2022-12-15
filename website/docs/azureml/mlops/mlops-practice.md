@@ -3,7 +3,7 @@ id: mlops-practice
 title: "MLOps のプラクティス"
 ---
 
-本ページでは MLOps のプラクティスを紹介します。
+本ページでは MLOps のプラクティスと Azure Machine Learning で実践する際に利用する機能を紹介します。
 
 ## 🎨 7 つのプラクティス
 MLOps を導入する際の基本原則を挙げます。
@@ -43,6 +43,7 @@ MLOps を Azure Machine Learning で実装する際に利用する代表的な�
 - [再学習の実行](#再学習の実行)
 - [機械学習ライフサイクルの自動化](#機械学習ライフサイクルの自動化)
 
+<br />
 
 ### :brain: 再現性のあるモデル学習・推論
 Azure Machine Learning の**パイプライン (Pipeline)** を使用して、再現性の高い機械学習ライフサイクル (データ準備、特徴量エンジニアリング、モデル学習、ハイパーパラメータチューニング、モデル評価 etc) を実装することができます。
@@ -57,6 +58,10 @@ Azure Machine Learning の**パイプライン (Pipeline)** を使用して、�
 Azure Machine Learning Pipeline による推論の形態は、**バッチ推論** を想定しています。
 :::
 
+#### 参考情報
+- [Azure Machine Learning パイプラインとは](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-ml-pipelines)
+- [Azure Machine Learning デザイナーとは](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-designer)
+
 <br/>
 
 ### :globe_with_meridians: 再現性のあるソフトウェア環境
@@ -65,13 +70,20 @@ Azure Machine Learning の**環境 (Environment)** の機能を用いて、モ�
 特に Python のライブラリの管理は煩雑になっているため、再現性に苦慮することが多いため、早い段階から環境 (Enviornment) を用いたソフトウェア管理に取り組むことを推奨します。
 
 <br/>
+<img src={require('./images/environment-create-flow.png').default} width="500" />
+<br/>
+
+#### 参考情報
+- [Azure Machine Learning 環境とは](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-environments)
+
+<br/>
 
 ### :package: モデルの運用管理
 Azure Machine Learning を用いて、実験を紐づけたモデル登録と推論環境へのデプロイを行うことができます。
 
 
 #### モデル登録と追跡
-あらゆる実験環境で構築されたモデルは、API (Azure CLI や Python SDK) や UI (Azure ML studio) 経由で Azure Machine Learning の**モデル (Model)** の機能を用いて登録することができます。
+あらゆる実験環境で構築されたモデルは、MLflow (Python)、Azure CLI や UI (Azure ML studio) 経由で Azure Machine Learning の**モデル (Model)** の機能を用いて登録することができます。
 
 また、モデル登録時に実験の情報を紐づけておくことで、登録済みモデルを構築した元のソースコード、データ、パラメータなどのメタデータを追跡することができます。
 
@@ -79,6 +91,10 @@ Azure Machine Learning を用いて、実験を紐づけたモデル登録と推
 Azure Machine Learning では Batch Endpoint と呼ばれる**バッチ推論**の形態の推論環境と、Online Endpoint と呼ばれる**リアルタイム推論**の形態の推論環境を提供しています。比較は [推論に特化した計算リソース](https://konabuta.github.io/azure-machine-learning-playbook/docs/azureml/platform/compute#%E6%8E%A8%E8%AB%96%E3%81%AB%E7%89%B9%E5%8C%96%E3%81%97%E3%81%9F%E8%A8%88%E7%AE%97%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9) を参照ください。
 
 また、ユーザーへの影響を極力抑えて安全にデプロイするための仕組みとして Blue/Green デプロイメントもサポートしています。
+
+#### 参考情報
+- [Azure Machine Learning でモデルを操作する](https://learn.microsoft.com/ja-jp/azure/machine-learning/how-to-manage-models?tabs=use-local%2Ccli)
+- [MLflow を使用して Azure Machine Learning でモデル レジストリを管理する](https://learn.microsoft.com/ja-jp/azure/machine-learning/how-to-manage-models-mlflow)
 
 <br/>
 
@@ -95,6 +111,9 @@ Azure Machine Learning 上で機械学習ライフサイクルを回すことで
 - 説明性に関するダッシュボードやレポート
 - 推論環境と関連するモデルのメタデータ
 
+<br/>
+<img src={require('./images/audit-trail.png').default} width="500" />
+<br/>
 <br/>
 
 ### :mega: 通知・アラート
@@ -129,6 +148,27 @@ Azure Machine Learning パイプライン (Pipeline) 以外にも、GitHub Actio
 - Data Scientist がコードを Commit/Push するタイミングでテストを実行する
 - コードや利用しているパッケージの脆弱性を定期的にスキャンする
 - モデル登録をトリガーにして、推論アプリケーションを構築する
+
+
+---
+## MLflow を用いた MLOps
+
+[MLflow](https://www.mlflow.org/) は機械学習の実験管理やモデル管理などをサポートするオープンソースライブラリです。Azure Machine Learning は MLflow の API をサポートしており、MLOps のシナリオで利用することができます。
+
+<br/>
+<img src={require('./images/azureml-mlflow.png').default} width="500" />
+<br/>
+
+- 実験の追跡
+- モデル登録
+- MLflow 形式モデルのデプロイ
+- MLflow Project によるモデル学習 (Preview)
+
+
+#### 参考情報
+- [MLflow と Azure Machine Learning](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-mlflow)
+- [MLflow を使用して ML の実験とモデルを追跡する](https://learn.microsoft.com/ja-jp/azure/machine-learning/how-to-use-mlflow-cli-runs?tabs=azuremlsdk)
+
 
 ---
 
