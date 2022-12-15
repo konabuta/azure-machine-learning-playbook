@@ -149,6 +149,27 @@ Azure Machine Learning パイプライン (Pipeline) 以外にも、GitHub Actio
 - コードや利用しているパッケージの脆弱性を定期的にスキャンする
 - モデル登録をトリガーにして、推論アプリケーションを構築する
 
+
+---
+## MLflow を用いた MLOps
+
+[MLflow](https://www.mlflow.org/) は機械学習の実験管理やモデル管理などをサポートするオープンソースライブラリです。Azure Machine Learning は MLflow の API をサポートしており、MLOps のシナリオで利用することができます。
+
+<br/>
+<img src={require('./images/azureml-mlflow.png').default} width="500" />
+<br/>
+
+- 実験の追跡
+- モデル登録
+- MLflow 形式モデルのデプロイ
+- MLflow Project によるモデル学習 (Preview)
+
+
+#### 参考情報
+- [MLflow と Azure Machine Learning](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-mlflow)
+- [MLflow を使用して ML の実験とモデルを追跡する](https://learn.microsoft.com/ja-jp/azure/machine-learning/how-to-use-mlflow-cli-runs?tabs=azuremlsdk)
+
+
 ---
 
 
