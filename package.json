@@ -1,7 +1,7 @@
 {
   "dependencies": {
-    "hast-util-is-element": "^1.1.0",
-    "rehype-katex": "^5.0.0",
-    "remark-math": "^3.0.1"
+    "hast-util-is-element": "^2.1.2",
+    "rehype-katex": "^6.0.2",
+    "remark-math": "^5.1.1"
   }
 }
