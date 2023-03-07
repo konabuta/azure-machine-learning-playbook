@@ -7,13 +7,28 @@ title: システム監視
 
 ## Azure Monitor
 
-Azure の監視で中心的な役割を果たすのは Azure Monitor です。Azure Monitor は Azure 上で利用できる監視に関連する多数の機能を統合し、一元的な管理を可能にしています。
+Azure の監視で中心的な役割を果たすのは Azure Monitor というサービスです。Azure Monitor は Azure 上で利用できる監視に関連する多数の機能を統合し、一元的な管理を可能にしています。
 
 
 <img src={require('./images/azure-monitor.png').default} width="600" /><br />
 
+---
 
-## Azure Machine Learning の監視
+## Azure サービスの監視
+### Azure の正常性
+Azure サービスの全体的な問題の確認方法は 3 つあります。
+
+**Azure の状態** <br/>
+[Azure の状態のページ](https://azure.status.microsoft/ja-JP/status) から、Azure サービスの停止の情報が確認できます。広範囲に及ぶインシデントの有無を確認する際に便利です。
+
+**Service Health** <br/>
+Azure Portal の [Service Health ポータル](https://portal.azure.com/#view/Microsoft_Azure_Health/AzureHealthBrowseBlade/%7E/serviceIssues) から、ユーザーが使用しているリソース Azure サービスとリージョンの正常性に関するイベント (サービスの問題、定期的なメンテナンス、正常性に関する勧告、セキュリティに関する勧告)  が確認できます。
+
+**Resource Health** <br/>
+Azure Portal の [Resource Health](https://ms.portal.azure.com/#view/Microsoft_Azure_Health/AzureHealthBrowseBlade/~/resourceHealth) のページから、特定の仮想マシンのインスタンスなど、個々のリソースの正常性に関する情報を確認できます。
+
+
+### Azure Machine Learning の監視
 
 Azure Machine Learning も同様に Azure Monitor を用いて監視の機能を提供しています。代表的な アクティビティログ、プラットフォームメトリック、リソースログの 3 つ監視データの概要は次の通りです。
 
