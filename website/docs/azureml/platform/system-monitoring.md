@@ -34,29 +34,55 @@ Azure Portal の [Resource Health](https://ms.portal.azure.com/#view/Microsoft_A
 
 ### Azure Machine Learning の監視
 
-Azure Machine Learning も同様に Azure Monitor を用いて監視の機能を提供しています。代表的な アクティビティログ、プラットフォームメトリック、リソースログの 3 つ監視データの概要は次の通りです。
+Azure Machine Learning は Azure Monitor を用いた監視の機能を提供しています。代表的なログとして **アクティビティログ**、**プラットフォームメトリック**、**リソースログ** の 3 つが挙げられます。それぞれの性質は次のとおりです。
 
 
-|監視データ|概要|格納先|分析ツール
+|監視データ|概要|格納先|分析ツールの例
 |---------|---------|---------|---------|
-|アクティビティログ|ワークスペース、計算リソースの作成・更新など|Azure Monitor に自動で収集・格納されるが、他の場所にルーティングすることもできる。|Azure Monitor の可視化|
-|プラットフォームメトリック|実験の実行、モデルの統計情報、クォータ情報など|Azure Monitor に自動で収集・格納されるが、他の場所にルーティングすることもできる。|Azure Monitor の可視化|
-|リソースログ|アセットやジョブの作成・削除・読み取りのイベント情報など|"診断設定" から明治的に収集するログの種類とルーティング先を指定する。|Azure Monitor の可視化、Log Analytics|
+|[アクティビティログ](https://learn.microsoft.com/ja-JP/azure/machine-learning/monitor-resource-reference?view=azure-ml-py#activity-log)|ワークスペース、計算リソースの作成・更新など|Azure Monitor に**自動**で収集・格納されるが、"診断設定" から Log Analytics などにルーティングすることもできる。|Azure Portal、Log Analytics|
+|[プラットフォームメトリック](https://learn.microsoft.com/ja-JP/azure/machine-learning/monitor-resource-reference?view=azure-ml-py#metrics)|実験の実行、モデルの統計情報、クォータ情報など|Azure Monitor に**自動**で収集・格納されるが、"診断設定" から Log Analytics などにルーティングすることもできる。|Azure Monitor の可視化、Log Analytics、Workbooks|
+|[リソースログ](https://learn.microsoft.com/ja-JP/azure/machine-learning/monitor-resource-reference?view=azure-ml-py#resource-logs)|アセットやジョブの作成・削除・読み取りのイベント情報など|"診断設定" から明示的に**手動**で収集するログの種類とルーティング先を指定する。|Log Analytics、Workbooks|
+
+<br/>
+
+なお、サンプルの Azure Machine Learning の監視用のダッシュボードが公開されているのでご活用ください。
+
+<details>
+    <summary>サンプルダッシュボードのイメージ図</summary>
+<img src="https://learn.microsoft.com/ja-jp/samples/azure/azure-quickstart-templates/machine-learning-workspace-monitoring-dashboard/media/azure_dashboard.png" width="600"/><br/>
+</details>
+
+サンプル : [Azure ML monitoring dashboard](https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/machine-learning-workspace-monitoring-dashboard/)
+
+
+#### 監視項目の例
+**プラットフォーム**<br/>
+- Compute リソースの作成・削除のイベント情報
+- Compute Cluster の起動ノード数
+- CPU、GPU 利用率
+- クォータ使用率
+- ワークスペースごとのコスト
+
+**アプリケーション**<br/>
+- Job の実行回数、ステータス (成功、失敗)、実行時間
+- ユーザーごとのデータソースへのアクセス数
+
 
 
 #### 参考情報
 - [Azure Machine Learning の監視](https://learn.microsoft.com/ja-JP/azure/machine-learning/monitor-azure-machine-learning)
 - [Azure Machine Learning データの監視のリファレンス](https://learn.microsoft.com/ja-JP/azure/machine-learning/monitor-resource-reference?view=azure-ml-py)
+- [Azure Workbooks 概要](https://learn.microsoft.com/ja-jp/azure/azure-monitor/visualize/workbooks-overview)
 
 <br/>
 
 ### ネットワークの監視
 [外部へのインターネット通信の必要性](./network-security#azure-外部へのインターネット通信の必要性) にあるように、Data Scientist はインターネット上にあるさまざまなコンテンツを利用します。Hub 構成で Azure Firewall の利用した場合、通信ログが一元的に取得できるため、ユーザのアクセス履歴を分析し、ネットワーク制御の設定に役立てることができます。
 
-Azure Firewall の監視用のダッシュボード (Workbook) が公開されているのでご活用ください。
+なお、サンプルの Azure Firewall の監視用のダッシュボード (Workbook) が公開されているのでご活用ください。
 
 
-<img src="https://raw.githubusercontent.com/Azure/Azure-Network-Security/master/Cross%20Product/MediaFiles/Azure-Firewall/AzFwWorkbook.png" width="600" /><br />
+<img src="https://raw.githubusercontent.com/Azure/Azure-Network-Security/master/Cross%20Product/MediaFiles/Azure-Firewall/AzFwWorkbook.png" width="400"/><br/>
 
 サンプル : [Create an Azure ML monitoring dashboard](https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.machinelearningservices/machine-learning-workspace-monitoring-dashboard)
 
