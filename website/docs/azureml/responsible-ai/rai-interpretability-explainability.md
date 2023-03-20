@@ -80,3 +80,70 @@ title : "解釈可能性 & 説明可能性"
 下記の図にあるように一般的には機械学習モデルの精度 (Accuracy) と解釈可能性 (Interpretability) にはトレードオフがあります。精度が高いニューラルネットワークのモデルが開発できたとしても、高い透明性が求められるようなビジネス要件の観点から採用されないことがあります。
 
 <img src={require('./images/interpret-tradeoff.png').default} width="500" /><br/>
+
+---
+## 主要なアルゴリズム
+### Global Surrogate
+
+グローバルなモデル解釈方法。学習済みモデルへの入力データとその予測値を再度線形回帰などの解釈可能なモデルで学習し直して、モデル解釈をするアプローチ方法。InterpretML では LightGBM や線形回帰のモデルが利用できます。
+
+<img
+  src={require('./images/global-surrogate.png').default}
+  width="300"
+/><br/>
+
+### SHAP
+
+[SHAP (SHapley Additive exPlanations)](https://github.com/slundberg/shap) はゲーム理論のシャープレイ値の枠組みを利用して、モデルの種類に関わらず、ここのデータの特徴量ごとの貢献度をみることができます。SHAP 単体でもライブラリが公開されています。
+
+<img
+  src={require('./images/shap-diagram.png').default}
+  width="300"
+/><br/>
+
+
+### 線形回帰モデル
+**線形回帰モデル** は、各説明変数の値に重みをかけたものを合計する線形的な関係を表現します。
+
+$$
+Y =  \alpha x_1 + \beta x_2 + \gamma x_3 + ... + \epsilon
+$$ 
+
+通常、各変数の重みの大きさを変数の重要度とし、予測値への影響を判断します。
+
+<img src={require('./images/linear-regression-qc.png').default} width="300" /><br/>
+
+
+### 決定木
+説明編数をある基準で分割し、分割された各領域における目的変数の値を予測値とするモデルです。分割によってどのくらい目的変数を正確に予測できるようになったのかをみて、変数の重要度を算出します。
+
+これは、工場の製造工程において、不良の確率が 20% のデータに対して決定木モデルを構築した場合のイメージ例です。
+
+<img src={require('./images/decision-tree-qc.png').default} width="300" /><br/>
+
+例えば、「温度が35℃以上」&「湿度が60%以上」 であれば不良の割合がかなり多いことがわかります。一方、「温度が35℃以下」&「スキルがベテラン」 の場合は不良の割合が少ないです。
+
+このように決定木は、どういった条件で予測値が算出されるのかが明確なので、解釈性のあるモデルです。
+
+### 一般化加法モデル
+**一般化加法モデル (Generalized Additive Model; GAM)** は、各説明変数の値に関数をかけたものを合計する非線形的な関係を表現します。
+$$
+Y =  f(x_1) + f(x_2) + f(x_3) + ... 
+$$ 
+
+
+#### Explainable Boosting Machines (EBM)
+
+Explainable Boosting Machines (EBM) は、一般化加法モデル (GAM) に交互作用項を組み込んだモデル (GA2M) を高速に推定するアルゴリズムです。
+
+$$
+Y =  f(x_1) + f(x_2) + f(x_3) + ... + \Sigma_{ij} f_{ij}(x_i, x_j)
+$$ 
+
+それぞれの特徴量 $x_i$ は関数 $f(x_i)$ で表現されています。線形回帰などの線形モデルとは違い目的変数 $y$ との関係性は線形性は前提としていません。この関数を推定する方法はいくつかありますが、EBM ではこの関数をブースティングで推定します。また交互作用項を推定するアルゴリズム (FAST) も実装されており精度向上に寄与しています。
+
+### 参考情報
+- [InterpretML (Web ページ)](http://interpret.ml/)
+- [InterpretML (GitHub)](https://github.com/interpretml)
+- [Interpretable Machine Learning](https://christophm.github.io/interpretable-ml-book/)
+- [一般化線形モデル (GLM) & 一般化加法モデル (GAM)](https://www.slideshare.net/DeepLearningLab/glm-gam)

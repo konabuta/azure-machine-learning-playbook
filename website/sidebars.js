@@ -102,7 +102,7 @@ const sidebars = {
       collapsed: false,
       items: [
         "azureml/responsible-ai/rai-concept",
-        "azureml/responsible-ai/rai-tech-debugging",
+        //"azureml/responsible-ai/rai-tech-debugging",
         {
           type: "category",
           label: "モデルのデバッグ・アセスメント",
@@ -110,6 +110,7 @@ const sidebars = {
           collapsed: true,
           items: [
             "azureml/responsible-ai/rai-interpretability-explainability",
+            "azureml/responsible-ai/rai-counterfactual-explanation",
             "azureml/responsible-ai/rai-toolbox-for-debug",
           ],
         },
