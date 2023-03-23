@@ -3,11 +3,12 @@ id: rai-toolbox-for-debug
 title : "Responsible AI Toolbox"
 ---
 
-本ページでは、Microsoft がオープンソースで提供している Responsible AI を実装するツールである Responsible AI Toolbox を紹介します。
+本ページでは、Microsoft がオープンソースで提供している Responsible AI を実装するツールである **Responsible AI Toolbox** を紹介します。
 
+---
 ## Responsible AI Toolbox
 
-Responsible AI Toolbox は Responsible AI の実装をサポートするツール群です。
+**Responsible AI Toolbox** は Responsible AI の実装をサポートするツール群です。
 
 <img src="https://raw.githubusercontent.com/microsoft/responsible-ai-widgets/main/img/responsible-ai-toolbox.png" />
 
@@ -22,9 +23,10 @@ Resposible AI dashboard は Responsible AI Toolbox の UI 機能を提供して�
 Mitigate は Responsible AI dashboard の機能では提供されていませんが、Responsible AI Toolbox Mitigate や Fairlearn ライブラリを用いることが実行できます。
 :::
 
+---
 
 ## ツール
-Responsible AI Toolbox は複数のツールで構成されています。それぞれについて紹介します。s
+Responsible AI Toolbox は複数のツールで構成されています。それぞれについて紹介します。
 
 
 |機能     |ベース技術   |概要|
@@ -113,6 +115,7 @@ Fairlearn が想定している不公平性による損害 (Harm) のパター�
 ---
 
 ### Counterfactual Analysis and What If
+[DiCE](http://interpret.ml/DiCE/) をベースにした反実仮想サンプルの生成と What if 分析の機能を提供しています。
 
 #### ライブラリ : DiCE
 <img src={require('./images/dice.png').default} width="500" /><br/>
@@ -123,4 +126,5 @@ DiCE (Diverse Counterfactual Explanations) は Microsoft が主導で開発し�
 
 #### 参考情報
 - [DiCE (GitHub)](https://github.com/interpretml/DiCE)
-- [反事実分析と What-If (プレビュー)](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-counterfactual-analysis)
+- [DiCE (ドキュメント)](http://interpret.ml/DiCE/)
+- [反事実分析と What-If](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-counterfactual-analysis)
