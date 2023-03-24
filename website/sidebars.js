@@ -141,6 +141,3 @@ const sidebars = {
 };
 
 module.exports = sidebars;
-
-// TODO : テスト
-// TODO あああ
