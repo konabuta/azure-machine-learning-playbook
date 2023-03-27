@@ -90,27 +90,32 @@ title : "解釈可能性 & 説明可能性"
 ## 主要なアルゴリズム
 ### Global Surrogate
 
-グローバルなモデル解釈方法。学習済みモデルへの入力データとその予測値を再度線形回帰などの解釈可能なモデルで学習し直して、モデル解釈をするアプローチ方法。InterpretML では LightGBM や線形回帰のモデルが利用できます。
+グローバルなモデル解釈方法です。ニューラルネットワークのような複雑な学習済みモデルへの入力データとその予測値を利用し、線形回帰などの解釈可能なモデルを構築します。そのモデルを解釈する手法が **Global Surrogate** です。InterpretML では LightGBM や線形回帰のモデルが利用できます。
 
 <img
   src={require('./images/global-surrogate.png').default}
   width="300"
 /><br/>
 
+<br/>
+
 ### SHAP
 
 [SHAP (SHapley Additive exPlanations)](https://github.com/slundberg/shap) はゲーム理論のシャープレイ値の枠組みを利用して、モデルの種類に関わらず、ここのデータの特徴量ごとの貢献度をみることができます。SHAP 単体でもライブラリが公開されています。
 
 <img
-  src={require('./images/shap-diagram.png').default}
-  width="300"
+  src="https://www.microsoft.com/en-us/research/uploads/prod/2022/03/Fed2022_SHAPExplainability-2048x669.jpg"
+  width="700"
 /><br/>
 
+※ [Trust and understanding of AI Models’ predictions through Customer Insights](https://www.microsoft.com/en-us/research/group/dynamics-insights-apps-artificial-intelligence-machine-learning/articles/explainability/) より引用
+
+<br/>
 
 ### 線形回帰モデル
 **線形回帰モデル** は、各説明変数の値に重みをかけたものを合計する線形的な関係を表現します。
 
-$$
+$$Trust and understanding of AI Models’ predictions through Customer Insights
 Y =  \alpha x_1 + \beta x_2 + \gamma x_3 + ... + \epsilon
 $$ 
 
@@ -118,6 +123,7 @@ $$
 
 <img src={require('./images/linear-regression-qc.png').default} width="300" /><br/>
 
+<br/>
 
 ### 決定木
 説明編数をある基準で分割し、分割された各領域における目的変数の値を予測値とするモデルです。分割によってどのくらい目的変数を正確に予測できるようになったのかをみて、変数の重要度を算出します。
@@ -130,8 +136,10 @@ $$
 
 このように決定木は、どういった条件で予測値が算出されるのかが明確なので、解釈性のあるモデルです。
 
+<br/>
+
 ### 一般化加法モデル
-**一般化加法モデル (Generalized Additive Model; GAM)** は、各説明変数の値に関数をかけたものを合計する非線形的な関係を表現します。
+**一般化加法モデル (Generalized Additive Model; GAM)** は、各説明変数ごとに非線形関数を学習します。この関数の出力を足し合わせたものが予測値になります。
 $$
 Y =  f(x_1) + f(x_2) + f(x_3) + ... 
 $$ 
