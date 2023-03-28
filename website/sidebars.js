@@ -22,6 +22,7 @@ const sidebars = {
       type: "category",
       label: "Fundamentals",
       items: [
+        "azureml/fundamentals/azure-ai",
         "azureml/fundamentals/azureml-basic",
         "azureml/fundamentals/azureml-resources-assets",
         "azureml/fundamentals/azureml-author",
