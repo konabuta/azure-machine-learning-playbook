@@ -6,7 +6,7 @@ title : "Responsible AI Toolbox"
 本ページでは、Microsoft がオープンソースで提供している Responsible AI を実装するツールである **Responsible AI Toolbox** を紹介します。
 
 ---
-## Responsible AI Toolbox
+## Responsible AI Toolbox とは？
 
 **Responsible AI Toolbox** は Responsible AI の実装をサポートするツール群です。
 
@@ -128,3 +128,18 @@ DiCE (Diverse Counterfactual Explanations) は Microsoft が主導で開発し�
 - [DiCE (GitHub)](https://github.com/interpretml/DiCE)
 - [DiCE (ドキュメント)](http://interpret.ml/DiCE/)
 - [反事実分析と What-If](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-counterfactual-analysis)
+
+---
+## Azure での実装
+Responsible AI dashboard は Azure Machine Learning と連携しており、登録されているモデルに紐づけてクラウド上で構築・管理することができるようになっています。
+
+:::caution 補足
+2023年3月現在、Azure Machine Learning と Responsible AI dashboard の連携機能には制限があります。
+
+- mlflow の scikit learn flavor モデルのみサポート
+- AutoML モデルで利用される dashboard は古いバージョンのもの (Error Analysis や Counterfactual などの機能なし)
+
+:::
+
+### 参考情報
+- [責任ある AI ダッシュボードを使用して AI システムを評価する](https://learn.microsoft.com/ja-jp/azure/machine-learning/concept-responsible-ai-dashboard)

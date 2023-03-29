@@ -88,6 +88,15 @@ title : "解釈可能性 & 説明可能性"
 
 ---
 ## 主要なアルゴリズム
+
+- [Global Surrogate](#global-surrogate)
+- [SHAP](#shap)
+- [線形回帰モデル](#線形回帰モデル)
+- [決定木](#決定木)
+- [一般化加法モデル](#一般化加法モデル)
+  - [Explainable Boosting Machine](#explainable-boosting-machines-ebm)
+
+
 ### Global Surrogate
 
 グローバルなモデル解釈方法です。ニューラルネットワークのような複雑な学習済みモデルへの入力データとその予測値を利用し、線形回帰などの解釈可能なモデルを構築します。そのモデルを解釈する手法が **Global Surrogate** です。InterpretML では LightGBM や線形回帰のモデルが利用できます。
@@ -115,7 +124,7 @@ title : "解釈可能性 & 説明可能性"
 ### 線形回帰モデル
 **線形回帰モデル** は、各説明変数の値に重みをかけたものを合計する線形的な関係を表現します。
 
-$$Trust and understanding of AI Models’ predictions through Customer Insights
+$$
 Y =  \alpha x_1 + \beta x_2 + \gamma x_3 + ... + \epsilon
 $$ 
 
