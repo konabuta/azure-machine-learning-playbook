@@ -109,8 +109,20 @@ Fairlearn が想定している不公平性による損害 (Harm) のパター�
 
 [InterpretML](https://interpret.ml/) は、主要な「解釈可能性が高い Glass-box なモデル」 と 「任意の学習済みモデル (Black-box) に対する説明性付与手法」が実装されているライブラリ群です。それぞれに共通してモデル全体の傾向を見る大域的な説明とテストデータ個々の予測値に対する局所的な説明があります。
 
+<br />
+
+##### GAM Changer
+インタラクティブな UI で GAM のモデルを編集できるツールが公開されています。Interpret で公開しているツールです。
+
+<img src="https://camo.githubusercontent.com/5b21549ec3ac73f9fcaa67516e088bd113dafa3ed3b5c2126daae1d4ddef9059/68747470733a2f2f692e696d6775722e636f6d2f654b7a4b4a666c2e706e67" width="500" />
 
 <br/>
+
+#### 参考情報
+- [InterpretML (Web ページ)](http://interpret.ml/)
+- [InterpretML (GitHub)](https://github.com/interpretml)
+- [GAM Changer (GitHub)](https://github.com/interpretml/gam-changer)
+
 
 ---
 
