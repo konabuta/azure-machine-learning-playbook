@@ -1,6 +1,6 @@
 ---
 id: azureml-basic
-title: "Azure Machine Learning とは"
+title: "Azure Machine Learning 概要"
 ---
 
 ## 機械学習のプラットフォーム

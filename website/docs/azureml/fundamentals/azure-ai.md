@@ -1,6 +1,6 @@
 ---
 id: azure-ai
-title: "Azure AI"
+title: "Azure AI 概要"
 ---
 
 # Azure AI
@@ -9,7 +9,7 @@ title: "Azure AI"
 Azure AI は Microsoft が提供するクラウドサービス Azure 上で提供される AI・機械学習の関連サービスです。主に 3 つのサービス群で構成されています。
 
 - ***Azure Machine Learning*** - 汎用的な機械学習のプラットフォームです。主にオープンソースを用いた機械学習のライフサイクルをサポートしています。
-- ***Azure Cognitive Services*** - 学習済みの AI サービスです。多くのサービスがファインチューニングに対応しています。
+- ***Azure Cognitive Services*** - 学習済みの AI モデルを API で提供するサービスです。多くのサービスがファインチューニングに対応しています。
 - ***Azure Applied AI Services*** - 業務ですぐに利用可能な AI ソリューションです。Azure Cognitive Services や Azure Machine Learning と連携しており、拡張性があります。
 
 
